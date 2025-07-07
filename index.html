@@ -3,40 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Portfolio</title>
+  <title>Portfolio Fullstack - Paula Fernández Cañas</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-  <header class="text-center py-10">
-    <h1 class="text-4xl font-bold">Hola, soy [Tu Nombre]</h1>
-    <p class="text-lg mt-2">Desarrollador web | Apasionado por la tecnología</p>
+  <!-- Header -->
+  <header class="bg-white shadow p-6 text-center">
+    <h1 class="text-4xl font-bold text-gray-900">Paula</h1>
+    <p class="text-lg mt-2 text-gray-600">Desarrollador Fullstack · PHP · JavaScript · Laravel · React</p>
   </header>
 
-  <section class="max-w-4xl mx-auto p-4">
-    <h2 class="text-2xl font-semibold mb-4">🎯 Logros</h2>
-    <ul class="list-disc list-inside">
-      <li>Graduado en Ingeniería Informática</li>
-      <li>Certificado en AWS Cloud Practitioner</li>
-      <li>Finalista Hackathon [Nombre]</li>
-    </ul>
+  <!-- Sobre mí -->
+  <section class="max-w-4xl mx-auto p-6">
+    <h2 class="text-2xl font-semibold mb-4">👋 Sobre mí</h2>
+    <p>Soy un desarrollador fullstack apasionado por crear soluciones web modernas y funcionales. Me especializo en tecnologías como PHP, Laravel, React y Tailwind. Actualmente estoy en búsqueda activa de oportunidades donde pueda aportar y seguir creciendo como profesional.</p>
   </section>
 
-  <section class="max-w-4xl mx-auto p-4">
-    <h2 class="text-2xl font-semibold mb-4">💼 Proyectos destacados</h2>
-    <div>
-      <p class="font-semibold">Proyecto Chat PHP (2025)</p>
-      <p><a href="https://github.com/tuusuario/chat-app" class="text-blue-600">Ver en GitHub</a></p>
+  <!-- Tecnologías -->
+  <section class="max-w-4xl mx-auto p-6 bg-white rounded shadow mt-6">
+    <h2 class="text-2xl font-semibold mb-4">🛠️ Tecnologías</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      <span class="bg-gray-100 px-3 py-2 rounded">HTML & CSS</span>
+      <span class="bg-gray-100 px-3 py-2 rounded">JavaScript</span>
+      <span class="bg-gray-100 px-3 py-2 rounded">React</span>
+      <span class="bg-gray-100 px-3 py-2 rounded">PHP</span>
+      <span class="bg-gray-100 px-3 py-2 rounded">Laravel</span>
+      <span class="bg-gray-100 px-3 py-2 rounded">MySQL</span>
+      <span class="bg-gray-100 px-3 py-2 rounded">TailwindCSS</span>
+      <span class="bg-gray-100 px-3 py-2 rounded">Git & GitHub</span>
+      <span class="bg-gray-100 px-3 py-2 rounded">Docker</span>
     </div>
   </section>
 
-  <section class="max-w-4xl mx-auto p-4">
-    <h2 class="text-2xl font-semibold mb-4">🛠️ Tecnologías</h2>
-    <p>PHP · Laravel · JavaScript · Tailwind · MySQL · Git · Docker</p>
+  <!-- Proyectos -->
+  <section class="max-w-4xl mx-auto p-6">
+    <h2 class="text-2xl font-semibold mb-4">🚀 Proyectos destacados</h2>
+    
+    <div class="mb-6 bg-white p-4 rounded shadow">
+      <h3 class="text-xl font-bold">Compiso Web</h3>
+      <p class="text-sm text-gray-600">Aplicación web para ofrecer alquileres de pisos y búsqueda de compañeros de piso.</p>
+      <p class="mt-2">
+        <a href="https://github.com/medelcasta/compiso" class="text-blue-600 underline mr-4">GitHub</a>
+        <a href="https://compiso.infy.uk/" class="text-blue-600 underline">Ver demo</a>
+      </p>
+    </div>
+
+    <div class="mb-6 bg-white p-4 rounded shadow">
+      <h3 class="text-xl font-bold">Secure App</h3>
+      <p class="text-sm text-gray-600">Aplicación web segura de almacenamiento y compartición de archivos con control de acceso avanzado.</p>
+      <p class="mt-2">
+        <a href="https://github.com/paulafc30/secure-app" class="text-blue-600 underline mr-4">GitHub</a>
+        <a href="https://https://secure-app.netlify.app/" class="text-blue-600 underline">Ver demo</a>
+      </p>
+    </div>
   </section>
 
-  <footer class="text-center mt-10 p-4 text-sm text-gray-600">
-    Contacto: <a href="mailto:tuemail@example.com" class="text-blue-600">tuemail@example.com</a>
+  <!-- Contacto -->
+  <section class="max-w-4xl mx-auto p-6 bg-white rounded shadow mt-6 mb-12">
+    <h2 class="text-2xl font-semibold mb-4">📬 Contacto</h2>
+    <p>Email: <a href="mailto:tuemail@example.com" class="text-blue-600">paulafc30@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/paula-fernandez-canas-057896220/" class="text-blue-600">linkedin.com/in/paula-fernandez-canas-057896220/</a></p>
+    <p>GitHub: <a href="https://github.com/paulafc30" class="text-blue-600">github.com/paulafc30</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-4 border-t">
+    &copy; 2025 Paula · Portfolio Fullstack
   </footer>
 
 </body>
