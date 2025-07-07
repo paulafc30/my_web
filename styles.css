@@ -1,0 +1,10 @@
+/* Efecto hover para ampliar secciones */
+.hover-zoom {
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.05);
+  z-index: 10; /* Para evitar problemas con elementos superpuestos */
+}
