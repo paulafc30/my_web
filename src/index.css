@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-techblack text-white;
+}
+
+
+.tech-item {
+  @apply inline-block bg-gray-100 px-3 py-2 rounded font-medium text-sm;
+}
+
+.btn-link {
+  @apply inline-block bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-800 transition;
+}

@@ -1,0 +1,12 @@
+export default function Contact() {
+  return (
+    <section className="max-w-5xl mx-auto p-6 bg-white rounded shadow mt-6 mb-12">
+      <h2 className="text-2xl font-semibold mb-4">📬 Contacto</h2>
+      <ul className="text-sm space-y-2">
+        <li>Email: <a href="mailto:paulafc30@gmail.com" className="text-blue-600">paulafc30@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/paula-fernandez-canas-057896220/" className="text-blue-600">/in/paula-fernandez-canas</a></li>
+        <li>GitHub: <a href="https://github.com/paulafc30" className="text-blue-600">github.com/paulafc30</a></li>
+      </ul>
+    </section>
+  )
+}
