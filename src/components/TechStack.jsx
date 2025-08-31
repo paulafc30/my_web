@@ -5,7 +5,7 @@ export default function TechStack() {
   ];
 
   return (
-    <section className="max-w-5xl mx-auto p-6 bg-gray-900 rounded shadow mt-8">
+    <section className="max-w-5xl mx-auto p-6 mt-8 bg-gray-900 rounded shadow card">
       <h2 className="text-2xl font-semibold mb-4 text-white">Tecnologías</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center text-sm text-gray-300">
         {technologies.map((tech, i) => (

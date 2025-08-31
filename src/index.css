@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Paleta formal blanco/negro mate */
 body {
   background-color: #121212; /* negro mate */
   color: #e5e5e5; /* blanco suave */
@@ -10,25 +9,33 @@ body {
 }
 
 a {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: #bbbbbb;
-}
-
-/* Sombras discretas */
-.shadow {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-}
-
-/* Colores para botones discretos */
-.btn-link {
-  color: #ffffff;
+  color: #ff4c4c; /* rojo para enlaces */
+  text-decoration: none;
   transition: color 0.2s;
 }
 
+a:hover {
+  color: #ff1a1a;
+}
+
+.btn-link {
+  color: #ff4c4c;
+  border-bottom: 1px dotted transparent;
+  transition: all 0.2s;
+}
+
 .btn-link:hover {
-  color: #bbbbbb;
+  color: #ff1a1a;
+  border-bottom: 1px dotted #ff1a1a;
+}
+
+/* Efectos hover para tarjetas */
+.card {
+  background-color: #1e1e1e;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 76, 76, 0.3);
 }
