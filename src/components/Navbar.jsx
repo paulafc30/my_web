@@ -6,7 +6,6 @@ const Navbar = () => {
       <h1 className="text-2xl font-bold text-red-500">Paula Fernández</h1>
       <Link
         to="/contacto"
-        target="_blank"
         className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-lg transition"
       >
         Contactar
