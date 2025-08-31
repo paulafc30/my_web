@@ -16,7 +16,7 @@ const Contact = () => {
   const enviarFormulario = (e) => {
     e.preventDefault();
 
-    emailjs
+    /*emailjs
       .send(
         "TU_SERVICE_ID",   // ← Sustituye por tu Service ID de EmailJS
         "TU_TEMPLATE_ID",  // ← Sustituye por tu Template ID
@@ -24,7 +24,8 @@ const Contact = () => {
         "TU_PUBLIC_KEY"    // ← Sustituye por tu Public Key
       )
       .then(() => setEnviado(true))
-      .catch((error) => alert("Error: " + error.text));
+      .catch((error) => alert("Error: " + error.text));*/
+      setEnviado(true);
   };
 
   return (
