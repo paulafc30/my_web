@@ -1,23 +1,19 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import TechStack from './components/TechStack.jsx'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 
-export default function App() {
+
+function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <About />
-      <TechStack />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
-    </>
-  )
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contacto" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
 }
+
+export default App;

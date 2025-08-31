@@ -1,12 +1,103 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🚀 Portfolio Fullstack - Paula Fernández Cañas
 
-Currently, two official plugins are available:
+Este es mi portfolio profesional como desarrolladora fullstack, construido con React, TailwindCSS y animaciones con Framer Motion. El proyecto incluye secciones como "Sobre mí", tecnologías, experiencia, proyectos destacados y contacto.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📦 Requisitos previos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Asegúrate de tener instalado:
+
+- [Node.js](https://nodejs.org/) (v16 o superior recomendado)
+- npm (v7 o superior)
+
+Comprueba que los tienes instalados:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## 🔧 Instalación
+
+1. **Clona el repositorio**:
+
+```bash
+git clone https://github.com/paulafc30/my-portfolio.git
+cd my-portfolio
+```
+
+2. **Instala las dependencias**:
+
+```bash
+npm install
+```
+
+---
+
+## 🧪 Uso en desarrollo
+
+Para iniciar el entorno de desarrollo en local:
+
+```bash
+npm run dev
+```
+
+Esto abrirá automáticamente el proyecto en `http://localhost:5173` o similar.
+
+---
+
+## 🏗️ Estructura del proyecto
+
+```
+my-portfolio/
+├── public/
+├── src/
+│   ├── components/
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── package.json
+├── tailwind.config.js
+└── README.md
+```
+
+---
+
+## 🛠️ Tecnologías principales
+
+- React + Vite
+- TailwindCSS
+- Framer Motion (animaciones)
+- React Icons
+
+---
+
+## 🌍 Despliegue
+
+Este portfolio puede desplegarse fácilmente en plataformas como:
+
+- [Netlify](https://www.netlify.com/)
+- [Vercel](https://vercel.com/)
+- GitHub Pages (requiere build con `vite.config.js` personalizado)
+
+Para construir una versión lista para producción:
+
+```bash
+npm run build
+```
+
+Y luego subir la carpeta `dist/` al servicio de hosting que prefieras.
+
+---
+
+## 📬 Contacto
+
+- Email: [paulafc30@gmail.com](mailto:paulafc30@gmail.com)
+- LinkedIn: [linkedin.com/in/paula-fernandez-canas](https://www.linkedin.com/in/paula-fernandez-canas-057896220/)
+- GitHub: [github.com/paulafc30](https://github.com/paulafc30)
+
+---
