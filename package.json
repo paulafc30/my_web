@@ -26,15 +26,7 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.13"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/paulafc30/my_web.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/paulafc30/my_web/issues"
-  },
-  "homepage": "https://github.com/paulafc30/my_web#readme"
+  "license": "ISC"
 }

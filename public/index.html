@@ -25,132 +25,106 @@
 
     <nav class="bg-black text-white px-6 py-4 flex justify-between items-center fixed top-0 w-full z-50 shadow">
         <h1 class="text-xl font-semibold text-red-500">Paula Fernández Cañas</h1>
-        <a href="#contacto" class="bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded transition">
-            Contactar
-        </a>
+        <a href="#contacto" class="bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-full transition">Contacto</a>
     </nav>
 
-    <section class="max-w-5xl mx-auto mt-20 p-6 rounded shadow flex flex-col md:flex-row items-center text-center md:text-left gap-6 bg-gray-900 card">
-        <img 
-            src="https://paulafernandez.netlify.app/assets/foto.jpg" 
-            alt="Retrato profesional de Paula, desarrolladora web fullstack." 
-            class="w-32 h-32 rounded-full shadow object-cover"
-        />
-        <div>
-            <h2 class="text-2xl font-semibold mb-2 text-white">👋 ¡Hola! Soy Paula</h2>
-            <p class="text-gray-300">
-                Desarrolladora web fullstack especializada en PHP, Laravel y React. Me encanta construir experiencias funcionales, modernas y accesibles. Busco un equipo donde crecer y aportar valor.
-            </p>
-        </div>
-    </section>
-
-    <section id="sobre-mi" class="max-w-5xl mx-auto p-6 mt-8 bg-gray-900 rounded shadow card">
-        <h2 class="text-3xl font-bold mb-4 text-white">Sobre mí</h2>
-        <p class="text-gray-300">
-            Soy desarrolladora fullstack apasionada por crear soluciones eficientes, con experiencia en PHP, Laravel y React. Me gusta escribir código limpio y colaborar en equipos que buscan mejorar continuamente.
-        </p>
-    </section>
-
-    <section id="experiencia" class="max-w-5xl mx-auto p-6 mt-8">
-        <h2 class="text-2xl font-semibold mb-4 text-white">Experiencia</h2>
-        <ul class="space-y-4">
-            <li class="bg-gray-800 rounded shadow p-4 card">
-                <h3 class="font-bold text-white">Secure App – Freelance</h3>
-                <p class="text-gray-400 text-sm">2025</p>
-                <p class="mt-2 text-gray-300 text-sm">Aplicación segura de archivos con control de acceso y roles.</p>
-            </li>
-            <li class="bg-gray-800 rounded shadow p-4 card">
-                <h3 class="font-bold text-white">Compiso Web – Académico</h3>
-                <p class="text-gray-400 text-sm">2024</p>
-                <p class="mt-2 text-gray-300 text-sm">Aplicación web para compartir piso desarrollada con Laravel.</p>
-            </li>
-        </ul>
-    </section>
-
-    <section id="proyectos" class="max-w-5xl mx-auto p-6 mt-8">
-        <h2 class="text-2xl font-semibold mb-4 text-white">Proyectos Destacados</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="p-4 rounded shadow card">
-                <h3 class="text-xl font-bold text-white">Compiso Web</h3>
-                <p class="text-gray-300 text-sm">Alquiler de pisos y búsqueda de compañeros.</p>
-                <div class="mt-3 flex gap-2">
-                    <a href="https://github.com/medelcasta/compiso" target="_blank" class="btn-link">GitHub</a>
-                    <a href="https://compiso.infy.uk/" target="_blank" class="btn-link">Demo</a>
-                </div>
+    <header class="py-20 flex flex-col items-center justify-center text-center">
+        <div class="max-w-4xl mx-auto p-6 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8 bg-gray-800 rounded-lg shadow-lg card">
+            <div class="flex-shrink-0">
+                <img src="tu_foto.jpg" alt="Paula Fernández Cañas" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-red-500 shadow-xl">
             </div>
-            <div class="p-4 rounded shadow card">
-                <h3 class="text-xl font-bold text-white">Secure App</h3>
-                <p class="text-gray-300 text-sm">Gestión de archivos con control de roles.</p>
-                <div class="mt-3 flex gap-2">
-                    <a href="https://github.com/paulafc30/secure-app" target="_blank" class="btn-link">GitHub</a>
-                    <a href="https://secure-app.netlify.app/" target="_blank" class="btn-link">Demo</a>
-                </div>
-            </div>
-            <div class="p-4 rounded shadow card">
-                <h3 class="text-xl font-bold text-white">Portfolio</h3>
-                <p class="text-gray-300 text-sm">Este mismo portfolio.</p>
-                <div class="mt-3 flex gap-2">
-                    <a href="https://github.com/paulafc30/my_web" target="_blank" class="btn-link">GitHub</a>
-                    <a href="#" class="btn-link">Demo</a>
-                </div>
+            <div class="text-left">
+                <h2 class="text-4xl font-bold text-red-500 mb-2">¡Hola, soy Paula!</h2>
+                <h3 class="text-2xl font-semibold mb-4">Desarrolladora Web Junior</h3>
+                <p class="text-lg">
+                    Soy una desarrolladora web con pasión por crear experiencias digitales dinámicas y funcionales. Mi enfoque se centra en el **desarrollo fullstack**, utilizando tecnologías como **HTML, CSS, JavaScript, React** y **TailwindCSS** en el frontend, y **Node.js** en el backend. Siempre estoy aprendiendo nuevas tecnologías y enfrentando desafíos para crecer profesionalmente.
+                </p>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section id="tecnologias" class="max-w-5xl mx-auto p-6 mt-8 bg-gray-900 rounded shadow card">
-        <h2 class="text-2xl font-semibold mb-4 text-white">Tecnologías</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center text-sm text-gray-300">
-            <span class="bg-gray-700 py-1 px-2 rounded">HTML & CSS</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">JavaScript</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">React</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">PHP</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">Laravel</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">MySQL</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">TailwindCSS</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">Git & GitHub</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">Docker</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">Figma</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">Vite</span>
-            <span class="bg-gray-700 py-1 px-2 rounded">Netlify</span>
-        </div>
-    </section>
+    <main class="container mx-auto px-6">
+        <section id="experiencia" class="max-w-5xl mx-auto p-6 mt-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow card">
+                <h3 class="text-3xl font-bold text-white">
+                    Experiencia
+                </h3>
+                <div class="mt-4 space-y-4">
+                    <div class="border-l-4 border-red-500 pl-4">
+                        <h4 class="text-xl font-semibold text-red-500">Nombre de la Empresa</h4>
+                        <p class="text-gray-400">Cargo · Fecha de inicio - Fecha de fin</p>
+                        <p class="mt-2 text-gray-300">
+                            Descripción de tus responsabilidades y logros clave en este puesto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="contacto" class="min-h-screen flex items-center justify-center bg-black text-white px-4 pt-20">
-        <div class="bg-red-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-            <h3 class="text-2xl mb-6 text-center font-bold text-white">
-                Contacta conmigo
-            </h3>
-            <form action="https://formspree.io/f/tu_identificador" method="POST" class="space-y-4">
-                <input
-                    type="text"
-                    name="nombre"
-                    placeholder="Tu nombre"
-                    required
-                    class="w-full p-2 rounded bg-black text-white border border-red-600"
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Tu correo"
-                    required
-                    class="w-full p-2 rounded bg-black text-white border border-red-600"
-                />
-                <textarea
-                    name="mensaje"
-                    placeholder="Motivo del contacto"
-                    required
-                    rows="4"
-                    class="w-full p-2 rounded bg-black text-white border border-red-600"
-                ></textarea>
-                <button
-                    type="submit"
-                    class="w-full bg-red-700 hover:bg-red-800 p-2 rounded font-bold transition"
-                >
-                    Enviar
-                </button>
-            </form>
-        </div>
-    </section>
+        <section id="proyectos" class="max-w-5xl mx-auto p-6 mt-8">
+            <div class="bg-gray-800 p-6 rounded-lg shadow card">
+                <h3 class="text-3xl font-bold text-white">
+                    Proyectos
+                </h3>
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-700 p-4 rounded-lg card">
+                        <img src="imagen_proyecto.jpg" alt="Nombre del Proyecto" class="w-full h-40 object-cover rounded-md mb-4">
+                        <h4 class="text-xl font-semibold text-white">Nombre del Proyecto</h4>
+                        <p class="text-gray-400 mb-2">Tecnologías usadas: HTML, CSS, JavaScript, React, etc.</p>
+                        <p class="text-gray-300 text-sm">
+                            Una breve descripción de tu proyecto. Explica qué problema resuelve, tu rol y los desafíos que superaste.
+                        </p>
+                        <div class="mt-4 flex space-x-2">
+                            <a href="#" class="bg-red-600 hover:bg-red-700 text-white text-sm px-3 py-1 rounded transition">Ver Proyecto</a>
+                            <a href="#" class="bg-gray-600 hover:bg-gray-700 text-white text-sm px-3 py-1 rounded transition">Código Fuente</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="max-w-5xl mx-auto p-6 mt-8">
+            <div class="bg-gray-800 p-6 rounded shadow card">
+                <h3 class="text-3xl font-bold text-white">
+                    Contacta conmigo
+                </h3>
+                <form action="https://formspree.io/f/tu_identificador" method="POST" class="space-y-4">
+                    <input
+                        type="text"
+                        name="nombre"
+                        placeholder="Tu nombre"
+                        required
+                        class="w-full p-2 rounded bg-black text-white border border-red-600"
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Tu correo"
+                        required
+                        class="w-full p-2 rounded bg-black text-white border border-red-600"
+                    />
+                    <textarea
+                        name="mensaje"
+                        placeholder="Motivo del contacto"
+                        required
+                        rows="4"
+                        class="w-full p-2 rounded bg-black text-white border border-red-600"
+                    ></textarea>
+                    <button
+                        type="submit"
+                        class="w-full bg-red-700 hover:bg-red-800 p-2 rounded font-bold transition"
+                    >
+                        Enviar
+                    </button>
+                </form>
+                <p class="text-center mt-4">
+                  Si lo prefieres, puedes contactar directamente a mi correo:
+                  <a href="mailto:paulafc30@gmail.com" class="text-red-500 hover:underline">paulafc30@gmail.com</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="text-center text-gray-400 text-sm py-4 mt-8 border-t border-gray-700">
         &copy; 2025 Paula Fernández Cañas · Portfolio Fullstack
