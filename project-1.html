@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio de Caso: [Nombre del Proyecto] | Tu Nombre</title>
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css"> 
+    
+    </head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Tu Nombre</a>
+            <ul class="nav-list">
+                <li><a href="about.html">Acerca de Mí</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="project-intro">
+            <h1 class="project-headline">
+                [Nombre del Proyecto]: <br>
+                Desarrollo de una Plataforma de Gestión de [Inventario/Citas]
+            </h1>
+
+            <div class="project-meta-grid">
+                <div>
+                    <span class="meta-label">Mi Rol:</span>
+                    <p class="meta-data">Desarrolladora Frontend & Backend</p>
+                </div>
+                <div>
+                    <span class="meta-label">Stack Tecnológico:</span>
+                    <p class="meta-data">React, Node.js/Express, PostgreSQL, Sass</p>
+                </div>
+                <div>
+                    <span class="meta-label">Duración:</span>
+                    <p class="meta-data">6 semanas (Proyecto personal/Hackathon)</p>
+                </div>
+                <div>
+                    <span class="meta-label">Enlace en Vivo:</span>
+                    <a href="https://es.stackoverflow.com/questions/50670/qu%C3%A9-significa-llevar-un-proyecto-a-producci%C3%B3n" target="_blank" class="meta-link">Ver Demo →</a>
+                </div>
+            </div>
+            
+            <figure class="hero-image">
+                <img src="assets/images/project-1-hero.jpg" alt="Captura de pantalla principal del proyecto" style="width: 100%; display: block;">
+                <figcaption>Vista principal de la aplicación. Mantén el diseño limpio.</figcaption>
+            </figure>
+        </section>
+
+        <section class="case-study-section">
+            <h2 class="section-subtitle">El Problema a Resolver</h2>
+            <p><strong>El Contexto:</strong> [Describe brevemente el problema inicial o la necesidad del proyecto. Ej: Las PYMEs necesitan una herramienta simple para... ]</p>
+            <p><strong>El Objetivo:</strong> Nuestro objetivo principal fue crear un [aplicación web/servicio] que ofreciera [beneficio clave] con una curva de aprendizaje mínima, centrándonos en la performance y la escalabilidad inicial.</p>
+        </section>
+
+        <section class="case-study-section">
+            <h2 class="section-subtitle">Proceso de Desarrollo y Stack</h2>
+            
+            <h3>Decisión Frontend (React)</h3>
+            <p>Elegí **React** por su eficiencia en la creación de interfaces de usuario dinámicas y la gestión de estados. Para el manejo de las peticiones, implementé **Axios** para aprovechar sus características de cancelación de peticiones y manejo de errores. En la arquitectura, decidí usar [Context API/Redux] para gestionar el estado global.</p>
+            
+            <h3>Arquitectura Backend y Base de Datos</h3>
+            <p>Para el backend, opté por **Node.js con Express** debido a su naturaleza asíncrona, ideal para aplicaciones I/O-bound. La base de datos elegida fue **PostgreSQL** por su robustez y fiabilidad para manejar datos estructurados. El diseño del esquema de la base de datos se centró en la normalización para prevenir redundancias y asegurar la integridad de los datos de [menciona un dato clave, ej: transacciones].</p>
+            
+            <div class="key-challenge">
+                <h4 class="challenge-title">Desafío Clave: Optimización de Consultas</h4>
+                <p>Durante las pruebas iniciales, las consultas al obtener la lista completa de usuarios eran lentas. La solución fue implementar **índices** en las columnas [columna A] y [columna B] y refactorizar la consulta con una instrucción `JOIN` optimizada, reduciendo el tiempo de carga en un 60%.</p>
+            </div>
+        </section>
+        
+        <section class="case-study-section">
+            <h2 class="section-subtitle">Resultados y Aprendizajes</h2>
+            <ul>
+                <li><strong>Resultados Medibles:</strong> La aplicación final logró [menciona una métrica, ej: una puntuación de rendimiento Lighthouse de 95].</li>
+                <li><strong>Aprendizaje Técnico:</strong> Esta fue mi primera experiencia manejando [menciona una tecnología o concepto nuevo, ej: autenticación con JWT].</li>
+                <li><strong>Próximos Pasos:</strong> La siguiente fase incluiría [ej: implementar pruebas unitarias con Jest o migrar a TypeScript].</li>
+            </ul>
+        </section>
+        
+        <section class="cta-section">
+            <a href="index.html" class="cta-link">← Volver a todos los proyectos</a>
+            <a href="about.html" class="cta-link">Conoce mi experiencia →</a>
+        </section>
+
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="contact-info">
+            <h2 class="footer-headline">Hablemos de tu próximo proyecto.</h2>
+            <p class="email">tu.email@ejemplo.com</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Tu Nombre. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

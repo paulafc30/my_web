@@ -1,0 +1,453 @@
+/* =================================================== */
+/* 0. VARIABLES Y RESET BÁSICO (Casi Monocromático) */
+/* =================================================== */
+:root {
+    /* Colores */
+    --color-background: #FFFFFF; /* Blanco puro */
+    --color-text: #111111;       /* Negro casi puro */
+    --color-accent: #888888;     /* Gris sutil para líneas y acentos */
+    
+    /* Tipografía (¡La clave del estilo!) */
+    /* Elige una serif o sans-serif elegante y muy limpia */
+    --font-primary: 'Inter', sans-serif; 
+    --font-display: 'Tippo', serif; /* Una fuente más atrevida para titulares */
+    
+    /* Espaciado */
+    --space-xl: 8rem;
+    --space-l: 4rem;
+    --space-m: 2rem;
+}
+
+/* Aplica el box-sizing globalmente */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 0 auto;
+    max-width: 1400px; /* Limita el ancho para mantener la elegancia */
+    padding: 0 var(--space-m);
+    line-height: 1.6;
+}
+
+/* =================================================== */
+/* 1. NAVEGACIÓN Y ENCABEZADO */
+/* =================================================== */
+.header {
+    padding-top: var(--space-l);
+    margin-bottom: var(--space-xl);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: var(--space-m);
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    /* Efecto hover minimalista */
+    border-bottom: 1px solid transparent; 
+    transition: border-bottom 0.3s;
+}
+
+.nav-list a:hover {
+    border-bottom: 1px solid var(--color-text);
+}
+
+
+/* =================================================== */
+/* 2. TIPOGRAFÍA Y SECCIÓN INTRO */
+/* =================================================== */
+.intro {
+    margin-bottom: var(--space-xl);
+}
+
+.intro-headline {
+    font-family: var(--font-display); 
+    font-size: 4.5rem; /* ¡Hazla GIGANTE! */
+    font-weight: 300;
+    line-height: 1.1;
+    margin-top: 0;
+}
+
+.highlight {
+    /* Un color de acento o simplemente un peso diferente */
+    font-weight: 600; 
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: var(--space-l);
+}
+
+/* =================================================== */
+/* 3. PROYECTOS (El núcleo del sitio) */
+/* =================================================== */
+.projects {
+    margin-bottom: var(--space-xl);
+}
+
+.project-item {
+    display: flex;
+    padding: var(--space-m) 0;
+    border-top: 1px solid var(--color-accent); /* Línea sutil de separación */
+    text-decoration: none;
+    color: var(--color-text);
+    transition: background-color 0.3s ease;
+}
+
+.project-item:hover {
+    background-color: #f7f7f7; /* Gris muy claro al pasar el ratón */
+}
+
+.project-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: var(--space-l);
+    flex-shrink: 0; /* Asegura que el número no se comprima */
+}
+
+.project-details {
+    flex-grow: 1;
+}
+
+.project-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem; /* Título de proyecto grande */
+    margin: 0;
+    line-height: 1.2;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* =================================================== */
+/* 4. FOOTER (Contacto) */
+/* =================================================== */
+.footer {
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--color-accent);
+}
+
+.footer-headline {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: var(--space-m);
+}
+
+.email {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-m);
+}
+
+.social-links a {
+    margin-right: var(--space-m);
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.social-links a:hover {
+    border-bottom: 1px solid var(--color-text);
+}
+
+.copyright {
+    margin-top: var(--space-l);
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* =================================================== */
+/* 5. MEDIA QUERIES (Responsivo Básico) */
+/* =================================================== */
+@media (max-width: 768px) {
+    :root {
+        --space-xl: 4rem;
+        --space-l: 2rem;
+    }
+
+    .intro-headline {
+        font-size: 2.5rem; /* Más pequeño en móvil */
+    }
+
+    .project-item {
+        flex-direction: column; /* Apila el número y los detalles */
+    }
+
+    .project-number {
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* =================================================== */
+/* CSS ESPECÍFICO PARA ESTUDIOS DE CASO */
+/* =================================================== */
+
+.project-intro {
+    margin-bottom: var(--space-xl);
+}
+
+.project-headline {
+    /* Mismo estilo que el intro de la home, pero menos margen superior */
+    margin-top: var(--space-l); 
+    margin-bottom: var(--space-xl);
+}
+
+.project-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 columnas */
+    gap: var(--space-m);
+    padding: var(--space-l) 0;
+    margin-bottom: var(--space-l);
+    border-top: 1px solid var(--color-accent);
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.meta-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.meta-data, .meta-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.meta-link {
+    text-decoration: none;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.case-study-section {
+    padding: var(--space-l) 0;
+}
+
+.section-subtitle {
+    font-size: 2rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: var(--space-m);
+}
+
+/* Estilo para destacar un desafío o punto clave */
+.key-challenge {
+    background-color: #f7f7f7;
+    border-left: 5px solid var(--color-accent);
+    padding: var(--space-m);
+    margin: var(--space-l) 0;
+}
+
+.challenge-title {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+/* Estilo para la sección de Llamada a la Acción (CTA) */
+.cta-section {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-xl) 0;
+}
+
+.cta-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: transform 0.3s ease;
+}
+
+.cta-link:hover {
+    /* Efecto sutil de desplazamiento o resalte */
+    transform: translateX(5px);
+}
+
+/* Media Query para móviles */
+@media (max-width: 600px) {
+    .project-meta-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+}
+
+/* =================================================== */
+/* CSS ESPECÍFICO PARA ACERCA DE MÍ (about.html) */
+/* =================================================== */
+
+.about-details-grid {
+    display: grid;
+    /* Ajusta este valor para controlar la proporción foto/texto */
+    grid-template-columns: 2fr 1fr; 
+    gap: var(--space-l);
+    margin-bottom: var(--space-xl);
+}
+
+.bio-text {
+    /* Limita la anchura del texto para una mejor lectura */
+    max-width: 700px; 
+}
+
+.section-subtitle {
+    /* Usado aquí para el título de la biografía */
+    margin-top: 0;
+}
+
+.profile-photo img {
+    /* Aplica un estilo limpio a la foto (puede ser un filtro blanco y negro) */
+    filter: grayscale(100%); 
+    object-fit: cover;
+    aspect-ratio: 4/5; /* Proporción para fotos verticales */
+}
+
+/* Separador simple para dividir secciones */
+.separator {
+    border: none;
+    border-top: 1px solid var(--color-accent);
+    margin: var(--space-xl) 0;
+    opacity: 0.5;
+}
+
+/* Sección de Habilidades (Skills) */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-l);
+}
+
+.skill-category {
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.skills-grid ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-grid li {
+    padding: 0.2rem 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Llamada a la Acción (CTA) al final de la página */
+.cta-about {
+    text-align: center;
+    padding: var(--space-l) 0;
+}
+
+.cta-link-l {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+    padding: 0.8rem 1.5rem;
+    margin: var(--space-m) 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-link-l:hover {
+    background-color: var(--color-text);
+    color: var(--color-background);
+}
+
+
+/* Media Queries para Móviles */
+@media (max-width: 768px) {
+    .about-details-grid {
+        grid-template-columns: 1fr; /* Apila la foto y el texto en móvil */
+    }
+
+    .profile-photo {
+        order: -1; /* Mueve la foto arriba del texto en móvil */
+        margin-bottom: var(--space-m);
+    }
+}
+
+/* =================================================== */
+/* CSS PARA ANIMACIONES DE CARGA (Fade-In) */
+/* =================================================== */
+
+/* Estado inicial: todos los elementos están ocultos y desenfocados */
+.intro, .projects, .about-details-grid, .footer {
+    opacity: 0;
+    transform: translateY(20px); /* Un ligero desplazamiento hacia abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado final: cuando el JS añade la clase, los elementos se muestran */
+/* La clase 'js-loaded' se añade al body para inicializar la carga */
+body.js-loaded .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Asegura que el contenido principal también aparezca */
+.main-content {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+body.js-loaded .main-content {
+    opacity: 1;
+}
+
+/* Nota: La cabecera (header) debe tener una transición muy rápida o nula 
+   para aparecer de inmediato y mejorar la percepción de velocidad.
+*/
+.header {
+    transition: opacity 0.3s ease-in;
+}
+
+:root {
+    /* Ejemplo con Lora e Inter */
+    --font-primary: 'Inter', sans-serif; /* Para el cuerpo */
+    --font-display: 'Lora', serif; /* Para titulares grandes */
+    /* ... el resto de tus variables ... */
+}
