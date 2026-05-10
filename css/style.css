@@ -1,64 +1,121 @@
 /* =================================================== */
-/* 0. VARIABLES Y RESET BÁSICO (Casi Monocromático) */
+/* 0. VARIABLES Y RESET                                  */
 /* =================================================== */
 :root {
-    /* Colores */
-    --color-background: #FFFFFF; /* Blanco puro */
-    --color-text: #111111;       /* Negro casi puro */
-    --color-accent: #888888;     /* Gris sutil para líneas y acentos */
-    
-    /* Tipografía (¡La clave del estilo!) */
-    /* Elige una serif o sans-serif elegante y muy limpia */
-    --font-primary: 'Inter', sans-serif; 
-    --font-display: 'Tippo', serif; /* Una fuente más atrevida para titulares */
-    
-    /* Espaciado */
-    --space-xl: 8rem;
-    --space-l: 4rem;
+    /* Colores - paleta sobria con un acento vibrante */
+    --color-bg: #FAFAF7;
+    --color-bg-alt: #FFFFFF;
+    --color-text: #0F0F0F;
+    --color-text-muted: #5C5C5C;
+    --color-border: #E5E3DD;
+    --color-accent: #2347E5;
+    --color-accent-soft: #EEF1FF;
+
+    /* Tipografía */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+    /* Espaciado (escala fluida) */
+    --space-xs: 0.5rem;
+    --space-s: 1rem;
     --space-m: 2rem;
+    --space-l: clamp(3rem, 6vw, 5rem);
+    --space-xl: clamp(5rem, 10vw, 8rem);
+
+    /* Otros */
+    --radius: 6px;
+    --max-width: 1200px;
+    --transition: 0.25s ease;
 }
 
-/* Aplica el box-sizing globalmente */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-primary);
-    background-color: var(--color-background);
+    background-color: var(--color-bg);
     color: var(--color-text);
-    margin: 0 auto;
-    max-width: 1400px; /* Limita el ancho para mantener la elegancia */
-    padding: 0 var(--space-m);
+    margin: 0;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+/* Layout container */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 
 /* =================================================== */
-/* 1. NAVEGACIÓN Y ENCABEZADO */
+/* 1. NAVEGACIÓN                                         */
 /* =================================================== */
 .header {
-    padding-top: var(--space-l);
-    margin-bottom: var(--space-xl);
+    padding: var(--space-m) 0;
+    position: sticky;
+    top: 0;
+    background-color: rgba(250, 250, 247, 0.85);
+    backdrop-filter: saturate(180%) blur(8px);
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    z-index: 100;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition);
+}
+
+.header.is-scrolled {
+    border-bottom-color: var(--color-border);
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--space-m);
 }
 
 .logo {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.05rem;
     text-decoration: none;
     color: var(--color-text);
     font-weight: 600;
+    letter-spacing: -0.01em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    display: inline-block;
 }
 
 .nav-list {
     list-style: none;
     display: flex;
-    gap: var(--space-m);
+    gap: clamp(1rem, 3vw, 2rem);
     padding: 0;
     margin: 0;
 }
@@ -66,388 +123,721 @@ body {
 .nav-list a {
     text-decoration: none;
     color: var(--color-text);
-    font-size: 0.9rem;
-    /* Efecto hover minimalista */
-    border-bottom: 1px solid transparent; 
-    transition: border-bottom 0.3s;
+    font-size: 0.92rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0.25rem 0;
 }
 
-.nav-list a:hover {
-    border-bottom: 1px solid var(--color-text);
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--color-accent);
+    transition: width var(--transition);
 }
 
+.nav-list a:hover::after,
+.nav-list a:focus-visible::after {
+    width: 100%;
+}
 
 /* =================================================== */
-/* 2. TIPOGRAFÍA Y SECCIÓN INTRO */
+/* 2. HERO / INTRO                                       */
 /* =================================================== */
 .intro {
-    margin-bottom: var(--space-xl);
+    padding: clamp(3rem, 10vw, 7rem) 0 var(--space-xl);
+}
+
+.intro-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    margin: 0 0 var(--space-m);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.intro-eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1.5px;
+    background-color: var(--color-accent);
+    display: inline-block;
 }
 
 .intro-headline {
-    font-family: var(--font-display); 
-    font-size: 4.5rem; /* ¡Hazla GIGANTE! */
-    font-weight: 300;
-    line-height: 1.1;
-    margin-top: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin: 0 0 var(--space-m);
+    max-width: 18ch;
 }
 
-.highlight {
-    /* Un color de acento o simplemente un peso diferente */
-    font-weight: 600; 
+.intro-headline .highlight {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.intro-sub {
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    color: var(--color-text-muted);
+    max-width: 60ch;
+    margin: 0 0 var(--space-m);
+    line-height: 1.6;
+}
+
+.intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    margin-top: var(--space-m);
+}
+
+/* =================================================== */
+/* 3. BOTONES Y ENLACES                                  */
+/* =================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.4rem;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    transition: transform var(--transition), background-color var(--transition), color var(--transition), border-color var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+    border-color: var(--color-text);
+    transform: translateY(-2px);
+}
+
+/* =================================================== */
+/* 4. SECCIONES                                          */
+/* =================================================== */
+.section {
+    padding: var(--space-xl) 0;
 }
 
 .section-title {
-    font-family: var(--font-primary);
-    font-size: 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border-bottom: 1px solid var(--color-accent);
-    padding-bottom: 0.5rem;
-    margin-bottom: var(--space-l);
+    letter-spacing: 0.12em;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-l);
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+}
+
+.section-title::before {
+    content: "";
+    flex: 0 0 32px;
+    height: 1.5px;
+    background-color: var(--color-text);
+}
+
+.section-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 var(--space-m);
 }
 
 /* =================================================== */
-/* 3. PROYECTOS (El núcleo del sitio) */
+/* 5. PROYECTOS                                          */
 /* =================================================== */
 .projects {
-    margin-bottom: var(--space-xl);
+    padding: var(--space-xl) 0;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .project-item {
-    display: flex;
-    padding: var(--space-m) 0;
-    border-top: 1px solid var(--color-accent); /* Línea sutil de separación */
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-m);
+    padding: clamp(1.5rem, 3vw, 2.5rem) var(--space-s);
+    border-top: 1px solid var(--color-border);
     text-decoration: none;
     color: var(--color-text);
-    transition: background-color 0.3s ease;
+    transition: padding-left var(--transition), background-color var(--transition);
+    position: relative;
+}
+
+.project-item:last-of-type {
+    border-bottom: 1px solid var(--color-border);
 }
 
 .project-item:hover {
-    background-color: #f7f7f7; /* Gris muy claro al pasar el ratón */
+    background-color: var(--color-bg-alt);
+    padding-left: var(--space-m);
 }
 
 .project-number {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-right: var(--space-l);
-    flex-shrink: 0; /* Asegura que el número no se comprima */
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
 }
 
 .project-details {
-    flex-grow: 1;
+    min-width: 0;
 }
 
 .project-title {
     font-family: var(--font-display);
-    font-size: 2.5rem; /* Título de proyecto grande */
-    margin: 0;
-    line-height: 1.2;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 500;
+    margin: 0 0 0.4rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
 }
 
 .project-description {
-    font-size: 1rem;
-    color: #666;
-    margin-top: 0.5rem;
+    font-size: 0.98rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-s);
+    max-width: 60ch;
 }
 
-/* =================================================== */
-/* 4. FOOTER (Contacto) */
-/* =================================================== */
-.footer {
-    padding: var(--space-xl) 0;
-    border-top: 1px solid var(--color-accent);
+.project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
 }
 
-.footer-headline {
-    font-size: 3rem;
-    font-weight: 300;
-    line-height: 1.2;
-    margin-bottom: var(--space-m);
+.tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text-muted);
+    background-color: var(--color-bg-alt);
 }
 
-.email {
+.project-arrow {
+    font-family: var(--font-display);
     font-size: 1.5rem;
+    color: var(--color-text-muted);
+    transition: transform var(--transition), color var(--transition);
+}
+
+.project-item:hover .project-arrow {
+    transform: translateX(6px);
+    color: var(--color-accent);
+}
+
+/* =================================================== */
+/* 6. EXPERIENCIA (timeline)                             */
+/* =================================================== */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: minmax(140px, 200px) 1fr;
+    gap: var(--space-m);
+    padding: var(--space-m) 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.timeline-item:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.timeline-date {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-top: 0.25rem;
+}
+
+.timeline-role {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
     font-weight: 600;
-    margin-bottom: var(--space-m);
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.015em;
 }
 
-.social-links a {
-    margin-right: var(--space-m);
+.timeline-company {
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.timeline-desc {
+    color: var(--color-text-muted);
+    margin: 0.6rem 0 0;
+    max-width: 65ch;
+}
+
+/* =================================================== */
+/* 7. ACERCA DE MÍ - LAYOUT                              */
+/* =================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+    margin-bottom: var(--space-xl);
+}
+
+.bio-text p {
+    font-size: 1.05rem;
     color: var(--color-text);
+    line-height: 1.7;
+    margin: 0 0 var(--space-s);
+}
+
+.bio-text p:last-child {
+    margin-bottom: 0;
+}
+
+.profile-card {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-m);
+    position: sticky;
+    top: 100px;
+}
+
+.profile-card-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin: 0 0 0.5rem;
+}
+
+.profile-card dl {
+    margin: 0;
+    display: grid;
+    gap: var(--space-s);
+}
+
+.profile-card dt {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.profile-card dd {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 500;
+}
+
+.profile-card a {
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
 }
 
-.social-links a:hover {
-    border-bottom: 1px solid var(--color-text);
+.profile-card a:hover {
+    text-decoration: underline;
 }
 
-.copyright {
-    margin-top: var(--space-l);
+/* =================================================== */
+/* 8. STACK / SKILLS                                     */
+/* =================================================== */
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-m);
+}
+
+.stack-card {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-m);
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.stack-card:hover {
+    border-color: var(--color-text);
+    transform: translateY(-2px);
+}
+
+.stack-card-icon {
+    font-family: var(--font-mono);
     font-size: 0.8rem;
-    color: #888;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.stack-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 var(--space-s);
+    letter-spacing: -0.01em;
+}
+
+.stack-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.stack-card li {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
 /* =================================================== */
-/* 5. MEDIA QUERIES (Responsivo Básico) */
+/* 9. ESTUDIO DE CASO (project-X.html)                   */
 /* =================================================== */
-@media (max-width: 768px) {
-    :root {
-        --space-xl: 4rem;
-        --space-l: 2rem;
-    }
-
-    .intro-headline {
-        font-size: 2.5rem; /* Más pequeño en móvil */
-    }
-
-    .project-item {
-        flex-direction: column; /* Apila el número y los detalles */
-    }
-
-    .project-number {
-        margin-bottom: 0.5rem;
-    }
-    
-    .project-title {
-        font-size: 1.8rem;
-    }
-}
-
-/* =================================================== */
-/* CSS ESPECÍFICO PARA ESTUDIOS DE CASO */
-/* =================================================== */
-
-.project-intro {
-    margin-bottom: var(--space-xl);
-}
-
 .project-headline {
-    /* Mismo estilo que el intro de la home, pero menos margen superior */
-    margin-top: var(--space-l); 
-    margin-bottom: var(--space-xl);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 var(--space-m);
+    max-width: 22ch;
 }
 
 .project-meta-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 columnas */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--space-m);
-    padding: var(--space-l) 0;
-    margin-bottom: var(--space-l);
-    border-top: 1px solid var(--color-accent);
-    border-bottom: 1px solid var(--color-accent);
+    padding: var(--space-m) 0;
+    margin: var(--space-m) 0 var(--space-l);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .meta-label {
     display: block;
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
 }
 
-.meta-data, .meta-link {
-    font-size: 1.1rem;
+.meta-data {
+    font-size: 1rem;
     font-weight: 500;
+    margin: 0;
 }
 
 .meta-link {
     text-decoration: none;
-    color: var(--color-text);
-    border-bottom: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-weight: 500;
+    border-bottom: 1px solid currentColor;
 }
 
 .case-study-section {
     padding: var(--space-l) 0;
+    border-top: 1px solid var(--color-border);
 }
 
-.section-subtitle {
-    font-size: 2rem;
+.case-study-section:first-of-type {
+    border-top: none;
+}
+
+.case-study-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 var(--space-s);
+    max-width: 70ch;
+}
+
+.case-study-section h3 {
     font-family: var(--font-display);
+    font-size: 1.4rem;
     font-weight: 600;
-    margin-top: 0;
-    margin-bottom: var(--space-m);
+    margin: var(--space-m) 0 var(--space-s);
+    letter-spacing: -0.01em;
 }
 
-/* Estilo para destacar un desafío o punto clave */
+.case-study-section ul {
+    padding-left: 1.25rem;
+    max-width: 70ch;
+}
+
+.case-study-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
 .key-challenge {
-    background-color: #f7f7f7;
-    border-left: 5px solid var(--color-accent);
+    background-color: var(--color-accent-soft);
+    border-left: 3px solid var(--color-accent);
     padding: var(--space-m);
-    margin: var(--space-l) 0;
+    margin: var(--space-m) 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .challenge-title {
-    font-size: 1.2rem;
-    margin-top: 0;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
 }
 
-/* Estilo para la sección de Llamada a la Acción (CTA) */
+.key-challenge p {
+    margin: 0;
+}
+
 .cta-section {
     display: flex;
     justify-content: space-between;
-    padding: var(--space-xl) 0;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    padding: var(--space-l) 0;
+    border-top: 1px solid var(--color-border);
 }
 
 .cta-link {
-    font-size: 1.2rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
     font-weight: 500;
     text-decoration: none;
     color: var(--color-text);
-    transition: transform 0.3s ease;
+    transition: color var(--transition), transform var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .cta-link:hover {
-    /* Efecto sutil de desplazamiento o resalte */
-    transform: translateX(5px);
-}
-
-/* Media Query para móviles */
-@media (max-width: 600px) {
-    .project-meta-grid {
-        grid-template-columns: 1fr; /* Una columna en móvil */
-    }
+    color: var(--color-accent);
 }
 
 /* =================================================== */
-/* CSS ESPECÍFICO PARA ACERCA DE MÍ (about.html) */
+/* 10. FOOTER (Contacto)                                 */
 /* =================================================== */
-
-.about-details-grid {
-    display: grid;
-    /* Ajusta este valor para controlar la proporción foto/texto */
-    grid-template-columns: 2fr 1fr; 
-    gap: var(--space-l);
-    margin-bottom: var(--space-xl);
+.footer {
+    padding: var(--space-xl) 0 var(--space-m);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-xl);
 }
 
-.bio-text {
-    /* Limita la anchura del texto para una mejor lectura */
-    max-width: 700px; 
-}
-
-.section-subtitle {
-    /* Usado aquí para el título de la biografía */
-    margin-top: 0;
-}
-
-.profile-photo img {
-    /* Aplica un estilo limpio a la foto (puede ser un filtro blanco y negro) */
-    filter: grayscale(100%); 
-    object-fit: cover;
-    aspect-ratio: 4/5; /* Proporción para fotos verticales */
-}
-
-/* Separador simple para dividir secciones */
-.separator {
-    border: none;
-    border-top: 1px solid var(--color-accent);
-    margin: var(--space-xl) 0;
-    opacity: 0.5;
-}
-
-/* Sección de Habilidades (Skills) */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-l);
-}
-
-.skill-category {
-    font-size: 1.5rem;
-    font-weight: 600;
-    border-bottom: 2px solid var(--color-accent);
-    padding-bottom: 0.5rem;
-    margin-top: 0;
-}
-
-.skills-grid ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skills-grid li {
-    padding: 0.2rem 0;
-    font-size: 1rem;
-    color: #444;
-}
-
-/* Llamada a la Acción (CTA) al final de la página */
-.cta-about {
-    text-align: center;
-    padding: var(--space-l) 0;
-}
-
-.cta-link-l {
-    display: inline-block;
-    font-size: 1.5rem;
+.footer-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 var(--space-m);
+    max-width: 18ch;
+}
+
+.email {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 500;
+    margin: 0 0 var(--space-m);
+}
+
+.email a {
+    color: var(--color-accent);
     text-decoration: none;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color var(--transition);
+}
+
+.email a:hover {
+    border-bottom-color: var(--color-accent);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+    margin-bottom: var(--space-l);
+}
+
+.social-links a {
     color: var(--color-text);
-    border: 1px solid var(--color-text);
-    padding: 0.8rem 1.5rem;
-    margin: var(--space-m) 1rem;
-    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color var(--transition), color var(--transition);
 }
 
-.cta-link-l:hover {
-    background-color: var(--color-text);
-    color: var(--color-background);
+.social-links a:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
 }
 
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--color-border);
+}
 
-/* Media Queries para Móviles */
-@media (max-width: 768px) {
-    .about-details-grid {
-        grid-template-columns: 1fr; /* Apila la foto y el texto en móvil */
-    }
+.copyright {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
 
-    .profile-photo {
-        order: -1; /* Mueve la foto arriba del texto en móvil */
-        margin-bottom: var(--space-m);
-    }
+.footer-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
 }
 
 /* =================================================== */
-/* CSS PARA ANIMACIONES DE CARGA (Fade-In) */
+/* 11. ANIMACIÓN FADE-IN (mejorada y accesible)          */
 /* =================================================== */
-
-/* Estado inicial: todos los elementos están ocultos y desenfocados */
-.intro, .projects, .about-details-grid, .footer {
+/* IMPORTANTE: el contenido es visible por defecto.
+   La animación solo se aplica si JS añade .animate-on-scroll. */
+.animate-on-scroll {
     opacity: 0;
-    transform: translateY(20px); /* Un ligero desplazamiento hacia abajo */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
-/* Estado final: cuando el JS añade la clase, los elementos se muestran */
-/* La clase 'js-loaded' se añade al body para inicializar la carga */
-body.js-loaded .fade-in {
+.animate-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Asegura que el contenido principal también aparezca */
-.main-content {
-    opacity: 0;
-    transition: opacity 1s ease-out;
+/* Respeta la preferencia del usuario */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .animate-on-scroll {
+        opacity: 1;
+        transform: none;
+    }
 }
 
-body.js-loaded .main-content {
-    opacity: 1;
+/* =================================================== */
+/* 12. FOCUS VISIBLE (accesibilidad)                     */
+/* =================================================== */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
 }
 
-/* Nota: La cabecera (header) debe tener una transición muy rápida o nula 
-   para aparecer de inmediato y mejorar la percepción de velocidad.
-*/
-.header {
-    transition: opacity 0.3s ease-in;
+/* =================================================== */
+/* 13. RESPONSIVE                                        */
+/* =================================================== */
+@media (max-width: 768px) {
+    .header {
+        padding: var(--space-s) 0;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .project-item {
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "num details"
+            "num details";
+    }
+
+    .project-item .project-arrow {
+        display: none;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        position: static;
+    }
+
+    .cta-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
-:root {
-    /* Ejemplo con Lora e Inter */
-    --font-primary: 'Inter', sans-serif; /* Para el cuerpo */
-    --font-display: 'Lora', serif; /* Para titulares grandes */
-    /* ... el resto de tus variables ... */
+@media (max-width: 480px) {
+    .nav-list {
+        font-size: 0.85rem;
+    }
+
+    .intro-headline {
+        max-width: none;
+    }
 }

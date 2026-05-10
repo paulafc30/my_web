@@ -3,66 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paula Fernández | Desarrolladora Web</title>
-    
+    <title>Paula Fernández Cañas · Desarrolladora Fullstack Junior</title>
+    <meta name="description" content="Desarrolladora fullstack junior especializada en PHP, Laravel, JavaScript y Python. Apasionada por el backend, la arquitectura de sistemas y los retos técnicos.">
+    <meta name="author" content="Paula Fernández Cañas">
+
+    <!-- Open Graph (para que se vea bien al compartir) -->
+    <meta property="og:title" content="Paula Fernández Cañas · Desarrolladora Fullstack Junior">
+    <meta property="og:description" content="Portfolio de Paula Fernández Cañas, desarrolladora fullstack junior. PHP, Laravel, JavaScript, Python.">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="css/normalize.css">
-    
     <link rel="stylesheet" href="css/style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
 <body>
     <header class="header">
-        <nav class="nav">
-            <a href="index.html" class="logo">Paula Fernández</a>
-            <ul class="nav-list">
-                <li><a href="about.html">Acerca de Mí</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav class="nav" aria-label="Navegación principal">
+                <a href="index.html" class="logo">Paula Fernández</a>
+                <ul class="nav-list">
+                    <li><a href="about.html">Sobre mí</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="main-content">
-        <section class="intro">
-            <h1 class="intro-headline">
-                Hola. Soy Paula Fernández. <br>
-                Desarrolladora Junior enfocada en la <span class="highlight">usabilidad</span> y el código limpio.
-            </h1>
-        </section>
-
-        <section class="projects">
-            <h2 class="section-title">Proyectos Destacados</h2>
-
-            <a href="project-1.html" class="project-item">
-                <span class="project-number">01.</span>
-                <div class="project-details">
-                    <h3 class="project-title">Título del Proyecto [Concepto/Cliente]</h3>
-                    <p class="project-description">Descripción breve del problema y tu solución. Ej: Una aplicación Full Stack para gestión de inventario.</p>
+    <main>
+        <div class="container">
+            <section class="intro" data-animate>
+                <p class="intro-eyebrow">Desarrolladora Fullstack Junior</p>
+                <h1 class="intro-headline">
+                    Construyo aplicaciones web <span class="highlight">sólidas</span> de extremo a extremo.
+                </h1>
+                <p class="intro-sub">
+                    Soy Paula Fernández Cañas. Trabajo principalmente con PHP, Laravel, JavaScript y bases de datos relacionales. Me apasiona el backend, la arquitectura de sistemas y aprender cada día algo que me haga mejor desarrolladora.
+                </p>
+                <div class="intro-actions">
+                    <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                    <a href="about.html" class="btn btn-ghost">Sobre mí</a>
                 </div>
-            </a>
-            
-            <a href="project-2.html" class="project-item">
-                <span class="project-number">02.</span>
-                <div class="project-details">
-                    <h3 class="project-title">Otro Proyecto (E-commerce/Landing Page)</h3>
-                    <p class="project-description">Menciona tecnologías clave. Ej: Maquetación con React y consumo de API con Axios.</p>
-                </div>
-            </a>
-            
             </section>
+
+            <section class="projects" id="projects" data-animate>
+                <h2 class="section-title">Proyectos seleccionados</h2>
+                <div class="project-list">
+
+                    <a href="project-1.html" class="project-item">
+                        <span class="project-number">01</span>
+                        <div class="project-details">
+                            <h3 class="project-title">Secure Files App</h3>
+                            <p class="project-description">
+                                Plataforma segura de almacenamiento y compartición de archivos con autenticación en dos pasos (2FA), control de acceso avanzado y solicitudes de archivos por email.
+                            </p>
+                            <div class="project-stack">
+                                <span class="tag">Laravel</span>
+                                <span class="tag">PHP</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">PL/SQL</span>
+                            </div>
+                        </div>
+                        <span class="project-arrow" aria-hidden="true">→</span>
+                    </a>
+
+                    <a href="project-2.html" class="project-item">
+                        <span class="project-number">02</span>
+                        <div class="project-details">
+                            <h3 class="project-title">Compiso · TFG</h3>
+                            <p class="project-description">
+                                Plataforma web que conecta inquilinos y propietarios para encontrar compañeros de piso compatibles. Sistema de matches, chat interno, valoraciones y notificaciones por email.
+                            </p>
+                            <div class="project-stack">
+                                <span class="tag">PHP</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Tailwind</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">EmailJS</span>
+                            </div>
+                        </div>
+                        <span class="project-arrow" aria-hidden="true">→</span>
+                    </a>
+
+                    <article class="project-item" style="cursor: default;">
+                        <span class="project-number">03</span>
+                        <div class="project-details">
+                            <h3 class="project-title">Gestión Interna · Piensos Urbano</h3>
+                            <p class="project-description">
+                                Aplicación interna en curso en BNT Business Telecom. Desarrollo fullstack, arquitectura de sistemas, gestión de bases de datos y migraciones de aplicaciones.
+                            </p>
+                            <div class="project-stack">
+                                <span class="tag">Laravel</span>
+                                <span class="tag">PHP</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">PL/SQL</span>
+                                <span class="tag">En curso</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="footer" id="contact">
-        <div class="contact-info">
-            <h2 class="footer-headline">Hablemos de tu próximo proyecto.</h2>
-            <p class="email">paulafc30@gmail.com</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/paula-fernandez-canas-057896220/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/paulafc30" target="_blank">GitHub</a>
+        <div class="container">
+            <div data-animate>
+                <p class="intro-eyebrow">Contacto</p>
+                <h2 class="footer-headline">¿Hablamos de tu próximo proyecto?</h2>
+                <p class="email">
+                    <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/paula-fernandez-canas/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    <a href="https://github.com/paulafc30" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© <span data-current-year>2026</span> Paula Fernández Cañas</p>
+                <span class="footer-meta">Diseñado y desarrollado a mano</span>
+            </div>
         </div>
-        <p class="copyright">© 2025 Paula Fernández. Todos los derechos reservados.</p>
     </footer>
 
     <script src="js/main.js"></script>
