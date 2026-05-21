@@ -527,7 +527,7 @@ function Hero({ t }) {
             <image-slot
               id="hero-portrait"
               shape="rect"
-              src="assets/images/paula.jpg"
+              src="assets/images/paula.jpeg"
               placeholder={t.hero.portraitPh}
             ></image-slot>
           </div>
