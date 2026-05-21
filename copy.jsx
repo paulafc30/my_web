@@ -1,5 +1,20 @@
 // copy.jsx — ES/EN translations (v2: honest, warm, junior)
 
+// Meses completos trabajando en BNT desde el 3 de noviembre de 2025.
+// Se recalcula en cada carga del navegador.
+function monthsAtBNT() {
+  const start = new Date(2025, 10, 3); // 3 noviembre 2025 (mes 0-indexed)
+  const now = new Date();
+  // Redondeo al mes más cercano: si pasan >= 15 días del mes actual, suma 1.
+  let months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+  const dayDiff = now.getDate() - start.getDate();
+  if (dayDiff >= 15) months++;
+  else if (dayDiff < 0 && dayDiff > -15) months--;
+  return Math.max(0, months);
+}
+const MESES_BNT = monthsAtBNT();
+const MESES_ES = MESES_BNT === 1 ? 'mes' : 'meses';
+
 const COPY = {
   es: {
     nav: { about: "Sobre mí", work: "Proyectos", contact: "Contacto", blog: "Blog" },
@@ -12,7 +27,7 @@ const COPY = {
       ],
       lede: (
         <>
-          Hola, soy <b>Paula Fernández Cañas</b>. Llevo <b>7 meses</b> trabajando
+          Hola, soy <b>Paula Fernández Cañas</b>. Llevo <b>{MESES_BNT} {MESES_ES}</b> trabajando
           como desarrolladora junior en BNT Business Telecom. Empecé por el
           front (HTML, CSS, JavaScript, Tailwind) y ahora también toco
           backend con <b>PHP, Laravel y MySQL</b>. Tengo más kilómetros en el
@@ -76,7 +91,7 @@ const COPY = {
     stack: {
       label: "Stack",
       title: "Lo que llevo en la mochila",
-      meta: "Honesto — no soy senior de nada",
+      meta: "Honesta — no soy senior de nada",
       cols: [
         {
           h: "Donde tengo más experiencia",
@@ -121,7 +136,7 @@ const COPY = {
           un año de <b>Ingeniería Telemática</b> para coger bases (y un
           buen rato de C++), y luego me pasé al <b>Grado Superior de
           Desarrollo de Aplicaciones Web</b> para ir directa a lo que me
-          interesaba. Hace 7 meses entré en
+          interesaba. Hace {MESES_BNT} {MESES_ES} entré en
           <b> BNT Business Telecom</b> como junior — mi primer trabajo de
           verdad como desarrolladora.
         </>
@@ -228,7 +243,7 @@ const COPY = {
       lede: (
         <>
           Hi, I'm <b>Paula Fernández Cañas</b>. I've been working as a junior
-          developer at BNT Business Telecom for <b>7 months</b>. I started on
+          developer at BNT Business Telecom for <b>{MESES_BNT} month{MESES_BNT === 1 ? '' : 's'}</b>. I started on
           the front (HTML, CSS, JavaScript, Tailwind) and now I also write
           backend with <b>PHP, Laravel and MySQL</b>. I have more mileage on
           the front side, but I'm drawn to the backend and that's where I
@@ -337,7 +352,7 @@ const COPY = {
           <b> Telematics Engineering</b> to lay foundations (and a good
           chunk of C++), and then switched to a <b>vocational higher
           education in Web Development (DAW)</b> to go straight to what I
-          cared about. Seven months ago I joined
+          cared about. {MESES_BNT} month{MESES_BNT === 1 ? '' : 's'} ago I joined
           <b> BNT Business Telecom</b> as a junior — my first real job as a
           developer.
         </>

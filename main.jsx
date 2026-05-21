@@ -76,7 +76,7 @@ const COPY = {
     stack: {
       label: "Stack",
       title: "Lo que llevo en la mochila",
-      meta: "Honesto — no soy senior de nada",
+      meta: "Honesta — no soy senior de nada",
       cols: [
         {
           h: "Donde tengo más experiencia",
