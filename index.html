@@ -1,137 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paula Fernández Cañas · Desarrolladora Fullstack Junior</title>
-    <meta name="description" content="Desarrolladora fullstack junior especializada en PHP, Laravel, JavaScript y Python. Apasionada por el backend, la arquitectura de sistemas y los retos técnicos.">
-    <meta name="author" content="Paula Fernández Cañas">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>paula.fc — fullstack engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
 
-    <!-- Open Graph (para que se vea bien al compartir) -->
-    <meta property="og:title" content="Paula Fernández Cañas · Desarrolladora Fullstack Junior">
-    <meta property="og:description" content="Portfolio de Paula Fernández Cañas, desarrolladora fullstack junior. PHP, Laravel, JavaScript, Python.">
-    <meta property="og:type" content="website">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="image-slot.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="nav" aria-label="Navegación principal">
-                <a href="index.html" class="logo">Paula Fernández</a>
-                <ul class="nav-list">
-                    <li><a href="about.html">Sobre mí</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <div id="root"></div>
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="grain" aria-hidden="true"></div>
 
-    <main>
-        <div class="container">
-            <section class="intro" data-animate>
-                <p class="intro-eyebrow">Desarrolladora Fullstack Junior</p>
-                <h1 class="intro-headline">
-                    Construyo aplicaciones web <span class="highlight">sólidas</span> de extremo a extremo.
-                </h1>
-                <p class="intro-sub">
-                    Soy Paula Fernández Cañas. Trabajo principalmente con PHP, Laravel, JavaScript y bases de datos relacionales. Me apasiona el backend, la arquitectura de sistemas y aprender cada día algo que me haga mejor desarrolladora.
-                </p>
-                <div class="intro-actions">
-                    <a href="#projects" class="btn btn-primary">Ver proyectos</a>
-                    <a href="about.html" class="btn btn-ghost">Sobre mí</a>
-                </div>
-            </section>
-
-            <section class="projects" id="projects" data-animate>
-                <h2 class="section-title">Proyectos seleccionados</h2>
-                <div class="project-list">
-
-                    <a href="project-1.html" class="project-item">
-                        <span class="project-number">01</span>
-                        <div class="project-details">
-                            <h3 class="project-title">Secure Files App</h3>
-                            <p class="project-description">
-                                Plataforma segura de almacenamiento y compartición de archivos con autenticación en dos pasos (2FA), control de acceso avanzado y solicitudes de archivos por email.
-                            </p>
-                            <div class="project-stack">
-                                <span class="tag">Laravel</span>
-                                <span class="tag">PHP</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Docker</span>
-                                <span class="tag">PL/SQL</span>
-                            </div>
-                        </div>
-                        <span class="project-arrow" aria-hidden="true">→</span>
-                    </a>
-
-                    <a href="project-2.html" class="project-item">
-                        <span class="project-number">02</span>
-                        <div class="project-details">
-                            <h3 class="project-title">Compiso · TFG</h3>
-                            <p class="project-description">
-                                Plataforma web que conecta inquilinos y propietarios para encontrar compañeros de piso compatibles. Sistema de matches, chat interno, valoraciones y notificaciones por email.
-                            </p>
-                            <div class="project-stack">
-                                <span class="tag">PHP</span>
-                                <span class="tag">MySQL</span>
-                                <span class="tag">Tailwind</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">EmailJS</span>
-                            </div>
-                        </div>
-                        <span class="project-arrow" aria-hidden="true">→</span>
-                    </a>
-
-                    <article class="project-item" style="cursor: default;">
-                        <span class="project-number">03</span>
-                        <div class="project-details">
-                            <h3 class="project-title">Gestión Interna · Piensos Urbano</h3>
-                            <p class="project-description">
-                                Aplicación interna en curso en BNT Business Telecom. Desarrollo fullstack, arquitectura de sistemas, gestión de bases de datos y migraciones de aplicaciones.
-                            </p>
-                            <div class="project-stack">
-                                <span class="tag">Laravel</span>
-                                <span class="tag">PHP</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Docker</span>
-                                <span class="tag">PL/SQL</span>
-                                <span class="tag">En curso</span>
-                            </div>
-                        </div>
-                    </article>
-
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div data-animate>
-                <p class="intro-eyebrow">Contacto</p>
-                <h2 class="footer-headline">¿Hablamos de tu próximo proyecto?</h2>
-                <p class="email">
-                    <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
-                </p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/paula-fernandez-canas/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                    <a href="https://github.com/paulafc30" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="copyright">© <span data-current-year>2026</span> Paula Fernández Cañas</p>
-                <span class="footer-meta">Diseñado y desarrollado a mano</span>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="main.jsx"></script>
 </body>
 </html>
