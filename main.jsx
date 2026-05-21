@@ -516,7 +516,7 @@ function Hero({ t }) {
             <a href="#work" className="btn-pill primary">
               {t.hero.cta1} <span className="arr">→</span>
             </a>
-            <a href="#" className="btn-pill" onClick={(e) => e.preventDefault()}>
+            <a href="assets/paula-fernandez-cv.pdf" download="Paula-Fernandez-Canas-CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-pill">
               {t.hero.cta2} <span className="arr">↓</span>
             </a>
           </div>

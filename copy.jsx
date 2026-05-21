@@ -221,7 +221,7 @@ const COPY = {
       links: [
         { name: "LinkedIn", url: "https://www.linkedin.com/in/paula-fernandez-canas/" },
         { name: "GitHub", url: "https://github.com/paulafc30" },
-        { name: "CV (pdf)", url: "#" },
+        { name: "CV (pdf)", url: "assets/paula-fernandez-cv.pdf" },
       ],
     },
     footer: {
@@ -438,7 +438,7 @@ const COPY = {
       links: [
         { name: "LinkedIn", url: "https://www.linkedin.com/in/paula-fernandez-canas/" },
         { name: "GitHub", url: "https://github.com/paulafc30" },
-        { name: "CV (pdf)", url: "#" },
+        { name: "CV (pdf)", url: "assets/paula-fernandez-cv.pdf" },
       ],
     },
     footer: {
