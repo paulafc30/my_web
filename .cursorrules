@@ -1,0 +1,96 @@
+# Instrucciones para asistentes IA (Cursor, Claude, Windsurf, Copilot, etc.)
+#
+# Este archivo se carga automáticamente por editores compatibles para
+# darle contexto al asistente sobre cómo trabajar en este proyecto.
+# Si tu editor usa otra convención (ej. `.ai-instructions`, `CLAUDE.md`),
+# duplica el contenido o crea un symlink.
+
+## Sobre el proyecto
+
+Es el **portfolio personal de Paula Fernández Cañas**, desarrolladora fullstack junior
+en BNT Business Telecom (Jaén, España). El objetivo del sitio es **ayudarla a conseguir
+trabajo backend o fullstack**.
+
+Stack y restricciones críticas:
+
+- **HTML estático + React 18 vía CDN + Babel standalone**. Sin Node, sin build step.
+- Todos los JSX se compilan en el navegador. No introducir TypeScript ni Vite/Webpack
+  sin un ADR que lo justifique (ver `docs/adr/0001-spa-react-via-cdn.md`).
+- Tipografía: **JetBrains Mono únicamente** (ver `docs/adr/0002-tipografia-monoespaciada.md`).
+- Idiomas soportados: **ES (por defecto) y EN**, ambos viven en `copy.jsx`
+  (ver `docs/adr/0003-i18n-en-copy-jsx.md`).
+
+## Antes de hacer cualquier cambio
+
+1. **Lee primero** `docs/ARCHITECTURE.md` y `docs/CONVENTIONS.md`.
+2. Si vas a tomar una decisión técnica relevante (librería nueva, cambio de stack,
+   restructura), **crea un ADR** en `docs/adr/` siguiendo el formato de los existentes.
+3. Si el cambio es solo de copy, edita SIEMPRE en `copy.jsx`, tanto la rama `es:` como
+   la `en:`. **No hardcodear strings de UI en componentes.**
+
+## Reglas de estilo (no negociables)
+
+- Comillas dobles `"` en JSX, simples `'` en JS.
+- Semicolons al final de cada sentencia.
+- Componentes React declarados con `function ComponentName() {}`, no arrow functions.
+- Hooks personalizados prefijados con `use`: `useTweaks`, `useCustomCursor`.
+- Variables CSS para colores, espacios y fuentes. Nada de valores hardcodeados.
+- Nombres de funciones, variables y clases CSS **en inglés**. Comentarios pueden ir en
+  español si describen lógica del producto.
+- **Sin `!important`** en CSS. Si lo necesitas, repiensa el selector.
+- **Sin librerías de utility CSS** (Tailwind, etc.) dentro del portfolio.
+
+## Comentarios
+
+- Explica **el porqué**, no el qué. Ver ejemplos en `docs/CONVENTIONS.md`.
+- Para funciones no triviales y componentes con props, usa JSDoc.
+- Mal: `// Incrementar months`. Bien: `// Redondeo al mes más cercano: 15 días = +1 mes`.
+
+## Patrones del proyecto
+
+- **Para añadir un proyecto** al carrusel: editar `copy.jsx` → `es.projects.list` Y
+  `en.projects.list`. Si necesita página de caso de estudio, crear `project-N.html`
+  en la raíz (mismo patrón que `project-1.html`).
+- **Para añadir un tweak** (idioma, tema, etc.): editar `app.jsx` (o el `main.jsx`
+  donde está el panel) con un nuevo `TweakRadio`/`TweakToggle`/`TweakColor`/`TweakSlider`,
+  y actualizar `TWEAK_DEFAULTS`.
+- **Para añadir un slot de imagen**: usar `<image-slot id="unique-id" src="ruta.jpg" />`.
+  La imagen drop-eada queda en localStorage por el `id`.
+- **Para textos dinámicos** (ej. antigüedad): definir función al principio de
+  `copy.jsx` y usar como `{NOMBRE_CONSTANTE}` en JSX. Ver `monthsAtBNT()` como ejemplo.
+
+## Sobre el contenido y la voz
+
+- El **tono es honesto y junior**: nunca exagerar experiencia, no decir "senior", "expert",
+  "10 años". Frases como "Honesto — no soy senior de nada" y "junior con ganas de equipo"
+  son intencionadas. Mantener esa voz.
+- Paula sí enfatiza: ganas de aprender, curiosidad técnica, equipo, foco en backend
+  pero con base frontend sólida.
+- Idioma del copy: español natural de España (no neutro latam). "Vosotros", "vale",
+  "currar", etc. Cuidado con anglicismos innecesarios.
+- En EN, registro profesional pero cálido. No "rockstar developer", no "ninja", no
+  "passionate" salvo si está justificado.
+
+## Despliegue
+
+- El sitio se despliega en **Vercel** desde un repo de GitHub (paulafc30).
+- Cualquier `git push` a `main` redespliega automáticamente.
+- Las rutas son **relativas** (`assets/...`, `styles.css`) para que funcione tanto
+  abriendo el archivo localmente como servido desde dominio raíz.
+
+## Lo que NO debes hacer
+
+- ❌ Convertir el proyecto a Next.js / Vite sin un ADR aceptado.
+- ❌ Añadir Tailwind o cualquier framework CSS.
+- ❌ Introducir TypeScript.
+- ❌ Hardcodear strings de UI en componentes.
+- ❌ Hardcodear cifras temporales ("7 meses", "1 año"). Calcula en runtime.
+- ❌ Romper paridad ES/EN en `copy.jsx`.
+- ❌ Tocar la imagen `assets/images/paula.jpg` ni el PDF `assets/paula-fernandez-cv.pdf`
+  sin pedir confirmación: son personales de Paula.
+
+## Si tienes dudas
+
+Pregunta. Es preferible una pregunta de más a una refactorización innecesaria.
+Si la duda es sobre una decisión técnica, busca en `docs/adr/` antes de proponer
+cambiarla.
