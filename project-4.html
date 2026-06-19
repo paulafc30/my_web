@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Armario · Paula Fernández Cañas</title>
+    <meta name="description" content="Estudio de caso: PWA para gestionar tu armario digital con outfits, flujo de venta de prendas y Web Share Target para importar desde Wallapop o Vinted. React 18, TypeScript, Supabase.">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav" aria-label="Navegación principal">
+                <a href="index.html" class="logo">Paula Fernández</a>
+                <ul class="nav-list">
+                    <li><a href="index.html#projects">Proyectos</a></li>
+                    <li><a href="about.html">Sobre mí</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <section class="intro" data-animate>
+                <p class="intro-eyebrow">Caso de estudio · 05</p>
+                <h1 class="project-headline">
+                    Mi Armario: PWA para organizar tu ropa, crear outfits y gestionar prendas en venta con Web Share Target.
+                </h1>
+
+                <div class="project-meta-grid">
+                    <div>
+                        <span class="meta-label">Mi rol</span>
+                        <p class="meta-data">Arquitectura, diseño y desarrollo — proyecto en solitario</p>
+                    </div>
+                    <div>
+                        <span class="meta-label">Stack</span>
+                        <p class="meta-data">React 18 · TypeScript · Vite · Tailwind · Supabase · Zustand · PWA</p>
+                    </div>
+                    <div>
+                        <span class="meta-label">Periodo</span>
+                        <p class="meta-data">2025 · En desarrollo activo</p>
+                    </div>
+                    <div>
+                        <span class="meta-label">Demo</span>
+                        <p class="meta-data">
+                            <a href="https://mi-armario-iota.vercel.app/login" target="_blank" rel="noopener noreferrer" class="meta-link">Abrir demo ↗</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section" data-animate>
+                <h2 class="section-subtitle">El problema</h2>
+                <p>
+                    Tengo demasiada ropa y poca memoria visual. ¿Cuántas veces compras algo que ya tienes? ¿Cuántas prendas llevan meses en el armario sin que te acuerdes de que existen? ¿Cuántas están esperando a que las pongas en Wallapop sin que nunca llegue el momento?
+                </p>
+                <p>
+                    Quería una app que fuera el inventario real de mi armario: ver lo que tengo, combinarlo, decidir qué vendo y hacer ese proceso lo más rápido posible. Y que funcionara bien en el móvil — es donde ocurre todo esto.
+                </p>
+            </section>
+
+            <section class="case-study-section" data-animate>
+                <h2 class="section-subtitle">Qué construí</h2>
+
+                <h3>Catálogo de prendas por categorías</h3>
+                <p>
+                    Cada prenda tiene foto (con compresión client-side antes del upload), categoría, color, marca y notas. Las imágenes se almacenan en Supabase Storage. El objetivo fue que añadir una prenda nueva tardara menos de 30 segundos desde el móvil.
+                </p>
+
+                <h3>Creador de outfits</h3>
+                <p>
+                    Seleccionas prendas del catálogo y las combinas en un outfit. Útil para preparar looks con antelación y para descubrir combinaciones entre prendas que normalmente no asociarías. Los outfits se guardan y se pueden recuperar.
+                </p>
+
+                <h3>Flujo de venta: Baúl → En Venta → Vendida → Archivada</h3>
+                <p>
+                    Las prendas que quiero vender pasan por estados claros. Toggles independientes para Wallapop y Vinted permiten saber dónde está publicada cada prenda sin abrir ninguna de las dos apps. Cuando se vende, se archiva y sale del catálogo activo pero queda en el historial.
+                </p>
+
+                <h3>Lista de deseos con preview automático</h3>
+                <p>
+                    Pegas una URL de cualquier tienda (Zara, Mango, ASOS…) y la app genera un preview automático con imagen, nombre y precio. Funciona como una wishlist visual para las cosas que te gustan pero no compras todavía.
+                </p>
+
+                <div class="key-challenge">
+                    <h3 class="challenge-title">Reto principal: Web Share Target</h3>
+                    <p>
+                        La funcionalidad que más me costó y de la que más orgullosa estoy. Gracias al Web Share Target API, puedes compartir directamente una prenda desde Wallapop, Vinted o cualquier tienda al móvil, y Mi Armario la recibe como si fuera una app nativa. La URL llega, se parsea el preview y se precarga el formulario de nueva prenda. Esto requirió configurar el Service Worker, el manifest de la PWA y el endpoint de recepción, todo coordinado para que el flujo fuera transparente.
+                    </p>
+                </div>
+            </section>
+
+            <section class="case-study-section" data-animate>
+                <h2 class="section-subtitle">Decisiones técnicas</h2>
+
+                <h3>Sin backend propio — todo en Supabase</h3>
+                <p>
+                    Toda la lógica server-side vive en Supabase: autenticación, base de datos PostgreSQL con RLS por usuario, triggers para actualizar estados automáticamente y funciones SQL para consultas complejas. Elegí esta arquitectura conscientemente: no quiero mantener un servidor para un proyecto personal, y Supabase me da garantías reales de seguridad y escalabilidad sin ese coste operativo.
+                </p>
+
+                <h3>TypeScript desde el principio</h3>
+                <p>
+                    Primer proyecto personal donde aposté por TypeScript desde cero. Al principio más lento, pero los tipos de los modelos de Supabase generados automáticamente y la autocomplete en componentes hacen que la velocidad de desarrollo aumente con el tiempo. El error que TypeScript te da en el editor es mucho mejor que el que te da el usuario en producción.
+                </p>
+
+                <h3>Zustand para estado global ligero</h3>
+                <p>
+                    El filtro activo del catálogo, la prenda seleccionada para el outfit, el estado del share target pendiente — cosas que varios componentes necesitan saber sin que valga la pena meterlas en React Query ni en un contexto pesado. Zustand es simple, predecible y no añade boilerplate.
+                </p>
+
+                <h3>Compresión de imágenes client-side</h3>
+                <p>
+                    Antes de subir una foto a Supabase Storage, la comprimo en el cliente. Una foto de cámara puede pesar 5-8 MB; después de la compresión, queda en unos 200-400 KB sin pérdida visual perceptible en pantallas móviles. Reduce el tiempo de carga de la app y el coste de almacenamiento.
+                </p>
+            </section>
+
+            <section class="case-study-section" data-animate>
+                <h2 class="section-subtitle">Aprendizajes</h2>
+                <ul>
+                    <li><strong>Las PWAs son más potentes de lo que parece — y más complicadas.</strong> El Service Worker, el manifest, el ciclo de vida de actualización, el Web Share Target… cada pieza tiene su propio modelo mental. Merece la pena entenderlas bien antes de tocarlas.</li>
+                    <li><strong>TypeScript + Supabase generan tipos automáticamente.</strong> El CLI de Supabase puede inferir los tipos de tus tablas y exponerlos en TypeScript. Eso elimina toda una clase de bugs donde el frontend asume una forma de dato que el backend no garantiza.</li>
+                    <li><strong>Los triggers de PostgreSQL son subestimados.</strong> Usé triggers para actualizar el estado de las prendas automáticamente cuando ciertas condiciones cambian. Lógica que en otro proyecto estaría en el cliente o en un endpoint, aquí vive en la base de datos y es mucho más fiable.</li>
+                </ul>
+            </section>
+
+            <section class="cta-section" data-animate>
+                <a href="project-3.html" class="cta-link">← Anterior: Finanzor</a>
+                <a href="project-5.html" class="cta-link">Siguiente: AparcaYa →</a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div data-animate>
+                <p class="intro-eyebrow">Contacto</p>
+                <h2 class="footer-headline">¿Hablamos de tu próximo proyecto?</h2>
+                <p class="email">
+                    <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/paula-fernandez-canas/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    <a href="https://github.com/paulafc30" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© <span data-current-year>2026</span> Paula Fernández Cañas</p>
+                <span class="footer-meta">Diseñado y desarrollado a mano</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertir post · Blog tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0e10;
+      --surface: #18181b;
+      --border: #27272a;
+      --accent: #a78bfa;
+      --accent-dim: #7c3aed22;
+      --text: #f4f4f5;
+      --muted: #71717a;
+      --green: #4ade80;
+      --red: #f87171;
+      --radius: 10px;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Space Grotesk', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+    header p {
+      color: var(--muted);
+      font-size: .875rem;
+      margin-top: .35rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .5rem;
+    }
+
+    input[type="text"],
+    input[type="url"],
+    textarea,
+    select {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: .9rem;
+      padding: .65rem .85rem;
+      outline: none;
+      transition: border-color .15s;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--accent);
+    }
+    textarea { resize: vertical; min-height: 160px; line-height: 1.6; }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+
+    .hint {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: .4rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--accent);
+      color: #0e0e10;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 600;
+      padding: .7rem 1.4rem;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+    .btn:hover { opacity: .85; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .btn-ghost:hover { background: var(--accent-dim); opacity: 1; }
+
+    .actions {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    /* Output */
+    #output-section { display: none; }
+    #output-section.visible { display: block; }
+
+    .output-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: .75rem;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .output-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    pre {
+      background: #09090b;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      overflow-x: auto;
+      font-family: var(--mono);
+      font-size: .8rem;
+      line-height: 1.7;
+      color: #d4d4d8;
+      white-space: pre;
+    }
+
+    .token-string { color: #86efac; }
+    .token-key    { color: #93c5fd; }
+    .token-punct  { color: var(--muted); }
+
+    #copy-btn {
+      background: var(--green);
+      color: #0e0e10;
+    }
+    #copy-btn.copied {
+      background: #22c55e;
+    }
+
+    .preview-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.25rem;
+    }
+    .preview-card .kind-tag {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+    .preview-card .p-date { font-size: .78rem; color: var(--muted); margin-bottom: .3rem; }
+    .preview-card .p-title { font-size: 1.05rem; font-weight: 700; margin-bottom: .5rem; }
+    .preview-card .p-excerpt { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+    .preview-card .p-time { font-size: .75rem; color: var(--muted); margin-top: .75rem; }
+
+    .step-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .notice {
+      display: flex;
+      gap: .6rem;
+      background: #1c1917;
+      border: 1px solid #44403c;
+      border-radius: 6px;
+      padding: .7rem .9rem;
+      font-size: .8rem;
+      color: #a8a29e;
+      margin-top: .5rem;
+    }
+    .notice svg { flex-shrink: 0; margin-top: 1px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>LinkedIn → Blog note</h1>
+    <p>Pega tu post y genera el snippet listo para <code>copy.jsx</code>.</p>
+  </header>
+
+  <!-- STEP 1 -->
+  <div class="card">
+    <div class="step-label">Paso 1 — Referencia</div>
+    <label for="url">URL del post en LinkedIn</label>
+    <input type="url" id="url" placeholder="https://www.linkedin.com/posts/...">
+    <div class="notice">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#78716c" stroke-width="1.5"/><path d="M8 7v4M8 5.5V5" stroke="#78716c" stroke-width="1.5" stroke-linecap="round"/></svg>
+      LinkedIn bloquea el scraping externo. Guarda la URL como referencia pero el texto hay que pegarlo a mano.
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="card">
+    <div class="step-label">Paso 2 — Contenido</div>
+    <label for="post-text">Texto del post</label>
+    <textarea id="post-text" placeholder="Copia y pega aquí el texto completo de tu publicación de LinkedIn…"></textarea>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="card">
+    <div class="step-label">Paso 3 — Metadatos</div>
+    <div class="row">
+      <div>
+        <label for="kind">Categoría</label>
+        <select id="kind">
+          <option value="Aprendizaje">Aprendizaje</option>
+          <option value="Lectura">Lectura</option>
+          <option value="Evento">Evento</option>
+          <option value="Reflexión">Reflexión</option>
+          <option value="Proyecto">Proyecto</option>
+          <option value="Opinión">Opinión</option>
+        </select>
+      </div>
+      <div>
+        <label for="read-time">Tiempo de lectura</label>
+        <input type="text" id="read-time" placeholder="3 min" value="">
+      </div>
+    </div>
+    <div style="margin-top:1rem">
+      <label for="custom-title">Título (opcional — si no, se genera del texto)</label>
+      <input type="text" id="custom-title" placeholder="Déjalo vacío para autogenerar">
+    </div>
+    <div style="margin-top:1rem">
+      <label for="custom-excerpt">Excerpt (opcional — si no, se genera del texto)</label>
+      <input type="text" id="custom-excerpt" placeholder="Déjalo vacío para autogenerar">
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn" onclick="generate()">Generar snippet →</button>
+    <button class="btn btn-ghost" onclick="reset()">Limpiar</button>
+  </div>
+
+  <!-- OUTPUT -->
+  <div id="output-section" style="margin-top:2rem">
+    <div class="card" style="padding-bottom:0;border-bottom:none;border-radius: var(--radius) var(--radius) 0 0;border-bottom:0">
+      <div class="step-label">Vista previa</div>
+      <div class="preview-card">
+        <div class="kind-tag" id="prev-kind"></div>
+        <div class="p-date" id="prev-date"></div>
+        <div class="p-title" id="prev-title"></div>
+        <div class="p-excerpt" id="prev-excerpt"></div>
+        <div class="p-time" id="prev-time"></div>
+      </div>
+    </div>
+
+    <div class="card" style="border-top:none;border-radius: 0 0 var(--radius) var(--radius)">
+      <div class="output-header">
+        <h2>Snippet para <code>copy.jsx</code></h2>
+        <button class="btn" id="copy-btn" onclick="copySnippet()">Copiar</button>
+      </div>
+      <pre id="output-code"></pre>
+      <p class="hint" style="margin-top:.75rem">Añade esto al array <code>posts</code> dentro de <code>es.blog.posts</code> y <code>en.blog.posts</code> en <code>copy.jsx</code>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function today() {
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y} · ${m} · ${day}`;
+  }
+
+  function estimateReadTime(text) {
+    const words = text.trim().split(/\s+/).length;
+    const mins = Math.max(1, Math.round(words / 200));
+    return `${mins} min`;
+  }
+
+  function autoTitle(text) {
+    // First sentence or first line, max 80 chars
+    const firstLine = text.split('\n')[0].trim();
+    const firstSentence = firstLine.split(/[.!?]/)[0].trim();
+    const candidate = firstSentence || firstLine;
+    return candidate.length > 80 ? candidate.slice(0, 77) + '…' : candidate;
+  }
+
+  function autoExcerpt(text, title) {
+    // Remove first line (used as title), take next chunk
+    const lines = text.split('\n').filter(l => l.trim());
+    let body = lines.slice(1).join(' ').trim() || lines[0];
+    // Clean up LinkedIn hashtags and emojis lightly
+    body = body.replace(/#\w+/g, '').replace(/\s{2,}/g, ' ').trim();
+    return body.length > 160 ? body.slice(0, 157) + '…' : body;
+  }
+
+  function escapeJSString(str) {
+    return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/`/g, '\\`');
+  }
+
+  function generate() {
+    const text = document.getElementById('post-text').value.trim();
+    if (!text) { alert('Pega primero el texto del post.'); return; }
+
+    const url  = document.getElementById('url').value.trim() || '#';
+    const kind = document.getElementById('kind').value;
+    const date = today();
+    const time = document.getElementById('read-time').value.trim() || estimateReadTime(text);
+    const title   = document.getElementById('custom-title').value.trim()   || autoTitle(text);
+    const excerpt = document.getElementById('custom-excerpt').value.trim() || autoExcerpt(text, title);
+
+    // Preview
+    document.getElementById('prev-kind').textContent = kind;
+    document.getElementById('prev-date').textContent = date;
+    document.getElementById('prev-title').textContent = title;
+    document.getElementById('prev-excerpt').textContent = excerpt;
+    document.getElementById('prev-time').textContent = time;
+
+    // Snippet (ES — duplicate manually for EN)
+    const snippet =
+`{
+  date: "${date}",
+  kind: "${kind}",
+  title: "${escapeJSString(title)}",
+  excerpt: "${escapeJSString(excerpt)}",
+  time: "${time}",
+  link: "${escapeJSString(url)}",
+},`;
+
+    document.getElementById('output-code').textContent = snippet;
+    document.getElementById('output-section').classList.add('visible');
+    document.getElementById('output-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function copySnippet() {
+    const code = document.getElementById('output-code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '¡Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  function reset() {
+    document.getElementById('url').value = '';
+    document.getElementById('post-text').value = '';
+    document.getElementById('custom-title').value = '';
+    document.getElementById('custom-excerpt').value = '';
+    document.getElementById('read-time').value = '';
+    document.getElementById('output-section').classList.remove('visible');
+  }
+</script>
+</body>
+</html>

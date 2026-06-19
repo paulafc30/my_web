@@ -1,19 +1,7 @@
 // copy.jsx — ES/EN translations (v2: honest, warm, junior)
 
-// Meses completos trabajando en BNT desde el 3 de noviembre de 2025.
-// Se recalcula en cada carga del navegador.
-function monthsAtBNT() {
-  const start = new Date(2025, 10, 3); // 3 noviembre 2025 (mes 0-indexed)
-  const now = new Date();
-  // Redondeo al mes más cercano: si pasan >= 15 días del mes actual, suma 1.
-  let months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
-  const dayDiff = now.getDate() - start.getDate();
-  if (dayDiff >= 15) months++;
-  else if (dayDiff < 0 && dayDiff > -15) months--;
-  return Math.max(0, months);
-}
-const MESES_BNT = monthsAtBNT();
-const MESES_ES = MESES_BNT === 1 ? 'mes' : 'meses';
+const MESES_BNT = 9;
+const MESES_ES = 'meses';
 
 const COPY = {
   es: {
@@ -27,9 +15,9 @@ const COPY = {
       ],
       lede: (
         <>
-          Hola, soy <b>Paula Fernández Cañas</b>. Llevo <b>{MESES_BNT} {MESES_ES}</b> trabajando
-          como desarrolladora junior en BNT Business Telecom. Empecé por el
-          front (HTML, CSS, JavaScript, Tailwind) y ahora también toco
+          Hola, soy <b>Paula Fernández Cañas</b>. Estuve <b>{MESES_BNT} {MESES_ES}</b> como
+          desarrolladora junior en BNT Business Telecom — mi primer trabajo real. Empecé por el
+          front (HTML, CSS, JavaScript, Tailwind) y acabé tocando
           backend con <b>PHP, Laravel y MySQL</b>. Tengo más kilómetros en el
           front, pero el back me atrae y es por donde quiero seguir creciendo.
         </>
@@ -37,8 +25,8 @@ const COPY = {
       cta1: "Ver proyectos",
       cta2: "Descargar CV",
       info: {
-        role: "Junior Dev",
-        company: "BNT Business Telecom",
+        role: "Junior Dev · disponible",
+        company: "En búsqueda activa",
         focus: "Fullstack (front-heavy)",
         location: "Jaén, ES · GMT+1",
         availability: "Open to work — remoto o Jaén",
@@ -77,14 +65,50 @@ const COPY = {
         {
           n: "03",
           name: "Gestión Interna · Piensos Urbano",
-          sub: "Aplicación interna en BNT Business Telecom",
-          tag: "En curso",
+          sub: "App para modernizar el flujo de trabajo de un negocio familiar",
+          tag: "Freelance",
           status: "wip",
-          role: "Mi parte: fullstack en equipo — aprendiendo a diario",
-          desc: "Trabajo actual. Toco frontend y backend, hago migraciones de datos y aprendo sobre arquitectura mientras el proyecto avanza. Mi primer proyecto serio en producción.",
+          role: "Mi parte: fullstack en equipo con Aurora Medel",
+          desc: "Proyecto en equipo con Aurora Medel para un familiar suyo con un negocio de piensos. El cliente gestionaba todo con Canva y Excel — construimos una aplicación interna para centralizar y digitalizar ese flujo de trabajo.",
           stack: ["Laravel", "PHP", "JavaScript", "Docker", "PL/SQL"],
           year: "2025 →",
           link: "#",
+        },
+        {
+          n: "04",
+          name: "Finanzor",
+          sub: "App de finanzas personales mobile-first",
+          tag: "Personal",
+          status: "wip",
+          role: "Mi parte: diseño + frontend + backend — proyecto en solitario",
+          desc: "Aplicación personal para registrar ingresos y gastos por categorías, ver un calendario de movimientos, gestionar presupuestos mensuales y crear metas de ahorro con seguimiento. Permite importar CSV bancario y exportar datos. Multiusuario.",
+          stack: ["React 18", "Vite", "Tailwind", "Supabase", "React Query", "Vercel"],
+          year: "2025 →",
+          link: "https://paula-fernandez-canas.vercel.app/project-3.html",
+        },
+        {
+          n: "05",
+          name: "Mi Armario",
+          sub: "PWA para gestionar tu armario digital",
+          tag: "Personal",
+          status: "wip",
+          role: "Mi parte: arquitectura, diseño y desarrollo — proyecto en solitario",
+          desc: "App web PWA para organizar ropa por categorías, crear outfits y gestionar prendas en venta (flujo Baúl → En Venta → Vendida). Integra Web Share Target para importar desde Wallapop o Vinted y una lista de deseos con preview automático de URLs.",
+          stack: ["React 18", "TypeScript", "Vite", "Tailwind", "Supabase", "Zustand", "PWA"],
+          year: "2025 →",
+          link: "https://paula-fernandez-canas.vercel.app/project-4.html",
+        },
+        {
+          n: "06",
+          name: "AparcaYa",
+          sub: "Ocupación en tiempo real y predicción de aparcamientos en Málaga",
+          tag: "IA & Big Data",
+          status: "wip",
+          role: "Mi parte: frontend completo — mapa, chatbot, integración de datos y despliegue",
+          desc: "App web que muestra en tiempo real la ocupación de los 12 aparcamientos públicos de Málaga y predice disponibilidad a 1-2 horas. Incluye mapa interactivo con Leaflet, semáforo de ocupación y un chatbot que recomienda aparcamiento según tu destino. Modelo predictivo en scikit-learn exportado a JS; visión artificial con MobileNetV2 para clasificar plazas desde cámara de tráfico.",
+          stack: ["JavaScript", "Leaflet.js", "Python", "scikit-learn", "TensorFlow", "OpenCV", "Supabase", "Vercel"],
+          year: "2026 →",
+          link: "https://paula-fernandez-canas.vercel.app/project-5.html",
         },
       ],
     },
@@ -101,9 +125,9 @@ const COPY = {
             { n: "CSS", lvl: "diario" },
             { n: "JavaScript", lvl: "diario" },
             { n: "Tailwind", lvl: "diario" },
-            { n: "PHP", lvl: "trabajo" },
-            { n: "Laravel", lvl: "trabajo" },
-            { n: "MySQL", lvl: "trabajo" },
+            { n: "PHP", lvl: "experiencia" },
+            { n: "Laravel", lvl: "experiencia" },
+            { n: "MySQL", lvl: "experiencia" },
             { n: "Git", lvl: "diario" },
           ],
           now: false,
@@ -136,7 +160,7 @@ const COPY = {
           un año de <b>Ingeniería Telemática</b> para coger bases (y un
           buen rato de C++), y luego me pasé al <b>Grado Superior de
           Desarrollo de Aplicaciones Web</b> para ir directa a lo que me
-          interesaba. Hace {MESES_BNT} {MESES_ES} entré en
+          interesaba. Estuve <b>{MESES_BNT} {MESES_ES}</b> en
           <b> BNT Business Telecom</b> como junior — mi primer trabajo de
           verdad como desarrolladora.
         </>
@@ -158,7 +182,8 @@ const COPY = {
         </>
       ),
       timeline: [
-        { when: "Ahora", what: "Desarrolladora junior · BNT Business Telecom", note: "Fullstack en una aplicación interna. Front, back, migraciones y todo lo que toque ese día.", now: true },
+        { when: "Ahora", what: "En búsqueda activa", note: "Buscando mi siguiente equipo. Abierta a roles fullstack o backend, en Jaén o remoto.", now: true },
+        { when: "2025–2026", what: "Desarrolladora junior · BNT Business Telecom", note: "9 meses fullstack en una aplicación interna. Front, back, migraciones y todo lo que tocase ese día." },
         { when: "2024", what: "TFG defendido — Compiso", note: "Plataforma para buscar compañeros de piso. Diseño, front y back." },
         { when: "2024", what: "Secure Files App", note: "Proyecto académico con foco en seguridad: 2FA y control de acceso." },
         { when: "2022", what: "Grado Superior · Desarrollo de Aplicaciones Web", note: "Tras un año de Telemática, me pasé a DAW para ir directa al desarrollo." },
@@ -242,9 +267,9 @@ const COPY = {
       ],
       lede: (
         <>
-          Hi, I'm <b>Paula Fernández Cañas</b>. I've been working as a junior
-          developer at BNT Business Telecom for <b>{MESES_BNT} month{MESES_BNT === 1 ? '' : 's'}</b>. I started on
-          the front (HTML, CSS, JavaScript, Tailwind) and now I also write
+          Hi, I'm <b>Paula Fernández Cañas</b>. I spent <b>{MESES_BNT} months</b> as a junior
+          developer at BNT Business Telecom — my first real job. I started on
+          the front (HTML, CSS, JavaScript, Tailwind) and ended up writing
           backend with <b>PHP, Laravel and MySQL</b>. I have more mileage on
           the front side, but I'm drawn to the backend and that's where I
           want to keep growing.
@@ -253,8 +278,8 @@ const COPY = {
       cta1: "See projects",
       cta2: "Download CV",
       info: {
-        role: "Junior Dev",
-        company: "BNT Business Telecom",
+        role: "Junior Dev · available",
+        company: "Actively looking",
         focus: "Fullstack (front-heavy)",
         location: "Jaén, ES · GMT+1",
         availability: "Open to work — remote or Jaén",
@@ -293,14 +318,50 @@ const COPY = {
         {
           n: "03",
           name: "Internal Ops · Piensos Urbano",
-          sub: "Internal app at BNT Business Telecom",
-          tag: "In progress",
+          sub: "App to modernise a family business workflow",
+          tag: "Freelance",
           status: "wip",
-          role: "My part: fullstack with the team — learning daily",
-          desc: "My current work. I touch both frontend and backend, do data migrations and learn about architecture as the project grows. My first serious project in production.",
+          role: "My part: fullstack with Aurora Medel",
+          desc: "Team project with Aurora Medel for her family member's pet food business. The client was managing everything with Canva and Excel — we built an internal app to centralise and digitalise that workflow.",
           stack: ["Laravel", "PHP", "JavaScript", "Docker", "PL/SQL"],
           year: "2025 →",
           link: "#",
+        },
+        {
+          n: "04",
+          name: "Finanzor",
+          sub: "Mobile-first personal finance app",
+          tag: "Personal",
+          status: "wip",
+          role: "My part: design + frontend + backend — solo project",
+          desc: "Personal app to track income and expenses by category, view a transaction calendar, manage monthly budgets and savings goals with contribution tracking. Supports bank CSV import and data export. Multi-user.",
+          stack: ["React 18", "Vite", "Tailwind", "Supabase", "React Query", "Vercel"],
+          year: "2025 →",
+          link: "https://paula-fernandez-canas.vercel.app/project-3.html",
+        },
+        {
+          n: "05",
+          name: "Mi Armario",
+          sub: "PWA to manage your digital wardrobe",
+          tag: "Personal",
+          status: "wip",
+          role: "My part: architecture, design and development — solo project",
+          desc: "PWA web app to organise clothes by category, create outfits and manage items for sale (Stored → For Sale → Sold flow). Integrates Web Share Target to import from Wallapop or Vinted and a wishlist with automatic URL preview.",
+          stack: ["React 18", "TypeScript", "Vite", "Tailwind", "Supabase", "Zustand", "PWA"],
+          year: "2025 →",
+          link: "https://paula-fernandez-canas.vercel.app/project-4.html",
+        },
+        {
+          n: "06",
+          name: "AparcaYa",
+          sub: "Real-time occupancy and parking prediction in Málaga",
+          tag: "AI & Big Data",
+          status: "wip",
+          role: "My part: full frontend — map, chatbot, data integration and deployment",
+          desc: "Web app showing real-time occupancy of Málaga's 12 public car parks and predicting availability 1-2 hours ahead. Features an interactive Leaflet map, occupancy traffic-light indicator and a chatbot that recommends where to park based on your destination. Predictive model in scikit-learn exported to JS; computer vision with MobileNetV2 to classify spaces from traffic camera images.",
+          stack: ["JavaScript", "Leaflet.js", "Python", "scikit-learn", "TensorFlow", "OpenCV", "Supabase", "Vercel"],
+          year: "2026 →",
+          link: "https://paula-fernandez-canas.vercel.app/project-5.html",
         },
       ],
     },
@@ -317,9 +378,9 @@ const COPY = {
             { n: "CSS", lvl: "daily" },
             { n: "JavaScript", lvl: "daily" },
             { n: "Tailwind", lvl: "daily" },
-            { n: "PHP", lvl: "at work" },
-            { n: "Laravel", lvl: "at work" },
-            { n: "MySQL", lvl: "at work" },
+            { n: "PHP", lvl: "experience" },
+            { n: "Laravel", lvl: "experience" },
+            { n: "MySQL", lvl: "experience" },
             { n: "Git", lvl: "daily" },
           ],
           now: false,
@@ -352,7 +413,7 @@ const COPY = {
           <b> Telematics Engineering</b> to lay foundations (and a good
           chunk of C++), and then switched to a <b>vocational higher
           education in Web Development (DAW)</b> to go straight to what I
-          cared about. {MESES_BNT} month{MESES_BNT === 1 ? '' : 's'} ago I joined
+          cared about. I spent <b>{MESES_BNT} months</b> at
           <b> BNT Business Telecom</b> as a junior — my first real job as a
           developer.
         </>
@@ -375,7 +436,8 @@ const COPY = {
         </>
       ),
       timeline: [
-        { when: "Now", what: "Junior developer · BNT Business Telecom", note: "Fullstack on an internal application. Front, back, migrations, and whatever that day brings.", now: true },
+        { when: "Now", what: "Actively looking", note: "Looking for my next team. Open to fullstack or backend roles, in Jaén or remote.", now: true },
+        { when: "2025–2026", what: "Junior developer · BNT Business Telecom", note: "9 months fullstack on an internal application. Front, back, migrations, and whatever that day brought." },
         { when: "2024", what: "Thesis defended — Compiso", note: "Flatmate matching platform. Design, front and back." },
         { when: "2024", what: "Secure Files App", note: "Academic project focused on security: 2FA and access control." },
         { when: "2022", what: "Higher Vocational · Web Development (DAW)", note: "After a year of Telematics, I moved to DAW to go straight to dev work." },

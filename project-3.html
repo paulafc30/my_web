@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzor · Paula Fernández Cañas</title>
+    <meta name="description" content="Estudio de caso: app de finanzas personales mobile-first con calendario de movimientos, presupuestos, metas de ahorro e importación de CSV bancario. React 18, Supabase, Vite.">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav" aria-label="Navegación principal">
+                <a href="index.html" class="logo">Paula Fernández</a>
+                <ul class="nav-list">
+                    <li><a href="index.html#projects">Proyectos</a></li>
+                    <li><a href="about.html">Sobre mí</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <section class="intro" data-animate>
+                <p class="intro-eyebrow">Caso de estudio · 04</p>
+                <h1 class="project-headline">
+                    Finanzor: app de finanzas personales mobile-first con presupuestos, metas de ahorro e importación bancaria.
+                </h1>
+
+                <div class="project-meta-grid">
+                    <div>
+                        <span class="meta-label">Mi rol</span>
+                        <p class="meta-data">Diseño + Frontend + Backend — proyecto en solitario</p>
+                    </div>
+                    <div>
+                        <span class="meta-label">Stack</span>
+                        <p class="meta-data">React 18 · Vite · Tailwind CSS · Supabase · React Query · Vercel</p>
+                    </div>
+                    <div>
+                        <span class="meta-label">Periodo</span>
+                        <p class="meta-data">2025 · En desarrollo activo</p>
+                    </div>
+                    <div>
+                        <span class="meta-label">Demo</span>
+                        <p class="meta-data">
+                            <a href="https://finanzor.vercel.app/" target="_blank" rel="noopener noreferrer" class="meta-link">Abrir demo ↗</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section" data-animate>
+                <h2 class="section-subtitle">El problema</h2>
+                <p>
+                    Las apps de finanzas del mercado suelen caer en uno de dos extremos: o son demasiado simples (un Excel glorificado) o tan complejas que acabas necesitando un manual para registrar un café. Quería algo que se sintiera ligero de usar en el móvil, pero con la potencia suficiente para entender de verdad a dónde va el dinero cada mes.
+                </p>
+                <p>
+                    El punto de partida fue mi propio flujo: registro movimiento → le pongo categoría → quiero saber si me estoy pasando del presupuesto → y si puedo seguir aportando a mi meta de ahorro. Todo eso sin fricciones, sin menús anidados, mobile-first desde el diseño inicial.
+                </p>
+            </section>
+
+            <section class="case-study-section" data-animate>
+                <h2 class="section-subtitle">Qué construí</h2>
+
+                <h3>Registro de ingresos y gastos por categorías</h3>
+                <p>
+                    Flujo rápido para añadir movimientos: importe, categoría, nota opcional y fecha. Las categorías son personalizables. El diseño prioriza que el registro sea un gesto de tres segundos desde el móvil, no un formulario.
+                </p>
+
+                <h3>Calendario de movimientos</h3>
+                <p>
+                    Vista mensual y semanal que muestra los movimientos sobre el calendario. Útil para detectar patrones (¿cuándo gasto más?) y recordar qué pasó un día concreto sin tener que buscar en una lista.
+                </p>
+
+                <h3>Presupuestos mensuales por categoría</h3>
+                <p>
+                    Para cada categoría puedes definir un presupuesto mensual. La app muestra cuánto llevas consumido, cuánto queda y cuándo estás por encima. Sencillo pero efectivo para frenar gastos en tiempo real.
+                </p>
+
+                <h3>Metas de ahorro con seguimiento de aportaciones</h3>
+                <p>
+                    Creas una meta (destino de viaje, fondo de emergencia, lo que sea), fijas un importe objetivo y vas registrando aportaciones. La app calcula el progreso y te muestra cuánto te falta. Admite múltiples metas en paralelo.
+                </p>
+
+                <h3>Importación desde CSV bancario y exportación</h3>
+                <p>
+                    Puedes importar un extracto bancario en CSV y mapear las columnas al esquema de Finanzor. También puedes exportar tus datos filtrados por rango de fechas, útil para declaraciones o simplemente para tener una copia local.
+                </p>
+
+                <div class="key-challenge">
+                    <h3 class="challenge-title">Reto principal: multiusuario sin backend propio</h3>
+                    <p>
+                        Toda la capa de datos y autenticación vive en Supabase. Eso significó diseñar el esquema de PostgreSQL y las políticas RLS desde el principio pensando en aislamiento de datos por usuario — cada fila tiene su <code>user_id</code> y los permisos se validan en la base de datos, no en el cliente. El reto fue entender bien RLS para que el multiusuario funcionara sin que yo tuviera que escribir ni una línea de servidor propio.
+                    </p>
+                </div>
+            </section>
+
+            <section class="case-study-section" data-animate>
+                <h2 class="section-subtitle">Decisiones técnicas</h2>
+
+                <h3>React 18 + Vite + Tailwind</h3>
+                <p>
+                    Stack ligero y rápido de iterar. Vite para builds instantáneos en desarrollo, Tailwind para no salir del JSX a escribir CSS. En una app mobile-first donde el diseño cambia mucho al principio, poder ajustar padding y colores directamente en el componente acelera mucho el ritmo.
+                </p>
+
+                <h3>Supabase como backend completo</h3>
+                <p>
+                    PostgreSQL para los datos, Supabase Auth para la autenticación, PostgREST para la API automática. Elegí Supabase porque me permitía tener un backend real (con relaciones, constraints y RLS) sin mantener un servidor. Para un proyecto personal en solitario, ese trade-off tiene mucho sentido.
+                </p>
+
+                <h3>React Query (TanStack) para estado servidor</h3>
+                <p>
+                    Gestión de caché, refetch en foco, estados de carga y error — todo sin tener que escribirlo a mano. En una app con muchas lecturas (calendario, presupuestos, metas) React Query evita que la UI se quede desincronizada con los datos reales.
+                </p>
+            </section>
+
+            <section class="case-study-section" data-animate>
+                <h2 class="section-subtitle">Aprendizajes</h2>
+                <ul>
+                    <li><strong>RLS en Supabase obliga a pensar en seguridad desde el esquema.</strong> No puedes parchear los permisos después: si el modelo de datos no distingue bien los usuarios desde el principio, hay que refactorizar todo.</li>
+                    <li><strong>Mobile-first de verdad significa diseñar para el pulgar primero.</strong> Los botones de acción principal abajo, los gestos naturales, el tamaño de los inputs. Empezar con desktop y "adaptar" no funciona igual.</li>
+                    <li><strong>La importación de CSV bancario es un campo minado.</strong> Cada banco exporta diferente. Tuve que construir un sistema de mapeo de columnas flexible en vez de asumir un formato fijo.</li>
+                </ul>
+            </section>
+
+            <section class="cta-section" data-animate>
+                <a href="project-2.html" class="cta-link">← Anterior: Compiso</a>
+                <a href="project-4.html" class="cta-link">Siguiente: Mi Armario →</a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div data-animate>
+                <p class="intro-eyebrow">Contacto</p>
+                <h2 class="footer-headline">¿Hablamos de tu próximo proyecto?</h2>
+                <p class="email">
+                    <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/paula-fernandez-canas/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                    <a href="https://github.com/paulafc30" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© <span data-current-year>2026</span> Paula Fernández Cañas</p>
+                <span class="footer-meta">Diseñado y desarrollado a mano</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
