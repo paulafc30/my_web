@@ -35,6 +35,7 @@ const COPY = {
       title: "Cosas en las que he trabajado",
       meta: "Desliza →",
       list: [
+        /* 01 — pendiente de revisar
         {
           n: "01",
           name: "Secure Files App",
@@ -47,6 +48,8 @@ const COPY = {
           year: "2024",
           link: "https://paula-fernandez-canas.vercel.app/project-1.html",
         },
+        */
+        /* 02 — pendiente de revisar
         {
           n: "02",
           name: "Compiso",
@@ -59,6 +62,7 @@ const COPY = {
           year: "2024",
           link: "https://paula-fernandez-canas.vercel.app/project-2.html",
         },
+        */
         {
           n: "03",
           name: "Gestión Interna · Piensos Urbano",
@@ -81,6 +85,7 @@ const COPY = {
           desc: "Aplicación personal para registrar ingresos y gastos por categorías, ver un calendario de movimientos, gestionar presupuestos mensuales y crear metas de ahorro con seguimiento. Permite importar CSV bancario y exportar datos. Multiusuario.",
           stack: ["React 18", "Vite", "Tailwind", "Supabase", "React Query", "Vercel"],
           year: "2025 →",
+          thumb: "assets/images/finanzor-dashboard.jpg",
           link: "https://paula-fernandez-canas.vercel.app/project-3.html",
         },
         {
@@ -288,6 +293,7 @@ const COPY = {
       title: "Things I have worked on",
       meta: "Swipe →",
       list: [
+        /* 01 — pending review
         {
           n: "01",
           name: "Secure Files App",
@@ -300,6 +306,8 @@ const COPY = {
           year: "2024",
           link: "https://paula-fernandez-canas.vercel.app/project-1.html",
         },
+        */
+        /* 02 — pending review
         {
           n: "02",
           name: "Compiso",
@@ -312,6 +320,7 @@ const COPY = {
           year: "2024",
           link: "https://paula-fernandez-canas.vercel.app/project-2.html",
         },
+        */
         {
           n: "03",
           name: "Internal Ops · Piensos Urbano",
@@ -334,6 +343,7 @@ const COPY = {
           desc: "Personal app to track income and expenses by category, view a transaction calendar, manage monthly budgets and savings goals with contribution tracking. Supports bank CSV import and data export. Multi-user.",
           stack: ["React 18", "Vite", "Tailwind", "Supabase", "React Query", "Vercel"],
           year: "2025 →",
+          thumb: "assets/images/finanzor-dashboard.jpg",
           link: "https://paula-fernandez-canas.vercel.app/project-3.html",
         },
         {
@@ -629,6 +639,7 @@ function ProjectCard({ p }) {
         <image-slot
           id={'thumb-' + p.n}
           shape="rect"
+          src={p.thumb || undefined}
           placeholder={'captura · ' + p.name}
         ></image-slot>
         <span className="num">N.º {p.n}</span>
