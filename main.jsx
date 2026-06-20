@@ -87,7 +87,7 @@ const COPY = {
             'Vercel',
           ],
           year: '2025 →',
-          thumb: 'assets/images/logo_principal_app.jpeg',
+          thumb: 'assets/images/finanzor.png',
           link: 'https://paula-fernandez-canas.vercel.app/project-3.html',
         },
         {
@@ -108,6 +108,7 @@ const COPY = {
             'PWA',
           ],
           year: '2025 →',
+          thumb: 'assets/images/miarmario.png',
           link: 'https://paula-fernandez-canas.vercel.app/project-4.html',
         },
         {
@@ -129,6 +130,7 @@ const COPY = {
             'Vercel',
           ],
           year: '2026 →',
+          thumb: 'assets/images/aparcaya.png',
           link: 'https://paula-fernandez-canas.vercel.app/project-5.html',
         },
         {
@@ -486,7 +488,7 @@ const COPY = {
             'Vercel',
           ],
           year: '2025 →',
-          thumb: 'assets/images/logo_principal_app.jpeg',
+          thumb: 'assets/images/finanzor.png',
           link: 'https://paula-fernandez-canas.vercel.app/project-3.html',
         },
         {
@@ -507,6 +509,7 @@ const COPY = {
             'PWA',
           ],
           year: '2025 →',
+          thumb: 'assets/images/miarmario.png',
           link: 'https://paula-fernandez-canas.vercel.app/project-4.html',
         },
         {
@@ -528,6 +531,7 @@ const COPY = {
             'Vercel',
           ],
           year: '2026 →',
+          thumb: 'assets/images/aparcaya.png',
           link: 'https://paula-fernandez-canas.vercel.app/project-5.html',
         },
         {
