@@ -18,11 +18,11 @@ const COPY = {
       ],
       lede: (
         <>
-          Buenas! Soy <b>Paula Fernández Cañas</b>. Estuve <b>8 meses</b> como
-          desarrolladora junior en BNT Business Telecom — mi primer trabajo
-          real, en proyectos web e <b>IoT</b>. Empecé por el front (HTML, CSS,
+          Buenas! Soy <b>Paula Fernández Cañas</b>. He estado trabajando como
+          <b> desarrolladora web junior</b> en BNT Business Telecom, en
+          proyectos web e <b>IoT</b>. Empecé por el front (HTML, CSS,
           JavaScript, Tailwind) y acabé tocando backend con{' '}
-          <b>PHP, Laravel y MySQL</b>. He trabajado como frontend, pero el
+          <b>PHP, Laravel y MySQL</b>. He trabajado más como frontend, pero el
           backend me atrae y es por donde quiero seguir creciendo. Actualmente
           también me estoy formando en IA y Big Data.
         </>
@@ -39,7 +39,7 @@ const COPY = {
     },
     projects: {
       label: 'Proyectos',
-      title: 'Proyectos en los que he trabajado',
+      title: 'Proyectos en los que estoy trabajando',
       meta: 'Desliza →',
       list: [
         /* 01 — pendiente de revisar
@@ -184,7 +184,7 @@ const COPY = {
     },
     about: {
       label: 'Sobre mí',
-      title: 'Una junior con ganas de equipo.',
+      title: 'Un poco de mi trayectoria.',
       p1: (
         <>
           Mi interés por la tecnología empezó mucho antes del bachillerato, pero
@@ -224,18 +224,18 @@ const COPY = {
         {
           when: 'Ahora',
           what: 'En búsqueda activa',
-          note: 'Buscando mi siguiente equipo. Abierta a roles fullstack o backend, en Jaén o remoto.',
+          note: 'Buscando mi siguiente oportunidad. Abierta a roles fullstack o backend, en Jaén o remoto.',
           now: true,
         },
         {
           when: 'nov. 2025 – jun. 2026',
           what: 'Desarrolladora junior · BNT Business Telecom',
-          note: '8 meses fullstack en proyectos web e IoT: Git, pipelines, Laravel, CodeIgniter, JavaScript, MySQL, Figma. Conexiones entre código y dispositivos físicos. Migración de Laravel 5.4 a 12.',
+          note: 'Fullstack en proyectos web e IoT: Git, pipelines, Laravel, CodeIgniter, JavaScript, MySQL, Figma. Conexiones entre código y dispositivos físicos. Migración de Laravel 5.4 a 12.',
         },
         {
           when: 'feb. – jun. 2025',
           what: 'Prácticas · Toomba Digital Agency',
-          note: '4 meses. Proyecto real en Laravel con Eloquent y 2FA. Esquemas, casos de uso y diseño en Figma — aprendí el flujo completo de un proyecto desde cero.',
+          note: 'Proyecto real en Laravel con Eloquent y 2FA. Esquemas, casos de uso y diseño en Figma — aprendí el flujo completo de un proyecto desde cero.',
         },
         {
           when: 'sept. 2023 – jun. 2025',
@@ -244,8 +244,8 @@ const COPY = {
         },
         {
           when: 'sept. 2022 – sept. 2023',
-          what: 'Ingeniería Telemática · Un año en Málaga',
-          note: 'Bases de programación, C++, y la certeza de que quería algo más aplicado.',
+          what: 'Ingeniería Telemática',
+          note: 'Bases de programación, C++, Matlab y un nuevo enfoque.',
         },
         {
           when: 'sept. 2020 – jun. 2022',
@@ -343,17 +343,17 @@ const COPY = {
         },
         {
           name: 'Inglés',
-          level: 'B1 — Cambridge University Press & Assessment · nov. 2020',
+          level: 'B1',
           icon: 'EN',
         },
       ],
     },
     blog: {
       label: 'Blog',
-      title: 'Cosas que voy aprendiendo.',
+      title: 'Mis descubrimientos.',
       meta: 'Notas de campo · honestas',
       intro:
-        'No soy ninguna experta en sistemas, pero me encanta aprender cosas nuevas. Voy apuntando todo lo que escucho y leo — en la cabeza y en una libreta. Esto es la versión publicable de esa libreta.',
+        'No soy ninguna experta, pero me encanta aprender cosas nuevas y compartir mis descubrimientos.',
       empty: 'Pronto más notas.',
       readMore: 'leer',
       seeAll: 'Ver todas →',
@@ -384,7 +384,7 @@ const COPY = {
       titleAccent: 'con ganas',
       titlePost: ' para vuestro equipo?',
       kicker:
-        'Estoy abierta a un primer (o segundo) puesto fullstack o backend, en Jaén o remoto. Si tu equipo tiene paciencia y ganas de enseñar, mándame un correo y lo hablamos.',
+        'Estoy abierta a un puesto fullstack o backend, en Jaén o remoto. Si tu equipo necesita de alguien con muchas ideas y motivación, mándame un correo y hablamos!',
       copy: 'Copiar correo',
       copied: '¡Copiado!',
       links: [
@@ -422,7 +422,7 @@ const COPY = {
       blog: 'Blog',
     },
     hero: {
-      eyebrow: 'Open to opportunities · Jaén or remote',
+      eyebrow: 'Open to opportunities · Jaén, Andalusia or remote',
       headlineLines: [
         ['Junior ', 'fullstack', ' developer'],
         ['with a lot of attitude', ' '],
@@ -430,12 +430,13 @@ const COPY = {
       ],
       lede: (
         <>
-          Hello! I'm <b>Paula Fernández Cañas</b>. I spent <b>8 months</b> as a
-          junior developer at BNT Business Telecom — my first real job, working
-          on web and <b>IoT</b> projects. I started on the front (HTML, CSS,
-          JavaScript, Tailwind) and ended up writing backend with{' '}
-          <b>PHP, Laravel and MySQL</b>. I've worked mainly on the frontend, but
-          the backend is where I want to keep growing.
+          Hello! I'm <b>Paula Fernández Cañas</b>. I've been working as a{' '}
+          <b>junior web developer</b> at BNT Business Telecom, on web and{' '}
+          <b>IoT</b> projects. I started on the front (HTML, CSS, JavaScript,
+          Tailwind) and ended up writing backend with{' '}
+          <b>PHP, Laravel and MySQL</b>. I've worked more on the frontend, but
+          the backend is where I want to keep growing. I'm also currently
+          studying AI and Big Data.
         </>
       ),
       cta1: 'See projects',
@@ -443,14 +444,14 @@ const COPY = {
       info: {
         role: 'Junior Developer',
         focus: 'Fullstack (backend-focused)',
-        location: 'Jaén, ES · GMT+1',
-        availability: 'Open to work — remote or Jaén',
+        location: 'Jaén, Andalusia · GMT+1',
+        availability: 'Open to work — remote or Jaén, Andalusia',
       },
       portraitPh: 'drop a photo',
     },
     projects: {
       label: 'Projects',
-      title: 'Projects I have worked on',
+      title: 'Projects I am working on',
       meta: 'Swipe →',
       list: [
         /* 01 — pending review
@@ -624,7 +625,7 @@ const COPY = {
       p3: (
         <>
           A personal situation meant I had to leave BNT and Málaga and return to
-          Jaén. But I'm ready to get back into the industry with renewed energy
+          Jaén, Andalusia. But I'm ready to get back into the industry with renewed energy
           and a lot of desire to keep growing. What I'm looking for is a{' '}
           <b>team</b> where I can do exactly that.
         </>
@@ -633,13 +634,13 @@ const COPY = {
         {
           when: 'Now',
           what: 'Actively looking',
-          note: 'Looking for my next team. Open to fullstack or backend roles, in Jaén or remote.',
+          note: 'Looking for my next opportunity. Open to fullstack or backend roles, in Jaén (Andalusia) or remote.',
           now: true,
         },
         {
           when: 'Nov. 2025 – Jun. 2026',
           what: 'Junior developer · BNT Business Telecom',
-          note: '8 months fullstack on web and IoT projects: Git, pipelines, Laravel, CodeIgniter, JavaScript, MySQL, Figma. Code-to-device connections. Hand-migrated a Laravel 5.4 project to Laravel 12.',
+          note: 'Fullstack on web and IoT projects: Git, pipelines, Laravel, CodeIgniter, JavaScript, MySQL, Figma. Code-to-device connections. Hand-migrated a Laravel 5.4 project to Laravel 12.',
         },
         {
           when: 'Feb. – Jun. 2025',
@@ -653,8 +654,8 @@ const COPY = {
         },
         {
           when: 'Sep. 2022 – Sep. 2023',
-          what: 'Telematics Engineering · One year in Málaga',
-          note: 'Programming fundamentals, C++, and the certainty that I wanted something more applied.',
+          what: 'Telematics Engineering',
+          note: 'Programming fundamentals, C++, MATLAB and a new direction.',
         },
         {
           when: 'Sep. 2020 – Jun. 2022',
@@ -793,7 +794,7 @@ const COPY = {
       titleAccent: 'with drive',
       titlePost: ' for your team?',
       kicker:
-        "I'm open to a first (or second) fullstack or backend role, in Jaén or remote. If your team is patient and willing to teach, send me an email and let's talk.",
+        "I'm open to a fullstack or backend role, in Jaén (Andalusia) or remote. If your team needs someone with lots of ideas and motivation, send me an email and let's talk!",
       copy: 'Copy email',
       copied: 'Copied!',
       links: [
@@ -811,13 +812,13 @@ const COPY = {
         msgPh: 'Your message...',
         send: 'Send →',
         sending: 'Sending...',
-        sent: 'Message sent! I\'ll get back to you soon.',
+        sent: "Message sent! I'll get back to you soon.",
         error: 'Something went wrong. Try emailing me directly.',
       },
     },
     footer: {
       left: '© 2026 Paula Fernández Cañas',
-      mid: 'Jaén, ES',
+      mid: 'Jaén, Andalusia',
       right: '',
     },
   },
@@ -854,7 +855,7 @@ function useActiveSection(ids) {
           if (e.isIntersecting) setActive(e.target.id);
         });
       },
-      { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
     );
     ids.forEach((id) => {
       const el = document.getElementById(id);
@@ -866,13 +867,20 @@ function useActiveSection(ids) {
 }
 
 function Header({ t, lang, setLang, dark, setDark }) {
-  const active = useActiveSection(['top', 'work', 'training', 'about', 'contact', 'blog']);
+  const active = useActiveSection([
+    'top',
+    'work',
+    'training',
+    'about',
+    'contact',
+    'blog',
+  ]);
   const navLinks = [
-    { href: '#work',     label: t.nav.work,     id: 'work' },
-    { href: '#training', label: t.nav.training,  id: 'training' },
-    { href: '#about',    label: t.nav.about,     id: 'about' },
-    { href: '#contact',  label: t.nav.contact,   id: 'contact' },
-    { href: '#blog',     label: t.nav.blog,      id: 'blog' },
+    { href: '#work', label: t.nav.work, id: 'work' },
+    { href: '#training', label: t.nav.training, id: 'training' },
+    { href: '#about', label: t.nav.about, id: 'about' },
+    { href: '#contact', label: t.nav.contact, id: 'contact' },
+    { href: '#blog', label: t.nav.blog, id: 'blog' },
   ];
   return (
     <header className="top">
@@ -884,7 +892,10 @@ function Header({ t, lang, setLang, dark, setDark }) {
         </a>
         <nav className="nav">
           {navLinks.map(({ href, label, id }) => (
-            <a key={id} href={href} className={active === id ? 'nav-active' : ''}>
+            <a
+              key={id}
+              href={href}
+              className={active === id ? 'nav-active' : ''}>
               {label}
             </a>
           ))}
@@ -1290,8 +1301,15 @@ function Contact({ t }) {
       // ⚠️ Reemplaza YOUR_FORM_ID con tu ID de Formspree (formspree.io)
       const res = await fetch('https://formspree.io/f/xnjknwpz', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ name: form.name, email: form.email, message: form.msg }),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.msg,
+        }),
       });
       setStatus(res.ok ? 'sent' : 'error');
     } catch {
@@ -1302,7 +1320,15 @@ function Contact({ t }) {
   return (
     <section id="contact" className="contact">
       <div className="wrap">
-        <div className="label dim" style={{ color: 'var(--accent)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 600 }}>
+        <div
+          className="label dim"
+          style={{
+            color: 'var(--accent)',
+            fontSize: 11,
+            letterSpacing: '0.16em',
+            textTransform: 'uppercase',
+            fontWeight: 600,
+          }}>
           {t.contact.label}
         </div>
         <h2>
@@ -1342,7 +1368,9 @@ function Contact({ t }) {
                   type="text"
                   placeholder={t.contact.form.namePh}
                   value={form.name}
-                  onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, name: e.target.value }))
+                  }
                   required
                 />
                 <input
@@ -1350,20 +1378,31 @@ function Contact({ t }) {
                   type="email"
                   placeholder={t.contact.form.emailPh}
                   value={form.email}
-                  onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, email: e.target.value }))
+                  }
                   required
                 />
                 <textarea
                   className="cf-input cf-textarea"
                   placeholder={t.contact.form.msgPh}
                   value={form.msg}
-                  onChange={e => setForm(f => ({ ...f, msg: e.target.value }))}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, msg: e.target.value }))
+                  }
                   required
                   rows={5}
                 />
-                {status === 'error' && <p className="cf-error">{t.contact.form.error}</p>}
-                <button className="cf-btn" type="submit" disabled={status === 'sending'}>
-                  {status === 'sending' ? t.contact.form.sending : t.contact.form.send}
+                {status === 'error' && (
+                  <p className="cf-error">{t.contact.form.error}</p>
+                )}
+                <button
+                  className="cf-btn"
+                  type="submit"
+                  disabled={status === 'sending'}>
+                  {status === 'sending'
+                    ? t.contact.form.sending
+                    : t.contact.form.send}
                 </button>
               </form>
             )}
