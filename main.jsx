@@ -395,6 +395,16 @@ const COPY = {
         { name: 'GitHub', url: 'https://github.com/paulafc30' },
         { name: 'CV (pdf)', url: '#' },
       ],
+      form: {
+        title: 'Escríbeme',
+        namePh: 'Tu nombre',
+        emailPh: 'Tu email',
+        msgPh: 'Tu mensaje...',
+        send: 'Enviar →',
+        sending: 'Enviando...',
+        sent: '¡Mensaje enviado! Te respondo pronto.',
+        error: 'Algo salió mal. Prueba por email directamente.',
+      },
     },
     footer: {
       left: '© 2026 Paula Fernández Cañas',
@@ -794,6 +804,16 @@ const COPY = {
         { name: 'GitHub', url: 'https://github.com/paulafc30' },
         { name: 'CV (pdf)', url: '#' },
       ],
+      form: {
+        title: 'Send me a message',
+        namePh: 'Your name',
+        emailPh: 'Your email',
+        msgPh: 'Your message...',
+        send: 'Send →',
+        sending: 'Sending...',
+        sent: 'Message sent! I\'ll get back to you soon.',
+        error: 'Something went wrong. Try emailing me directly.',
+      },
     },
     footer: {
       left: '© 2026 Paula Fernández Cañas',
@@ -1254,23 +1274,35 @@ function Blog({ t }) {
 // ------- Contact -------
 function Contact({ t }) {
   const [copied, setCopied] = React.useState(false);
+  const [form, setForm] = React.useState({ name: '', email: '', msg: '' });
+  const [status, setStatus] = React.useState('idle'); // idle | sending | sent | error
+
   function copy() {
     navigator.clipboard?.writeText('paulafc30@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 1400);
   }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      // ⚠️ Reemplaza YOUR_FORM_ID con tu ID de Formspree (formspree.io)
+      const res = await fetch('https://formspree.io/f/xnjknwpz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name: form.name, email: form.email, message: form.msg }),
+      });
+      setStatus(res.ok ? 'sent' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  }
+
   return (
     <section id="contact" className="contact">
       <div className="wrap">
-        <div
-          className="label dim"
-          style={{
-            color: 'var(--accent)',
-            fontSize: 11,
-            letterSpacing: '0.16em',
-            textTransform: 'uppercase',
-            fontWeight: 600,
-          }}>
+        <div className="label dim" style={{ color: 'var(--accent)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 600 }}>
           {t.contact.label}
         </div>
         <h2>
@@ -1278,19 +1310,64 @@ function Contact({ t }) {
           <span className="accent">{t.contact.titleAccent}</span>
           {t.contact.titlePost}
         </h2>
-        <p className="kicker">{t.contact.kicker}</p>
-        <div className="email-row">
-          <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
-          <button className="copy" onClick={copy}>
-            {copied ? t.contact.copied : t.contact.copy}
-          </button>
-        </div>
-        <div className="links">
-          {t.contact.links.map((l, i) => (
-            <a key={i} href={l.url} target="_blank" rel="noopener">
-              {l.name} ↗
-            </a>
-          ))}
+
+        <div className="contact-grid">
+          {/* Columna izquierda */}
+          <div className="contact-left">
+            <p className="kicker">{t.contact.kicker}</p>
+            <div className="email-row">
+              <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
+              <button className="copy" onClick={copy}>
+                {copied ? t.contact.copied : t.contact.copy}
+              </button>
+            </div>
+            <div className="links">
+              {t.contact.links.map((l, i) => (
+                <a key={i} href={l.url} target="_blank" rel="noopener">
+                  {l.name} ↗
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Columna derecha — formulario */}
+          <div className="contact-right">
+            <div className="cf-title">{t.contact.form.title}</div>
+            {status === 'sent' ? (
+              <p className="cf-sent">{t.contact.form.sent}</p>
+            ) : (
+              <form className="cf" onSubmit={handleSubmit}>
+                <input
+                  className="cf-input"
+                  type="text"
+                  placeholder={t.contact.form.namePh}
+                  value={form.name}
+                  onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                  required
+                />
+                <input
+                  className="cf-input"
+                  type="email"
+                  placeholder={t.contact.form.emailPh}
+                  value={form.email}
+                  onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                  required
+                />
+                <textarea
+                  className="cf-input cf-textarea"
+                  placeholder={t.contact.form.msgPh}
+                  value={form.msg}
+                  onChange={e => setForm(f => ({ ...f, msg: e.target.value }))}
+                  required
+                  rows={5}
+                />
+                {status === 'error' && <p className="cf-error">{t.contact.form.error}</p>}
+                <button className="cf-btn" type="submit" disabled={status === 'sending'}>
+                  {status === 'sending' ? t.contact.form.sending : t.contact.form.send}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>
