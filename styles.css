@@ -191,6 +191,12 @@ header.top {
   max-width: 54ch;
   line-height: 1.7;
 }
+.lede p {
+  text-align: justify;
+  text-align-last: left;
+  margin: 0 0 10px;
+}
+.lede p:last-child { margin-bottom: 0; }
 .lede b { color: var(--fg); font-weight: 600; }
 
 .cta-row { display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap; }
@@ -213,7 +219,14 @@ header.top {
 .btn-pill:hover .arr { transform: translateX(3px); }
 
 /* Portrait + info */
-.portrait-stack { display: flex; flex-direction: column; gap: 16px; }
+.portrait-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  margin-top: -36px;
+}
+@media (max-width: 900px) { .portrait-stack { margin-top: 0; } }
 .portrait {
   position: relative;
   aspect-ratio: 4 / 5;

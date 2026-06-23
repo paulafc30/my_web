@@ -16,17 +16,19 @@ const COPY = {
         ['con mucha ', 'actitud', ' '],
         ['y aún más ganas de', ' aprender', '.'],
       ],
-      lede: (
+      lede: [
         <>
-          Buenas! Soy <b>Paula Fernández Cañas</b>. He estado trabajando como
-          <b> desarrolladora web junior</b> en BNT Business Telecom, en
-          proyectos web e <b>IoT</b>. Empecé por el front (HTML, CSS,
-          JavaScript, Tailwind) y acabé tocando backend con{' '}
-          <b>PHP, Laravel y MySQL</b>. He trabajado más como frontend, pero el
-          backend me atrae y es por donde quiero seguir creciendo. Actualmente
-          también me estoy formando en IA y Big Data.
-        </>
-      ),
+          Soy <b>Paula Fernández Cañas</b>. He estado trabajando como{' '}
+          <b>desarrolladora web junior</b> en BNT Business Telecom, en proyectos
+          web e <b>IoT</b>.
+        </>,
+        <>
+          Empecé por el front (HTML, CSS, JavaScript, Tailwind) y acabé tocando
+          backend con <b>PHP, Laravel y MySQL</b>. Me atrae el backend y es por
+          donde quiero seguir creciendo. Actualmente también me estoy formando
+          en <b>IA y Big Data</b>.
+        </>,
+      ],
       cta1: 'Ver proyectos',
       cta2: 'Descargar CV',
       info: {
@@ -149,7 +151,7 @@ const COPY = {
     },
     stack: {
       label: 'Stack',
-      title: 'Lo que llevo en la mochila',
+      title: 'Tecnologias y Lenguajes',
       meta: 'Honesta — no soy senior de nada',
       cols: [
         {
@@ -428,17 +430,21 @@ const COPY = {
         ['with a lot of attitude', ' '],
         ['and even more', ' eagerness to learn', '.'],
       ],
-      lede: (
+      lede: [
         <>
-          Hello! I'm <b>Paula Fernández Cañas</b>. I've been working as a{' '}
+          I'm <b>Paula Fernández Cañas</b>. I've been working as a{' '}
           <b>junior web developer</b> at BNT Business Telecom, on web and{' '}
-          <b>IoT</b> projects. I started on the front (HTML, CSS, JavaScript,
-          Tailwind) and ended up writing backend with{' '}
-          <b>PHP, Laravel and MySQL</b>. I've worked more on the frontend, but
-          the backend is where I want to keep growing. I'm also currently
-          studying AI and Big Data.
-        </>
-      ),
+          <b>IoT</b> projects.
+        </>,
+        <>
+          I started on the front (HTML, CSS, JavaScript, Tailwind) and ended up
+          writing backend with <b>PHP, Laravel and MySQL</b>. The backend is
+          where I want to keep growing.
+        </>,
+        <>
+          I'm also currently studying <b>AI and Big Data</b>.
+        </>,
+      ],
       cta1: 'See projects',
       cta2: 'Download CV',
       info: {
@@ -625,9 +631,9 @@ const COPY = {
       p3: (
         <>
           A personal situation meant I had to leave BNT and Málaga and return to
-          Jaén, Andalusia. But I'm ready to get back into the industry with renewed energy
-          and a lot of desire to keep growing. What I'm looking for is a{' '}
-          <b>team</b> where I can do exactly that.
+          Jaén, Andalusia. But I'm ready to get back into the industry with
+          renewed energy and a lot of desire to keep growing. What I'm looking
+          for is a <b>team</b> where I can do exactly that.
         </>
       ),
       timeline: [
@@ -945,7 +951,13 @@ function Hero({ t }) {
             ))}
           </h1>
 
-          <p className="lede">{t.hero.lede}</p>
+          <div className="lede">
+            {Array.isArray(t.hero.lede) ? (
+              t.hero.lede.map((p, i) => <p key={i}>{p}</p>)
+            ) : (
+              <p>{t.hero.lede}</p>
+            )}
+          </div>
 
           <div className="cta-row">
             <a href="#work" className="btn-pill primary">
