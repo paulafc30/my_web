@@ -50,7 +50,6 @@
     color-mix(in oklab, var(--bg-3) 90%, transparent));
 }
 [data-theme="dark"] .section-head .label,
-[data-theme="dark"] .stack-col h4,
 [data-theme="dark"] .timeline .t-item .when {
   color: var(--accent-2);
 }
@@ -424,42 +423,53 @@ header.top {
 }
 
 /* ===== Stack ============================================== */
-.stack-grid {
+.skills-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border: 1px solid var(--rule);
-  border-radius: 14px;
-  overflow: hidden;
-  background: color-mix(in oklab, var(--bg-2) 50%, transparent);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 32px 16px;
+  margin-top: 32px;
 }
-@media (max-width: 720px) { .stack-grid { grid-template-columns: 1fr; } }
-.stack-col { padding: 24px 26px; }
-.stack-col + .stack-col { border-left: 1px solid var(--rule); }
-@media (max-width: 720px) {
-  .stack-col + .stack-col { border-left: 0; border-top: 1px solid var(--rule); }
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
 }
-.stack-col h4 {
-  font-size: 11.5px; color: var(--accent); letter-spacing: 0.14em;
-  text-transform: uppercase; font-weight: 600;
-  margin: 0 0 4px;
+.skill-ring-wrap {
+  position: relative;
+  width: 88px;
+  height: 88px;
 }
-.stack-col .desc { color: var(--fg-2); font-size: 12.5px; margin: 0 0 18px; max-width: 32ch; line-height: 1.55; }
-.stack-col .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.stack-col .chip {
-  font-size: 13px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--rule-2);
+.skill-ring { width: 88px; height: 88px; }
+.skill-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.skill-icon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9px;
+  font-weight: 700;
+  font-family: var(--mono);
+  color: var(--fg-2);
+  text-align: center;
+  line-height: 1.2;
+  width: 36px;
+}
+.skill-name {
+  font-size: 11.5px;
   color: var(--fg);
-  background: var(--bg);
-  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.3;
 }
-.stack-col .chip .nv {
-  font-size: 10px; color: var(--fg-3);
-  text-transform: uppercase; letter-spacing: 0.08em;
-}
-.stack-col.now .chip { background: var(--accent-soft); border-color: color-mix(in oklab, var(--accent) 35%, var(--rule)); }
 
 /* ===== About + timeline ==================================== */
 .about-grid {
@@ -523,9 +533,20 @@ header.top {
   border-radius: 6px;
   padding: 20px 22px;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
 }
+.edu-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.edu-body { display: flex; flex-direction: column; gap: 6px; }
 .edu-degree { font-size: 13px; font-weight: 600; color: var(--fg); line-height: 1.4; }
 .edu-school { font-size: 12px; color: var(--fg-2); margin-top: 3px; }
 .edu-period { font-size: 11px; color: var(--fg-3); margin-top: 2px; }

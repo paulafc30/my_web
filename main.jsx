@@ -151,37 +151,40 @@ const COPY = {
     },
     stack: {
       label: 'Stack',
-      title: 'Tecnologias y Lenguajes',
+      title: 'Tecnologías y Lenguajes',
       meta: 'Honesta — no soy senior de nada',
-      cols: [
-        {
-          h: 'Donde tengo más experiencia',
-          desc: 'Lo que uso a diario en el trabajo o he usado en varios proyectos.',
-          chips: [
-            { n: 'HTML', lvl: 'diario' },
-            { n: 'CSS', lvl: 'diario' },
-            { n: 'JavaScript', lvl: 'diario' },
-            { n: 'Tailwind', lvl: 'diario' },
-            { n: 'PHP', lvl: 'experiencia' },
-            { n: 'Laravel', lvl: 'experiencia' },
-            { n: 'MySQL', lvl: 'experiencia' },
-            { n: 'Git', lvl: 'diario' },
-          ],
-          now: false,
-        },
-        {
-          h: 'Donde estoy creciendo',
-          desc: 'Cosas que toco en proyectos puntuales y donde quiero seguir aprendiendo.',
-          chips: [
-            { n: 'PL/SQL', lvl: 'aprendiendo' },
-            { n: 'Docker', lvl: 'aprendiendo' },
-            { n: 'Oracle', lvl: 'puntual' },
-            { n: 'Python', lvl: 'puntual' },
-            { n: 'Arquitectura', lvl: 'leyendo' },
-            { n: 'Testing', lvl: 'siguiente' },
-          ],
-          now: true,
-        },
+      skills: [
+        { n: 'HTML',         icon: 'https://cdn.simpleicons.org/html5/e34f26',                                                       pct: 90 },
+        { n: 'CSS',          icon: 'https://cdn.simpleicons.org/css/1572b6',                                                          pct: 85 },
+        { n: 'JavaScript',   icon: 'https://cdn.simpleicons.org/javascript/f7df1e',                                                   pct: 82 },
+        { n: 'Git',          icon: 'https://cdn.simpleicons.org/git/f05032',                                                          pct: 82 },
+        { n: 'Tailwind',     icon: 'https://cdn.simpleicons.org/tailwindcss/06b6d4',                                                  pct: 75 },
+        { n: 'PHP',          icon: 'https://cdn.simpleicons.org/php/8892bf',                                                          pct: 72 },
+        { n: 'Laravel',      icon: 'https://cdn.simpleicons.org/laravel/ff2d20',                                                      pct: 72 },
+        { n: 'MySQL',        icon: 'https://cdn.simpleicons.org/mysql/4479a1',                                                        pct: 68 },
+        { n: 'Bootstrap',    icon: 'https://cdn.simpleicons.org/bootstrap/7952b3',                                                    pct: 65 },
+        { n: 'jQuery',       icon: 'https://cdn.simpleicons.org/jquery/0769ad',                                                       pct: 63 },
+        { n: 'Figma',        icon: 'https://cdn.simpleicons.org/figma/f24e1e',                                                        pct: 62 },
+        { n: 'CodeIgniter',  icon: 'https://cdn.simpleicons.org/codeigniter/ef4223',                                                  pct: 58 },
+        { n: 'Linux',        icon: 'https://cdn.simpleicons.org/linux/111111',                                                        pct: 55 },
+        { n: 'React',        icon: 'https://cdn.simpleicons.org/react/61dafb',                                                        pct: 52 },
+        { n: 'XML',          icon: null,                                                                                               pct: 52 },
+        { n: 'JSON',         icon: null,                                                                                               pct: 50 },
+        { n: 'TypeScript',   icon: 'https://cdn.simpleicons.org/typescript/3178c6',                                                   pct: 45 },
+        { n: 'PL/SQL',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',           pct: 42 },
+        { n: 'Docker',       icon: 'https://cdn.simpleicons.org/docker/2496ed',                                                       pct: 42 },
+        { n: 'Node.js',      icon: 'https://cdn.simpleicons.org/nodedotjs/339933',                                                    pct: 38 },
+        { n: 'Python',       icon: 'https://cdn.simpleicons.org/python/3776ab',                                                       pct: 35 },
+        { n: 'Vitest',       icon: 'https://cdn.simpleicons.org/vitest/6e9f18',                                                       pct: 33 },
+        { n: 'Java',         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/java/java-original.svg',               pct: 30 },
+        { n: 'MATLAB',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/matlab/matlab-original.svg',           pct: 30 },
+        { n: 'Oracle DB',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',           pct: 30 },
+        { n: 'Cypress',      icon: 'https://cdn.simpleicons.org/cypress/69d3a7',                                                      pct: 28 },
+        { n: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud/4285f4',                                                  pct: 28 },
+        { n: 'Spring',       icon: 'https://cdn.simpleicons.org/spring/6db33f',                                                       pct: 25 },
+        { n: 'AWS',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/amazonwebservices/amazonwebservices-original.svg', pct: 25 },
+        { n: 'C++',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/cplusplus/cplusplus-original.svg',     pct: 25 },
+        { n: '.NET',         icon: 'https://cdn.simpleicons.org/dotnet/512bd4',                                                       pct: 20 },
       ],
     },
     about: {
@@ -267,11 +270,13 @@ const COPY = {
           school: 'MEDAC',
           degree: 'Técnico Superior en Desarrollo de Aplicaciones Web',
           period: 'sept. 2023 – jun. 2025',
+          logo: 'assets/images/MEDAC_imagotipo_cuadr_azul_PNG.png',
         },
         {
           school: 'IES Huarte de San Juan',
           degree: 'Bachillerato Tecnológico',
           period: 'sept. 2020 – jun. 2022',
+          logo: 'https://ieshuartedesanjuan.es/wp-content/uploads/2020/03/cropped-logo1-320x320.png',
         },
       ],
       certs: [
@@ -567,37 +572,40 @@ const COPY = {
     },
     stack: {
       label: 'Stack',
-      title: 'What I carry in the backpack',
+      title: 'Technologies & Languages',
       meta: "Honest — I'm senior at nothing",
-      cols: [
-        {
-          h: 'Where I have more experience',
-          desc: 'What I use daily at work or have used across several projects.',
-          chips: [
-            { n: 'HTML', lvl: 'daily' },
-            { n: 'CSS', lvl: 'daily' },
-            { n: 'JavaScript', lvl: 'daily' },
-            { n: 'Tailwind', lvl: 'daily' },
-            { n: 'PHP', lvl: 'experience' },
-            { n: 'Laravel', lvl: 'experience' },
-            { n: 'MySQL', lvl: 'experience' },
-            { n: 'Git', lvl: 'daily' },
-          ],
-          now: false,
-        },
-        {
-          h: "Where I'm growing",
-          desc: 'Things I touch on specific projects and want to keep learning.',
-          chips: [
-            { n: 'PL/SQL', lvl: 'learning' },
-            { n: 'Docker', lvl: 'learning' },
-            { n: 'Oracle', lvl: 'occasional' },
-            { n: 'Python', lvl: 'occasional' },
-            { n: 'Architecture', lvl: 'reading' },
-            { n: 'Testing', lvl: 'next' },
-          ],
-          now: true,
-        },
+      skills: [
+        { n: 'HTML',         icon: 'https://cdn.simpleicons.org/html5/e34f26',                                                       pct: 90 },
+        { n: 'CSS',          icon: 'https://cdn.simpleicons.org/css/1572b6',                                                          pct: 85 },
+        { n: 'JavaScript',   icon: 'https://cdn.simpleicons.org/javascript/f7df1e',                                                   pct: 82 },
+        { n: 'Git',          icon: 'https://cdn.simpleicons.org/git/f05032',                                                          pct: 82 },
+        { n: 'Tailwind',     icon: 'https://cdn.simpleicons.org/tailwindcss/06b6d4',                                                  pct: 75 },
+        { n: 'PHP',          icon: 'https://cdn.simpleicons.org/php/8892bf',                                                          pct: 72 },
+        { n: 'Laravel',      icon: 'https://cdn.simpleicons.org/laravel/ff2d20',                                                      pct: 72 },
+        { n: 'MySQL',        icon: 'https://cdn.simpleicons.org/mysql/4479a1',                                                        pct: 68 },
+        { n: 'Bootstrap',    icon: 'https://cdn.simpleicons.org/bootstrap/7952b3',                                                    pct: 65 },
+        { n: 'jQuery',       icon: 'https://cdn.simpleicons.org/jquery/0769ad',                                                       pct: 63 },
+        { n: 'Figma',        icon: 'https://cdn.simpleicons.org/figma/f24e1e',                                                        pct: 62 },
+        { n: 'CodeIgniter',  icon: 'https://cdn.simpleicons.org/codeigniter/ef4223',                                                  pct: 58 },
+        { n: 'Linux',        icon: 'https://cdn.simpleicons.org/linux/111111',                                                        pct: 55 },
+        { n: 'React',        icon: 'https://cdn.simpleicons.org/react/61dafb',                                                        pct: 52 },
+        { n: 'XML',          icon: null,                                                                                               pct: 52 },
+        { n: 'JSON',         icon: null,                                                                                               pct: 50 },
+        { n: 'TypeScript',   icon: 'https://cdn.simpleicons.org/typescript/3178c6',                                                   pct: 45 },
+        { n: 'PL/SQL',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',           pct: 42 },
+        { n: 'Docker',       icon: 'https://cdn.simpleicons.org/docker/2496ed',                                                       pct: 42 },
+        { n: 'Node.js',      icon: 'https://cdn.simpleicons.org/nodedotjs/339933',                                                    pct: 38 },
+        { n: 'Python',       icon: 'https://cdn.simpleicons.org/python/3776ab',                                                       pct: 35 },
+        { n: 'Vitest',       icon: 'https://cdn.simpleicons.org/vitest/6e9f18',                                                       pct: 33 },
+        { n: 'Java',         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/java/java-original.svg',               pct: 30 },
+        { n: 'MATLAB',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/matlab/matlab-original.svg',           pct: 30 },
+        { n: 'Oracle DB',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',           pct: 30 },
+        { n: 'Cypress',      icon: 'https://cdn.simpleicons.org/cypress/69d3a7',                                                      pct: 28 },
+        { n: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud/4285f4',                                                  pct: 28 },
+        { n: 'Spring',       icon: 'https://cdn.simpleicons.org/spring/6db33f',                                                       pct: 25 },
+        { n: 'AWS',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/amazonwebservices/amazonwebservices-original.svg', pct: 25 },
+        { n: 'C++',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/cplusplus/cplusplus-original.svg',     pct: 25 },
+        { n: '.NET',         icon: 'https://cdn.simpleicons.org/dotnet/512bd4',                                                       pct: 20 },
       ],
     },
     about: {
@@ -681,11 +689,13 @@ const COPY = {
           school: 'MEDAC',
           degree: 'Higher Vocational Diploma in Web Application Development',
           period: 'Sep. 2023 – Jun. 2025',
+          logo: 'assets/images/MEDAC_imagotipo_cuadr_azul_PNG.png',
         },
         {
           school: 'IES Huarte de San Juan',
           degree: 'Technology Baccalaureate',
           period: 'Sep. 2020 – Jun. 2022',
+          logo: 'https://ieshuartedesanjuan.es/wp-content/uploads/2020/03/cropped-logo1-320x320.png',
         },
       ],
       certs: [
@@ -1140,8 +1150,10 @@ function Projects({ t }) {
 
 // ------- Stack -------
 function Stack({ t }) {
+  const R = 36;
+  const CIRC = 2 * Math.PI * R;
   return (
-    <section className="section wrap">
+    <section className="section wrap" id="stack">
       <div className="section-head">
         <div>
           <div className="label">{t.stack.label}</div>
@@ -1149,21 +1161,29 @@ function Stack({ t }) {
         </div>
         <div className="meta">{t.stack.meta}</div>
       </div>
-      <div className="stack-grid">
-        {t.stack.cols.map((col, ci) => (
-          <div className={'stack-col' + (col.now ? ' now' : '')} key={ci}>
-            <h4>{col.h}</h4>
-            <p className="desc">{col.desc}</p>
-            <div className="chips">
-              {col.chips.map((c, i) => (
-                <span className="chip" key={i}>
-                  {c.n}
-                  <span className="nv">{c.lvl}</span>
-                </span>
-              ))}
+      <div className="skills-grid">
+        {t.stack.skills.map((s, i) => {
+          const offset = CIRC * (1 - s.pct / 100);
+          return (
+            <div key={i} className="skill-item">
+              <div className="skill-ring-wrap">
+                <svg className="skill-ring" viewBox="0 0 88 88">
+                  <circle cx="44" cy="44" r={R} fill="none" stroke="var(--rule)" strokeWidth="3.5"/>
+                  <circle cx="44" cy="44" r={R} fill="none"
+                    stroke="var(--accent)" strokeWidth="3.5"
+                    strokeDasharray={`${CIRC} ${CIRC}`}
+                    strokeDashoffset={offset}
+                    strokeLinecap="round"
+                    transform="rotate(-90 44 44)"/>
+                </svg>
+                {s.icon
+                  ? <img className="skill-icon" src={s.icon} alt={s.n} />
+                  : <span className="skill-icon-text">{s.n}</span>}
+              </div>
+              <span className="skill-name">{s.n}</span>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
@@ -1214,9 +1234,12 @@ function Training({ t }) {
       <div className="training-edu">
         {t.training.edu.map((e, i) => (
           <div key={i} className="edu-item">
-            <div className="edu-degree">{e.degree}</div>
-            <div className="edu-school">{e.school}</div>
-            <div className="edu-period">{e.period}</div>
+            {e.logo && <img className="edu-logo" src={e.logo} alt={e.school} />}
+            <div className="edu-body">
+              <div className="edu-degree">{e.degree}</div>
+              <div className="edu-school">{e.school}</div>
+              <div className="edu-period">{e.period}</div>
+            </div>
           </div>
         ))}
       </div>
