@@ -42,6 +42,7 @@ const COPY = {
     projects: {
       label: 'Proyectos',
       title: 'Proyectos en los que estoy trabajando',
+      roleLabel: 'rol',
       meta: 'Desliza →',
       list: [
         /* 01 — pendiente de revisar
@@ -463,6 +464,7 @@ const COPY = {
     projects: {
       label: 'Projects',
       title: 'Projects I am working on',
+      roleLabel: 'role',
       meta: 'Swipe →',
       list: [
         /* 01 — pending review
@@ -1022,7 +1024,7 @@ function Hero({ t }) {
 }
 
 // ------- Project card -------
-function ProjectCard({ p }) {
+function ProjectCard({ p, roleLabel = 'role' }) {
   const tagClass = p.status === 'wip' ? 'tag' : 'tag muted';
   return (
     <article className="pcard">
@@ -1043,7 +1045,7 @@ function ProjectCard({ p }) {
         <p>{p.desc}</p>
 
         <div className="role">
-          <span className="k">role</span>
+          <span className="k">{roleLabel}</span>
           <span>{p.role}</span>
         </div>
 
@@ -1132,7 +1134,7 @@ function Projects({ t }) {
         </div>
         <div className="carousel" ref={ref}>
           {t.projects.list.map((p, i) => (
-            <ProjectCard key={i} p={p} />
+            <ProjectCard key={i} p={p} roleLabel={t.projects.roleLabel} />
           ))}
         </div>
         <div className="car-progress">
