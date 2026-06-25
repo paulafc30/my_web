@@ -367,6 +367,24 @@ const COPY = {
       seeAll: 'Ver todas →',
       posts: [
         {
+          date: '2026 · 06 · 25',
+          kind: 'Proyecto',
+          title: 'AparcaYa: predicción de aparcamiento en tiempo real con ML y visión artificial',
+          excerpt:
+            'Proyecto final del curso de IA y Big Data junto a Luisa Moreira Mendoza. Construimos un Random Forest para predecir la ocupación de los 12 aparcamientos de Málaga a 1-2 horas vista, y un modelo de visión artificial con MobileNetV2 para clasificar plazas desde cámaras de tráfico reales. Todo integrado con un chatbot y mapa interactivo.',
+          time: '4 min',
+          link: 'https://www.linkedin.com/posts/paula-fernandez-canas_smartcity-machinelearning-python-share-7475982668053037056-oPE4/',
+        },
+        {
+          date: '2026 · 06 · 25',
+          kind: 'Formación',
+          title: 'Cerrando el curso de IA y Big Data en 5G',
+          excerpt:
+            'Ha sido breve pero intenso. Me llevo bases sólidas en tecnologías que no conocía, proyectos que me han hecho pensar de verdad y un grupo de compañeros estupendo. Gracias al profesor Pablo Udias por conseguir que todo pareciera fácil y divertido.',
+          time: '2 min',
+          link: 'https://www.linkedin.com/posts/paula-fernandez-canas_ia-bigdata-formacionen5g-share-7475985760723288065-c1JW/',
+        },
+        {
           date: '2026 · 06 · 07',
           kind: 'Formación',
           title: 'Mi primer flujo ETL con Pentaho Data Integration',
@@ -786,6 +804,24 @@ const COPY = {
       readMore: 'read',
       seeAll: 'See all →',
       posts: [
+        {
+          date: '2026 · 06 · 25',
+          kind: 'Project',
+          title: 'AparcaYa: real-time parking prediction with ML and computer vision',
+          excerpt:
+            'Final project of the AI & Big Data course, built with Luisa Moreira Mendoza. We trained a Random Forest to predict occupancy across 12 Málaga car parks 1-2 hours ahead, and a MobileNetV2 vision model to classify spaces from real traffic cameras. All integrated with a chatbot and interactive map.',
+          time: '4 min',
+          link: 'https://www.linkedin.com/posts/paula-fernandez-canas_smartcity-machinelearning-python-share-7475982668053037056-oPE4/',
+        },
+        {
+          date: '2026 · 06 · 25',
+          kind: 'Training',
+          title: 'Wrapping up the AI & Big Data in 5G course',
+          excerpt:
+            'Short but intense. I leave with solid foundations in technologies I didn\'t know, projects that made me think hard, and a great group of classmates. Thanks to professor Pablo Udias for making it all feel easy and fun.',
+          time: '2 min',
+          link: 'https://www.linkedin.com/posts/paula-fernandez-canas_ia-bigdata-formacionen5g-share-7475985760723288065-c1JW/',
+        },
         {
           date: '2026 · 06 · 07',
           kind: 'Training',
