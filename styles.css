@@ -82,7 +82,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* Layout */
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
-@media (max-width: 720px) { .wrap { padding: 0 20px; } }
+@media (max-width: 720px) { .wrap { padding: 0 24px; } }
 
 .dim { color: var(--fg-2); }
 .muted { color: var(--fg-3); }
@@ -140,7 +140,6 @@ header.top {
 .nav-mobile { display: none; }
 
 @media (max-width: 720px) {
-  .wrap { padding: 0 24px; }
   .top-inner { grid-template-columns: auto 1fr; }
   .nav { display: none; }
   .brand .role { display: none; }
@@ -148,7 +147,6 @@ header.top {
     display: flex;
     overflow-x: auto;
     scrollbar-width: none;
-    border-top: 1px solid var(--rule);
     padding: 0 24px;
     gap: 0;
   }
@@ -224,6 +222,8 @@ header.top {
 .lede b { color: var(--fg); font-weight: 600; }
 
 .cta-row { display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap; }
+.hero-cta { grid-column: 1; }
+@media (max-width: 900px) { .hero-cta { grid-column: 1; margin-top: 0; } }
 .btn-pill {
   border: 1px solid var(--rule-2);
   border-radius: 999px;
@@ -720,15 +720,19 @@ header.top {
 }
 .email-row a { color: var(--fg); font-weight: 500; }
 .email-row a:hover { color: var(--accent); }
-.email-row .copy {
+.email-row .copy-icon {
   margin-left: auto;
-  font-size: 12px; color: var(--fg-2);
-  border: 1px solid var(--rule-2);
-  border-radius: 999px;
-  padding: 8px 14px;
-  transition: all .15s ease;
+  color: var(--fg-3);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color .15s ease;
+  flex-shrink: 0;
 }
-.email-row .copy:hover { color: var(--accent); border-color: var(--accent); }
+.email-row .copy-icon:hover { color: var(--accent); }
 
 .contact .links { display: flex; gap: 22px; margin-top: 22px; font-size: 13px; flex-wrap: wrap; }
 .contact .links a {
@@ -829,11 +833,11 @@ footer.bot {
     margin-bottom: 28px;
   }
 
-  /* Carousel: ajustar al padding de .wrap en móvil (20px) */
+  /* Carousel: ajustar al padding de .wrap en móvil (24px) */
   .carousel {
-    scroll-padding-left: 20px;
-    padding: 4px 20px 20px;
-    margin: 0 -20px;
+    scroll-padding-left: 24px;
+    padding: 4px 24px 20px;
+    margin: 0 -24px;
   }
   .car-controls { left: 0; right: 0; }
   .car-btn { width: 36px; height: 36px; font-size: 12px; }
@@ -852,7 +856,6 @@ footer.bot {
 
   /* Contacto */
   .email-row { flex-wrap: wrap; gap: 10px; }
-  .email-row .copy { margin-left: 0; }
   .contact .kicker { font-size: 13.5px; }
 
   /* Footer */

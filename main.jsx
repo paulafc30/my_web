@@ -389,7 +389,6 @@ const COPY = {
           name: 'Programación en IA y Big Data aplicables en 5G',
           issuer: 'Formación en Tecnología 5G · Polo Digital',
           date: 'may. – jun. 2026',
-          highlight: true,
           icon: '🤖',
         },
         {
@@ -1224,19 +1223,6 @@ function Hero({ t }) {
             )}
           </div>
 
-          <div className="cta-row">
-            <a href="#work" className="btn-pill primary">
-              {t.hero.cta1} <span className="arr">→</span>
-            </a>
-            <a
-              href="assets/paula-fernandez-cv.pdf"
-              download="Paula-Fernandez-Canas-CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-pill">
-              {t.hero.cta2} <span className="arr">↓</span>
-            </a>
-          </div>
         </div>
 
         <div className="portrait-stack">
@@ -1270,6 +1256,20 @@ function Hero({ t }) {
               </span>
             </div>
           </div>
+        </div>
+
+        <div className="cta-row hero-cta">
+          <a href="#work" className="btn-pill primary">
+            {t.hero.cta1} <span className="arr">→</span>
+          </a>
+          <a
+            href="assets/paula-fernandez-cv.pdf"
+            download="Paula-Fernandez-Canas-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-pill">
+            {t.hero.cta2} <span className="arr">↓</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1647,9 +1647,17 @@ function Contact({ t }) {
           <div className="contact-left">
             <p className="kicker">{t.contact.kicker}</p>
             <div className="email-row">
-              <a href="https://mail.google.com/mail/?view=cm&to=paulafc30@gmail.com" target="_blank" rel="noopener noreferrer">paulafc30@gmail.com</a>
-              <button className="copy" onClick={copy}>
-                {copied ? t.contact.copied : t.contact.copy}
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=paulafc30@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer">
+                paulafc30@gmail.com
+              </a>
+              <button className="copy-icon" onClick={copy} aria-label="Copiar correo" title={copied ? t.contact.copied : t.contact.copy}>
+                {copied
+                  ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  : <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                }
               </button>
             </div>
             <div className="links">
