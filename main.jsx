@@ -450,7 +450,7 @@ const COPY = {
         {
           name: 'Español',
           level: 'Nativo',
-          icon: '🇪🇸',
+          icon: 'ES',
         },
         {
           name: 'Inglés',
@@ -461,14 +461,23 @@ const COPY = {
     },
     blog: {
       label: 'Blog',
-      title: 'Mis descubrimientos.',
+      title: 'Mis Notas.',
       meta: 'Notas de campo · honestas',
       intro:
-        'No soy ninguna experta, pero me encanta aprender cosas nuevas y compartir mis descubrimientos.',
+        'No soy ninguna experta, pero me encanta aprender cosas nuevas, compartir mis descubrimientos y mi forma de ver el mundo.',
       empty: 'Pronto más notas.',
       readMore: 'leer',
       seeAll: 'Ver todas →',
       posts: [
+        {
+          date: '2026 · 07 · 12',
+          kind: 'Personal',
+          title: 'ferava.es: Fernández, Ambición, Valiente',
+          excerpt:
+            'He registrado ferava.es como mi dominio personal. Fer de Fernández, A de Ambición, Va de Valiente — porque hace falta valentía para dedicarte a algo que ya hacen miles de personas, y hacerlo igualmente. No porque sea original, sino porque la originalidad rara vez está en inventar algo desde cero: está en mejorar lo que ya existe e innovar en la forma de presentarlo y venderlo. Ahí es donde se marca la diferencia. Es mi pequeña declaración de intenciones.',
+          time: '1 min',
+          link: null,
+        },
         {
           date: '2026 · 06 · 25',
           kind: 'Proyecto',
@@ -993,7 +1002,7 @@ const COPY = {
         {
           name: 'Spanish',
           level: 'Native',
-          icon: '🇪🇸',
+          icon: 'ES',
         },
         {
           name: 'English',
@@ -1012,6 +1021,15 @@ const COPY = {
       readMore: 'read',
       seeAll: 'See all →',
       posts: [
+        {
+          date: '2026 · 07 · 12',
+          kind: 'Personal',
+          title: 'ferava.es: Fernández, Ambition, Valiente',
+          excerpt:
+            "I registered ferava.es as my personal domain. Fer from Fernández, A from Ambición (Ambition), Va from Valiente (Brave) — because it takes courage to dedicate yourself to something thousands of people already do, and do it anyway. Not because it's original — originality rarely comes from building something from scratch. It comes from improving what already exists and innovating in how you present and sell it. That's where the difference is made. My small declaration of intent.",
+          time: '1 min',
+          link: null,
+        },
         {
           date: '2026 · 06 · 25',
           kind: 'Project',
@@ -1222,7 +1240,6 @@ function Hero({ t }) {
               <p>{t.hero.lede}</p>
             )}
           </div>
-
         </div>
 
         <div className="portrait-stack">
@@ -1566,22 +1583,39 @@ function Blog({ t }) {
       </div>
       {t.blog.intro && <p className="blog-intro">{t.blog.intro}</p>}
       <div className="blog-grid">
-        {t.blog.posts.map((p, i) => (
-          <a key={i} href={p.link} className="bcard">
-            <div className="bmeta">
-              <span className="bdate">{p.date}</span>
-              <span className="bsep">·</span>
-              <span className="bkind">{p.kind}</span>
-              <span className="bsep">·</span>
-              <span className="btime">{p.time}</span>
-            </div>
-            <h3 className="btitle">{p.title}</h3>
-            <p className="bexcerpt">{p.excerpt}</p>
-            <span className="bread">
-              {t.blog.readMore} <span className="arr">→</span>
-            </span>
-          </a>
-        ))}
+        {t.blog.posts.map((p, i) => {
+          const cardProps = {
+            key: i,
+            className: 'bcard' + (p.link ? '' : ' bcard-static'),
+          };
+          const inner = (
+            <>
+              <div className="bmeta">
+                <span className="bdate">{p.date}</span>
+                <span className="bsep">·</span>
+                <span className="bkind">{p.kind}</span>
+              </div>
+              <h3 className="btitle">{p.title}</h3>
+              <p className="bexcerpt">{p.excerpt}</p>
+              {p.link && (
+                <span className="bread">
+                  {t.blog.readMore} <span className="arr">→</span>
+                </span>
+              )}
+            </>
+          );
+          return p.link ? (
+            <a
+              {...cardProps}
+              href={p.link}
+              target="_blank"
+              rel="noopener noreferrer">
+              {inner}
+            </a>
+          ) : (
+            <div {...cardProps}>{inner}</div>
+          );
+        })}
       </div>
     </section>
   );
@@ -1653,11 +1687,37 @@ function Contact({ t }) {
                 rel="noopener noreferrer">
                 paulafc30@gmail.com
               </a>
-              <button className="copy-icon" onClick={copy} aria-label="Copiar correo" title={copied ? t.contact.copied : t.contact.copy}>
-                {copied
-                  ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  : <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                }
+              <button
+                className="copy-icon"
+                onClick={copy}
+                aria-label="Copiar correo"
+                title={copied ? t.contact.copied : t.contact.copy}>
+                {copied ? (
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                ) : (
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                )}
               </button>
             </div>
             <div className="links">

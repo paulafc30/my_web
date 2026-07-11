@@ -166,7 +166,7 @@ header.top {
 }
 
 /* ===== Hero ================================================ */
-.hero { padding: 80px 0 64px; position: relative; }
+.hero { padding-top: 80px; padding-bottom: 64px; position: relative; }
 
 .hero-grid {
   display: grid;
@@ -281,7 +281,7 @@ header.top {
 }
 
 /* ===== Section heading ===================================== */
-.section { padding: 96px 0; position: relative; }
+.section { padding-top: 96px; padding-bottom: 96px; position: relative; }
 .section-head {
   display: flex; align-items: flex-end; justify-content: space-between;
   gap: 24px;
@@ -696,7 +696,8 @@ header.top {
 
 /* ===== Contact ============================================ */
 .contact {
-  padding: 100px 0 80px;
+  padding-top: 100px;
+  padding-bottom: 80px;
   border-top: 1px solid var(--rule);
 }
 .contact h2 {
@@ -821,9 +822,9 @@ footer.bot {
 /* ===== Mobile ≤720px ====================================== */
 @media (max-width: 720px) {
   /* Espaciado general */
-  .hero { padding: 52px 0 40px; }
-  .section { padding: 64px 0; }
-  .contact { padding: 64px 0 52px; }
+  .hero { padding-top: 52px; padding-bottom: 40px; }
+  .section { padding-top: 64px; padding-bottom: 64px; }
+  .contact { padding-top: 64px; padding-bottom: 52px; }
 
   /* Section header: apila label+h2 y meta */
   .section-head {
@@ -864,8 +865,8 @@ footer.bot {
 
 /* ===== Mobile ≤480px (pantallas pequeñas) ================= */
 @media (max-width: 480px) {
-  .hero { padding: 40px 0 32px; }
-  .section { padding: 52px 0; }
+  .hero { padding-top: 40px; padding-bottom: 32px; }
+  .section { padding-top: 52px; padding-bottom: 52px; }
 
   /* Headline más compacto */
   .headline { font-size: clamp(26px, 8vw, 40px); }
