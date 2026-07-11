@@ -333,7 +333,7 @@ function Blog({ t }) {
 function Contact({ t }) {
   const [copied, setCopied] = React.useState(false);
   function copy() {
-    navigator.clipboard?.writeText('contacto@ferava.es');
+    navigator.clipboard?.writeText('paulafc30@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 1400);
   }
@@ -358,7 +358,7 @@ function Contact({ t }) {
         </h2>
         <p className="kicker">{t.contact.kicker}</p>
         <div className="email-row">
-          <a href="mailto:contacto@ferava.es">contacto@ferava.es</a>
+          <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
           <button className="copy" onClick={copy}>
             {copied ? t.contact.copied : t.contact.copy}
           </button>
