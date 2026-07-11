@@ -1,155 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Secure Files App · Paula Fernández Cañas</title>
-    <meta name="description" content="Estudio de caso: plataforma segura de almacenamiento y compartición de archivos con autenticación 2FA. Laravel, PHP, Docker, PL/SQL.">
+    <meta
+      name="description"
+      content="Estudio de caso: plataforma segura de almacenamiento y compartición de archivos con autenticación 2FA. Laravel, PHP, Docker, PL/SQL." />
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
     <header class="header">
-        <div class="container">
-            <nav class="nav" aria-label="Navegación principal">
-                <a href="index.html" class="logo">Paula Fernández</a>
-                <ul class="nav-list">
-                    <li><a href="index.html#projects">Proyectos</a></li>
-                    <li><a href="index.html#about">Sobre mí</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <nav class="nav" aria-label="Navegación principal">
+          <a href="index.html" class="logo">Paula Fernández</a>
+          <ul class="nav-list">
+            <li><a href="index.html#projects">Proyectos</a></li>
+            <li><a href="index.html#about">Sobre mí</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <div class="container">
+      <div class="container">
+        <section class="intro" data-animate>
+          <p class="intro-eyebrow">Caso de estudio · 01</p>
+          <h1 class="project-headline">
+            Secure Files App: gestión segura de archivos con 2FA y control de
+            acceso avanzado.
+          </h1>
 
-            <section class="intro" data-animate>
-                <p class="intro-eyebrow">Caso de estudio · 01</p>
-                <h1 class="project-headline">
-                    Secure Files App: gestión segura de archivos con 2FA y control de acceso avanzado.
-                </h1>
+          <div class="project-meta-grid">
+            <div>
+              <span class="meta-label">Mi rol</span>
+              <p class="meta-data">Desarrollo Fullstack</p>
+            </div>
+            <div>
+              <span class="meta-label">Stack</span>
+              <p class="meta-data">Laravel, PHP, JavaScript, Docker, PL/SQL</p>
+            </div>
+            <div>
+              <span class="meta-label">Periodo</span>
+              <p class="meta-data">
+                Enero — Junio 2025 · Toomba Digital Agency
+              </p>
+            </div>
+            <div>
+              <span class="meta-label">Demo</span>
+              <p class="meta-data">
+                <a
+                  href="https://secure-files-app.up.railway.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="meta-link"
+                  >Abrir demo ↗</a
+                >
+              </p>
+            </div>
+          </div>
+        </section>
 
-                <div class="project-meta-grid">
-                    <div>
-                        <span class="meta-label">Mi rol</span>
-                        <p class="meta-data">Desarrollo Fullstack</p>
-                    </div>
-                    <div>
-                        <span class="meta-label">Stack</span>
-                        <p class="meta-data">Laravel, PHP, JavaScript, Docker, PL/SQL</p>
-                    </div>
-                    <div>
-                        <span class="meta-label">Periodo</span>
-                        <p class="meta-data">Enero — Junio 2025 · Toomba Digital Agency</p>
-                    </div>
-                    <div>
-                        <span class="meta-label">Demo</span>
-                        <p class="meta-data">
-                            <a href="https://secure-files-app.up.railway.app/" target="_blank" rel="noopener noreferrer" class="meta-link">Abrir demo ↗</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
+        <section class="case-study-section" data-animate>
+          <h2 class="section-subtitle">El problema</h2>
+          <p>
+            Compartir documentos sensibles por correo o nubes públicas tiene dos
+            puntos débiles: cualquiera con el enlace puede acceder, y una vez
+            enviado, el remitente pierde el control sobre el archivo.
+            Necesitábamos una plataforma donde el control real lo tuviera el
+            dueño del documento.
+          </p>
+          <p>
+            El objetivo fue construir un sistema donde subir un archivo, decidir
+            quién puede verlo y por cuánto tiempo, fuera tan simple como
+            adjuntar un archivo a un email — pero con garantías de seguridad
+            reales detrás.
+          </p>
+        </section>
 
-            <section class="case-study-section" data-animate>
-                <h2 class="section-subtitle">El problema</h2>
-                <p>
-                    Compartir documentos sensibles por correo o nubes públicas tiene dos puntos débiles: cualquiera con el enlace puede acceder, y una vez enviado, el remitente pierde el control sobre el archivo. Necesitábamos una plataforma donde el control real lo tuviera el dueño del documento.
-                </p>
-                <p>
-                    El objetivo fue construir un sistema donde subir un archivo, decidir quién puede verlo y por cuánto tiempo, fuera tan simple como adjuntar un archivo a un email — pero con garantías de seguridad reales detrás.
-                </p>
-            </section>
+        <section class="case-study-section" data-animate>
+          <h2 class="section-subtitle">Qué construí</h2>
 
-            <section class="case-study-section" data-animate>
-                <h2 class="section-subtitle">Qué construí</h2>
+          <h3>Autenticación en dos pasos (2FA)</h3>
+          <p>
+            Cualquier acceso a un archivo compartido pasa por una verificación
+            2FA por email. El destinatario recibe un enlace, y para abrirlo debe
+            introducir un código temporal enviado a la cuenta autorizada. Esto
+            evita que el simple reenvío del enlace dé acceso al archivo.
+          </p>
 
-                <h3>Autenticación en dos pasos (2FA)</h3>
-                <p>
-                    Cualquier acceso a un archivo compartido pasa por una verificación 2FA por email. El destinatario recibe un enlace, y para abrirlo debe introducir un código temporal enviado a la cuenta autorizada. Esto evita que el simple reenvío del enlace dé acceso al archivo.
-                </p>
+          <h3>Compartición y solicitudes por email</h3>
+          <p>
+            Además de compartir, los usuarios pueden
+            <strong>solicitar</strong> archivos a otros: envías una petición por
+            email, el receptor sube el documento a una carpeta protegida y queda
+            automáticamente vinculado a la solicitud. Útil para gestiones
+            administrativas, contratos o entregables entre proveedor y cliente.
+          </p>
 
-                <h3>Compartición y solicitudes por email</h3>
-                <p>
-                    Además de compartir, los usuarios pueden <strong>solicitar</strong> archivos a otros: envías una petición por email, el receptor sube el documento a una carpeta protegida y queda automáticamente vinculado a la solicitud. Útil para gestiones administrativas, contratos o entregables entre proveedor y cliente.
-                </p>
+          <h3>Control granular de permisos</h3>
+          <p>
+            Cada archivo tiene reglas independientes: quién puede verlo,
+            descargarlo, durante cuánto tiempo, y quién puede o no eliminarlo.
+            Las restricciones se persisten en BBDD y se validan en cada
+            operación, nunca solo en el frontend.
+          </p>
 
-                <h3>Control granular de permisos</h3>
-                <p>
-                    Cada archivo tiene reglas independientes: quién puede verlo, descargarlo, durante cuánto tiempo, y quién puede o no eliminarlo. Las restricciones se persisten en BBDD y se validan en cada operación, nunca solo en el frontend.
-                </p>
+          <div class="key-challenge">
+            <h3 class="challenge-title">
+              Reto principal: invalidar el acceso de forma fiable
+            </h3>
+            <p>
+              Lo más difícil fue garantizar que cuando un dueño revoca el acceso
+              a un archivo, ninguna sesión activa, enlace cacheado o intento de
+              descarga pueda saltarse esa decisión. La solución pasó por mover
+              toda la validación al backend, firmar tokens de descarga con
+              expiración corta y registrar cada acceso en logs auditables.
+            </p>
+          </div>
+        </section>
 
-                <div class="key-challenge">
-                    <h3 class="challenge-title">Reto principal: invalidar el acceso de forma fiable</h3>
-                    <p>
-                        Lo más difícil fue garantizar que cuando un dueño revoca el acceso a un archivo, ninguna sesión activa, enlace cacheado o intento de descarga pueda saltarse esa decisión. La solución pasó por mover toda la validación al backend, firmar tokens de descarga con expiración corta y registrar cada acceso en logs auditables.
-                    </p>
-                </div>
-            </section>
+        <section class="case-study-section" data-animate>
+          <h2 class="section-subtitle">Decisiones técnicas</h2>
 
-            <section class="case-study-section" data-animate>
-                <h2 class="section-subtitle">Decisiones técnicas</h2>
+          <h3>Laravel + PHP en el backend</h3>
+          <p>
+            Elegí Laravel por su sistema de middleware (perfecto para validar
+            permisos en cada request), su autenticación robusta y la facilidad
+            para implementar políticas de acceso por modelo. La capa de bases de
+            datos en PL/SQL me permitió encapsular la lógica crítica de permisos
+            en procedimientos almacenados, reduciendo la superficie de error
+            desde la aplicación.
+          </p>
 
-                <h3>Laravel + PHP en el backend</h3>
-                <p>
-                    Elegí Laravel por su sistema de middleware (perfecto para validar permisos en cada request), su autenticación robusta y la facilidad para implementar políticas de acceso por modelo. La capa de bases de datos en PL/SQL me permitió encapsular la lógica crítica de permisos en procedimientos almacenados, reduciendo la superficie de error desde la aplicación.
-                </p>
+          <h3>Docker para entornos reproducibles</h3>
+          <p>
+            Todo el entorno de desarrollo y la imagen de producción viven en
+            contenedores. Eso me dio un despliegue limpio en Railway con la
+            misma configuración que usaba en local — sin sorpresas.
+          </p>
 
-                <h3>Docker para entornos reproducibles</h3>
-                <p>
-                    Todo el entorno de desarrollo y la imagen de producción viven en contenedores. Eso me dio un despliegue limpio en Railway con la misma configuración que usaba en local — sin sorpresas.
-                </p>
+          <h3>JavaScript en el frontend</h3>
+          <p>
+            UI ligera y sin frameworks pesados. Validaciones, subidas con
+            feedback en tiempo real y manejo asíncrono de las solicitudes de
+            archivos.
+          </p>
+        </section>
 
-                <h3>JavaScript en el frontend</h3>
-                <p>
-                    UI ligera y sin frameworks pesados. Validaciones, subidas con feedback en tiempo real y manejo asíncrono de las solicitudes de archivos.
-                </p>
-            </section>
+        <section class="case-study-section" data-animate>
+          <h2 class="section-subtitle">Aprendizajes</h2>
+          <ul>
+            <li>
+              <strong>La seguridad se diseña, no se añade al final.</strong>
+              Cuando el modelo de permisos está claro desde el principio, todo
+              lo demás encaja. Cuando no, se empiezan a parchear casos
+              especiales que rompen la coherencia.
+            </li>
+            <li>
+              <strong>Confiar solo en el backend para validar.</strong> El
+              frontend puede mostrar u ocultar botones, pero la verdad sobre
+              quién puede hacer qué tiene que vivir en el servidor y en BBDD.
+            </li>
+            <li>
+              <strong>Logs auditables desde el día uno.</strong> Saber quién
+              accedió, cuándo y a qué archivo no es opcional en una herramienta
+              así — lo introduje pronto y me ahorró tiempo de depuración
+              después.
+            </li>
+          </ul>
+        </section>
 
-            <section class="case-study-section" data-animate>
-                <h2 class="section-subtitle">Aprendizajes</h2>
-                <ul>
-                    <li><strong>La seguridad se diseña, no se añade al final.</strong> Cuando el modelo de permisos está claro desde el principio, todo lo demás encaja. Cuando no, se empiezan a parchear casos especiales que rompen la coherencia.</li>
-                    <li><strong>Confiar solo en el backend para validar.</strong> El frontend puede mostrar u ocultar botones, pero la verdad sobre quién puede hacer qué tiene que vivir en el servidor y en BBDD.</li>
-                    <li><strong>Logs auditables desde el día uno.</strong> Saber quién accedió, cuándo y a qué archivo no es opcional en una herramienta así — lo introduje pronto y me ahorró tiempo de depuración después.</li>
-                </ul>
-            </section>
-
-            <section class="cta-section" data-animate>
-                <a href="index.html#projects" class="cta-link">← Todos los proyectos</a>
-                <a href="project-2.html" class="cta-link">Siguiente: Compiso →</a>
-            </section>
-
-        </div>
+        <section class="cta-section" data-animate>
+          <a href="index.html#projects" class="cta-link"
+            >← Todos los proyectos</a
+          >
+          <a href="project-2.html" class="cta-link">Siguiente: Compiso →</a>
+        </section>
+      </div>
     </main>
 
     <footer class="footer" id="contact">
-        <div class="container">
-            <div data-animate>
-                <p class="intro-eyebrow">Contacto</p>
-                <h2 class="footer-headline">¿Hablamos de tu próximo proyecto?</h2>
-                <p class="email">
-                    <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
-                </p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/paula-fernandez-canas/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                    <a href="https://github.com/paulafc30" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="copyright">© <span data-current-year>2026</span> Paula Fernández Cañas</p>
-                <span class="footer-meta">Diseñado y desarrollado a mano</span>
-            </div>
+      <div class="container">
+        <div data-animate>
+          <p class="intro-eyebrow">Contacto</p>
+          <h2 class="footer-headline">¿Hablamos de tu próximo proyecto?</h2>
+          <p class="email">
+            <a href="mailto:contacto@ferava.es">contacto@ferava.es</a>
+          </p>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/paula-fernandez-canas/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn ↗</a
+            >
+            <a
+              href="https://github.com/paulafc30"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub ↗</a
+            >
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p class="copyright">
+            © <span data-current-year>2026</span> Paula Fernández Cañas
+          </p>
+          <span class="footer-meta">Diseñado y desarrollado a mano</span>
+        </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

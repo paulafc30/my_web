@@ -155,37 +155,141 @@ const COPY = {
       title: 'Tecnologías y Lenguajes',
       meta: 'Honesta — no soy senior de nada',
       skills: [
-        { n: 'HTML',         icon: 'https://cdn.simpleicons.org/html5/e34f26',                                                       pct: 90 },
-        { n: 'CSS',          icon: 'https://cdn.simpleicons.org/css/1572b6',                                                          pct: 85 },
-        { n: 'JavaScript',   icon: 'https://cdn.simpleicons.org/javascript/f7df1e',                                                   pct: 82 },
-        { n: 'Git',          icon: 'https://cdn.simpleicons.org/git/f05032',                                                          pct: 82 },
-        { n: 'Tailwind',     icon: 'https://cdn.simpleicons.org/tailwindcss/06b6d4',                                                  pct: 75 },
-        { n: 'PHP',          icon: 'https://cdn.simpleicons.org/php/8892bf',                                                          pct: 72 },
-        { n: 'Laravel',      icon: 'https://cdn.simpleicons.org/laravel/ff2d20',                                                      pct: 72 },
-        { n: 'MySQL',        icon: 'https://cdn.simpleicons.org/mysql/4479a1',                                                        pct: 68 },
-        { n: 'Bootstrap',    icon: 'https://cdn.simpleicons.org/bootstrap/7952b3',                                                    pct: 65 },
-        { n: 'jQuery',       icon: 'https://cdn.simpleicons.org/jquery/0769ad',                                                       pct: 63 },
-        { n: 'Figma',        icon: 'https://cdn.simpleicons.org/figma/f24e1e',                                                        pct: 62 },
-        { n: 'CodeIgniter',  icon: 'https://cdn.simpleicons.org/codeigniter/ef4223',                                                  pct: 58 },
-        { n: 'Linux',        icon: 'https://cdn.simpleicons.org/linux/111111',                                                        pct: 55 },
-        { n: 'React',        icon: 'https://cdn.simpleicons.org/react/61dafb',                                                        pct: 52 },
-        { n: 'XML',          icon: null,                                                                                               pct: 52 },
-        { n: 'JSON',         icon: null,                                                                                               pct: 50 },
-        { n: 'TypeScript',   icon: 'https://cdn.simpleicons.org/typescript/3178c6',                                                   pct: 45 },
-        { n: 'PL/SQL',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',           pct: 42 },
-        { n: 'Docker',       icon: 'https://cdn.simpleicons.org/docker/2496ed',                                                       pct: 42 },
-        { n: 'Node.js',      icon: 'https://cdn.simpleicons.org/nodedotjs/339933',                                                    pct: 38 },
-        { n: 'Python',       icon: 'https://cdn.simpleicons.org/python/3776ab',                                                       pct: 35 },
-        { n: 'Vitest',       icon: 'https://cdn.simpleicons.org/vitest/6e9f18',                                                       pct: 33 },
-        { n: 'Java',         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/java/java-original.svg',               pct: 30 },
-        { n: 'MATLAB',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/matlab/matlab-original.svg',           pct: 30 },
-        { n: 'Oracle DB',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',           pct: 30 },
-        { n: 'Cypress',      icon: 'https://cdn.simpleicons.org/cypress/69d3a7',                                                      pct: 28 },
-        { n: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud/4285f4',                                                  pct: 28 },
-        { n: 'Spring',       icon: 'https://cdn.simpleicons.org/spring/6db33f',                                                       pct: 25 },
-        { n: 'AWS',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/amazonwebservices/amazonwebservices-original.svg', pct: 25 },
-        { n: 'C++',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/cplusplus/cplusplus-original.svg',     pct: 25 },
-        { n: '.NET',         icon: 'https://cdn.simpleicons.org/dotnet/512bd4',                                                       pct: 20 },
+        {
+          n: 'HTML',
+          icon: 'https://cdn.simpleicons.org/html5/e34f26',
+          pct: 90,
+        },
+        { n: 'CSS', icon: 'https://cdn.simpleicons.org/css/1572b6', pct: 85 },
+        {
+          n: 'JavaScript',
+          icon: 'https://cdn.simpleicons.org/javascript/f7df1e',
+          pct: 82,
+        },
+        { n: 'Git', icon: 'https://cdn.simpleicons.org/git/f05032', pct: 82 },
+        {
+          n: 'Tailwind',
+          icon: 'https://cdn.simpleicons.org/tailwindcss/06b6d4',
+          pct: 75,
+        },
+        { n: 'PHP', icon: 'https://cdn.simpleicons.org/php/8892bf', pct: 72 },
+        {
+          n: 'Laravel',
+          icon: 'https://cdn.simpleicons.org/laravel/ff2d20',
+          pct: 72,
+        },
+        {
+          n: 'MySQL',
+          icon: 'https://cdn.simpleicons.org/mysql/4479a1',
+          pct: 68,
+        },
+        {
+          n: 'Bootstrap',
+          icon: 'https://cdn.simpleicons.org/bootstrap/7952b3',
+          pct: 65,
+        },
+        {
+          n: 'jQuery',
+          icon: 'https://cdn.simpleicons.org/jquery/0769ad',
+          pct: 63,
+        },
+        {
+          n: 'Figma',
+          icon: 'https://cdn.simpleicons.org/figma/f24e1e',
+          pct: 62,
+        },
+        {
+          n: 'CodeIgniter',
+          icon: 'https://cdn.simpleicons.org/codeigniter/ef4223',
+          pct: 58,
+        },
+        {
+          n: 'Linux',
+          icon: 'https://cdn.simpleicons.org/linux/111111',
+          pct: 55,
+        },
+        {
+          n: 'React',
+          icon: 'https://cdn.simpleicons.org/react/61dafb',
+          pct: 52,
+        },
+        { n: 'XML', icon: null, pct: 52 },
+        { n: 'JSON', icon: null, pct: 50 },
+        {
+          n: 'TypeScript',
+          icon: 'https://cdn.simpleicons.org/typescript/3178c6',
+          pct: 45,
+        },
+        {
+          n: 'PL/SQL',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',
+          pct: 42,
+        },
+        {
+          n: 'Docker',
+          icon: 'https://cdn.simpleicons.org/docker/2496ed',
+          pct: 42,
+        },
+        {
+          n: 'Node.js',
+          icon: 'https://cdn.simpleicons.org/nodedotjs/339933',
+          pct: 38,
+        },
+        {
+          n: 'Python',
+          icon: 'https://cdn.simpleicons.org/python/3776ab',
+          pct: 35,
+        },
+        {
+          n: 'Vitest',
+          icon: 'https://cdn.simpleicons.org/vitest/6e9f18',
+          pct: 33,
+        },
+        {
+          n: 'Java',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/java/java-original.svg',
+          pct: 30,
+        },
+        {
+          n: 'MATLAB',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/matlab/matlab-original.svg',
+          pct: 30,
+        },
+        {
+          n: 'Oracle DB',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',
+          pct: 30,
+        },
+        {
+          n: 'Cypress',
+          icon: 'https://cdn.simpleicons.org/cypress/69d3a7',
+          pct: 28,
+        },
+        {
+          n: 'Google Cloud',
+          icon: 'https://cdn.simpleicons.org/googlecloud/4285f4',
+          pct: 28,
+        },
+        {
+          n: 'Spring',
+          icon: 'https://cdn.simpleicons.org/spring/6db33f',
+          pct: 25,
+        },
+        {
+          n: 'AWS',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/amazonwebservices/amazonwebservices-original.svg',
+          pct: 25,
+        },
+        {
+          n: 'C++',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/cplusplus/cplusplus-original.svg',
+          pct: 25,
+        },
+        {
+          n: '.NET',
+          icon: 'https://cdn.simpleicons.org/dotnet/512bd4',
+          pct: 20,
+        },
       ],
     },
     about: {
@@ -369,7 +473,8 @@ const COPY = {
         {
           date: '2026 · 06 · 25',
           kind: 'Proyecto',
-          title: 'AparcaYa: predicción de aparcamiento en tiempo real con ML y visión artificial',
+          title:
+            'AparcaYa: predicción de aparcamiento en tiempo real con ML y visión artificial',
           excerpt:
             'Proyecto final del curso de IA y Big Data junto a Luisa Moreira Mendoza. Construimos un Random Forest para predecir la ocupación de los 12 aparcamientos de Málaga a 1-2 horas vista, y un modelo de visión artificial con MobileNetV2 para clasificar plazas desde cámaras de tráfico reales. Todo integrado con un chatbot y mapa interactivo.',
           time: '4 min',
@@ -595,37 +700,141 @@ const COPY = {
       title: 'Technologies & Languages',
       meta: "Honest — I'm senior at nothing",
       skills: [
-        { n: 'HTML',         icon: 'https://cdn.simpleicons.org/html5/e34f26',                                                       pct: 90 },
-        { n: 'CSS',          icon: 'https://cdn.simpleicons.org/css/1572b6',                                                          pct: 85 },
-        { n: 'JavaScript',   icon: 'https://cdn.simpleicons.org/javascript/f7df1e',                                                   pct: 82 },
-        { n: 'Git',          icon: 'https://cdn.simpleicons.org/git/f05032',                                                          pct: 82 },
-        { n: 'Tailwind',     icon: 'https://cdn.simpleicons.org/tailwindcss/06b6d4',                                                  pct: 75 },
-        { n: 'PHP',          icon: 'https://cdn.simpleicons.org/php/8892bf',                                                          pct: 72 },
-        { n: 'Laravel',      icon: 'https://cdn.simpleicons.org/laravel/ff2d20',                                                      pct: 72 },
-        { n: 'MySQL',        icon: 'https://cdn.simpleicons.org/mysql/4479a1',                                                        pct: 68 },
-        { n: 'Bootstrap',    icon: 'https://cdn.simpleicons.org/bootstrap/7952b3',                                                    pct: 65 },
-        { n: 'jQuery',       icon: 'https://cdn.simpleicons.org/jquery/0769ad',                                                       pct: 63 },
-        { n: 'Figma',        icon: 'https://cdn.simpleicons.org/figma/f24e1e',                                                        pct: 62 },
-        { n: 'CodeIgniter',  icon: 'https://cdn.simpleicons.org/codeigniter/ef4223',                                                  pct: 58 },
-        { n: 'Linux',        icon: 'https://cdn.simpleicons.org/linux/111111',                                                        pct: 55 },
-        { n: 'React',        icon: 'https://cdn.simpleicons.org/react/61dafb',                                                        pct: 52 },
-        { n: 'XML',          icon: null,                                                                                               pct: 52 },
-        { n: 'JSON',         icon: null,                                                                                               pct: 50 },
-        { n: 'TypeScript',   icon: 'https://cdn.simpleicons.org/typescript/3178c6',                                                   pct: 45 },
-        { n: 'PL/SQL',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',           pct: 42 },
-        { n: 'Docker',       icon: 'https://cdn.simpleicons.org/docker/2496ed',                                                       pct: 42 },
-        { n: 'Node.js',      icon: 'https://cdn.simpleicons.org/nodedotjs/339933',                                                    pct: 38 },
-        { n: 'Python',       icon: 'https://cdn.simpleicons.org/python/3776ab',                                                       pct: 35 },
-        { n: 'Vitest',       icon: 'https://cdn.simpleicons.org/vitest/6e9f18',                                                       pct: 33 },
-        { n: 'Java',         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/java/java-original.svg',               pct: 30 },
-        { n: 'MATLAB',       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/matlab/matlab-original.svg',           pct: 30 },
-        { n: 'Oracle DB',    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',           pct: 30 },
-        { n: 'Cypress',      icon: 'https://cdn.simpleicons.org/cypress/69d3a7',                                                      pct: 28 },
-        { n: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud/4285f4',                                                  pct: 28 },
-        { n: 'Spring',       icon: 'https://cdn.simpleicons.org/spring/6db33f',                                                       pct: 25 },
-        { n: 'AWS',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/amazonwebservices/amazonwebservices-original.svg', pct: 25 },
-        { n: 'C++',          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/cplusplus/cplusplus-original.svg',     pct: 25 },
-        { n: '.NET',         icon: 'https://cdn.simpleicons.org/dotnet/512bd4',                                                       pct: 20 },
+        {
+          n: 'HTML',
+          icon: 'https://cdn.simpleicons.org/html5/e34f26',
+          pct: 90,
+        },
+        { n: 'CSS', icon: 'https://cdn.simpleicons.org/css/1572b6', pct: 85 },
+        {
+          n: 'JavaScript',
+          icon: 'https://cdn.simpleicons.org/javascript/f7df1e',
+          pct: 82,
+        },
+        { n: 'Git', icon: 'https://cdn.simpleicons.org/git/f05032', pct: 82 },
+        {
+          n: 'Tailwind',
+          icon: 'https://cdn.simpleicons.org/tailwindcss/06b6d4',
+          pct: 75,
+        },
+        { n: 'PHP', icon: 'https://cdn.simpleicons.org/php/8892bf', pct: 72 },
+        {
+          n: 'Laravel',
+          icon: 'https://cdn.simpleicons.org/laravel/ff2d20',
+          pct: 72,
+        },
+        {
+          n: 'MySQL',
+          icon: 'https://cdn.simpleicons.org/mysql/4479a1',
+          pct: 68,
+        },
+        {
+          n: 'Bootstrap',
+          icon: 'https://cdn.simpleicons.org/bootstrap/7952b3',
+          pct: 65,
+        },
+        {
+          n: 'jQuery',
+          icon: 'https://cdn.simpleicons.org/jquery/0769ad',
+          pct: 63,
+        },
+        {
+          n: 'Figma',
+          icon: 'https://cdn.simpleicons.org/figma/f24e1e',
+          pct: 62,
+        },
+        {
+          n: 'CodeIgniter',
+          icon: 'https://cdn.simpleicons.org/codeigniter/ef4223',
+          pct: 58,
+        },
+        {
+          n: 'Linux',
+          icon: 'https://cdn.simpleicons.org/linux/111111',
+          pct: 55,
+        },
+        {
+          n: 'React',
+          icon: 'https://cdn.simpleicons.org/react/61dafb',
+          pct: 52,
+        },
+        { n: 'XML', icon: null, pct: 52 },
+        { n: 'JSON', icon: null, pct: 50 },
+        {
+          n: 'TypeScript',
+          icon: 'https://cdn.simpleicons.org/typescript/3178c6',
+          pct: 45,
+        },
+        {
+          n: 'PL/SQL',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',
+          pct: 42,
+        },
+        {
+          n: 'Docker',
+          icon: 'https://cdn.simpleicons.org/docker/2496ed',
+          pct: 42,
+        },
+        {
+          n: 'Node.js',
+          icon: 'https://cdn.simpleicons.org/nodedotjs/339933',
+          pct: 38,
+        },
+        {
+          n: 'Python',
+          icon: 'https://cdn.simpleicons.org/python/3776ab',
+          pct: 35,
+        },
+        {
+          n: 'Vitest',
+          icon: 'https://cdn.simpleicons.org/vitest/6e9f18',
+          pct: 33,
+        },
+        {
+          n: 'Java',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/java/java-original.svg',
+          pct: 30,
+        },
+        {
+          n: 'MATLAB',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/matlab/matlab-original.svg',
+          pct: 30,
+        },
+        {
+          n: 'Oracle DB',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',
+          pct: 30,
+        },
+        {
+          n: 'Cypress',
+          icon: 'https://cdn.simpleicons.org/cypress/69d3a7',
+          pct: 28,
+        },
+        {
+          n: 'Google Cloud',
+          icon: 'https://cdn.simpleicons.org/googlecloud/4285f4',
+          pct: 28,
+        },
+        {
+          n: 'Spring',
+          icon: 'https://cdn.simpleicons.org/spring/6db33f',
+          pct: 25,
+        },
+        {
+          n: 'AWS',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/amazonwebservices/amazonwebservices-original.svg',
+          pct: 25,
+        },
+        {
+          n: 'C++',
+          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/cplusplus/cplusplus-original.svg',
+          pct: 25,
+        },
+        {
+          n: '.NET',
+          icon: 'https://cdn.simpleicons.org/dotnet/512bd4',
+          pct: 20,
+        },
       ],
     },
     about: {
@@ -807,7 +1016,8 @@ const COPY = {
         {
           date: '2026 · 06 · 25',
           kind: 'Project',
-          title: 'AparcaYa: real-time parking prediction with ML and computer vision',
+          title:
+            'AparcaYa: real-time parking prediction with ML and computer vision',
           excerpt:
             'Final project of the AI & Big Data course, built with Luisa Moreira Mendoza. We trained a Random Forest to predict occupancy across 12 Málaga car parks 1-2 hours ahead, and a MobileNetV2 vision model to classify spaces from real traffic cameras. All integrated with a chatbot and interactive map.',
           time: '4 min',
@@ -818,7 +1028,7 @@ const COPY = {
           kind: 'Training',
           title: 'Wrapping up the AI & Big Data in 5G course',
           excerpt:
-            'Short but intense. I leave with solid foundations in technologies I didn\'t know, projects that made me think hard, and a great group of classmates. Thanks to professor Pablo Udias for making it all feel easy and fun.',
+            "Short but intense. I leave with solid foundations in technologies I didn't know, projects that made me think hard, and a great group of classmates. Thanks to professor Pablo Udias for making it all feel easy and fun.",
           time: '2 min',
           link: 'https://www.linkedin.com/posts/paula-fernandez-canas_ia-bigdata-formacionen5g-share-7475985760723288065-c1JW/',
         },
@@ -1206,17 +1416,32 @@ function Stack({ t }) {
             <div key={i} className="skill-item">
               <div className="skill-ring-wrap">
                 <svg className="skill-ring" viewBox="0 0 88 88">
-                  <circle cx="44" cy="44" r={R} fill="none" stroke="var(--rule)" strokeWidth="3.5"/>
-                  <circle cx="44" cy="44" r={R} fill="none"
-                    stroke="var(--accent)" strokeWidth="3.5"
+                  <circle
+                    cx="44"
+                    cy="44"
+                    r={R}
+                    fill="none"
+                    stroke="var(--rule)"
+                    strokeWidth="3.5"
+                  />
+                  <circle
+                    cx="44"
+                    cy="44"
+                    r={R}
+                    fill="none"
+                    stroke="var(--accent)"
+                    strokeWidth="3.5"
                     strokeDasharray={`${CIRC} ${CIRC}`}
                     strokeDashoffset={offset}
                     strokeLinecap="round"
-                    transform="rotate(-90 44 44)"/>
+                    transform="rotate(-90 44 44)"
+                  />
                 </svg>
-                {s.icon
-                  ? <img className="skill-icon" src={s.icon} alt={s.n} />
-                  : <span className="skill-icon-text">{s.n}</span>}
+                {s.icon ? (
+                  <img className="skill-icon" src={s.icon} alt={s.n} />
+                ) : (
+                  <span className="skill-icon-text">{s.n}</span>
+                )}
               </div>
               <span className="skill-name">{s.n}</span>
             </div>
@@ -1362,7 +1587,7 @@ function Contact({ t }) {
   const [status, setStatus] = React.useState('idle'); // idle | sending | sent | error
 
   function copy() {
-    navigator.clipboard?.writeText('paulafc30@gmail.com');
+    navigator.clipboard?.writeText('contacto@ferava.es');
     setCopied(true);
     setTimeout(() => setCopied(false), 1400);
   }
@@ -1415,7 +1640,7 @@ function Contact({ t }) {
           <div className="contact-left">
             <p className="kicker">{t.contact.kicker}</p>
             <div className="email-row">
-              <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
+              <a href="mailto:contacto@ferava.es">contacto@ferava.es</a>
               <button className="copy" onClick={copy}>
                 {copied ? t.contact.copied : t.contact.copy}
               </button>

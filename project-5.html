@@ -1,174 +1,287 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AparcaYa · Paula Fernández Cañas</title>
-    <meta name="description" content="Estudio de caso: app web de ocupación en tiempo real y predicción de aparcamientos en Málaga. JavaScript, Leaflet.js, scikit-learn, TensorFlow/Keras, MobileNetV2, Supabase, Vercel.">
+    <meta
+      name="description"
+      content="Estudio de caso: app web de ocupación en tiempo real y predicción de aparcamientos en Málaga. JavaScript, Leaflet.js, scikit-learn, TensorFlow/Keras, MobileNetV2, Supabase, Vercel." />
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
     <header class="header">
-        <div class="container">
-            <nav class="nav" aria-label="Navegación principal">
-                <a href="index.html" class="logo">Paula Fernández</a>
-                <ul class="nav-list">
-                    <li><a href="index.html#projects">Proyectos</a></li>
-                    <li><a href="index.html#about">Sobre mí</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container">
+        <nav class="nav" aria-label="Navegación principal">
+          <a href="index.html" class="logo">Paula Fernández</a>
+          <ul class="nav-list">
+            <li><a href="index.html#projects">Proyectos</a></li>
+            <li><a href="index.html#about">Sobre mí</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <div class="container">
+      <div class="container">
+        <section class="intro" data-animate>
+          <p class="intro-eyebrow">Caso de estudio · 06</p>
+          <h1 class="project-headline">
+            AparcaYa: ocupación en tiempo real y predicción de aparcamientos en
+            Málaga con IA y visión artificial.
+          </h1>
 
-            <section class="intro" data-animate>
-                <p class="intro-eyebrow">Caso de estudio · 06</p>
-                <h1 class="project-headline">
-                    AparcaYa: ocupación en tiempo real y predicción de aparcamientos en Málaga con IA y visión artificial.
-                </h1>
+          <div class="project-meta-grid">
+            <div>
+              <span class="meta-label">Mi rol</span>
+              <p class="meta-data">
+                Frontend completo — mapa, chatbot, integración de datos en
+                tiempo real y despliegue · Equipo de dos
+              </p>
+            </div>
+            <div>
+              <span class="meta-label">Stack</span>
+              <p class="meta-data">
+                JavaScript · Leaflet.js · Fetch API · Python · scikit-learn ·
+                TensorFlow/Keras · OpenCV · MobileNetV2 · Supabase · Vercel
+              </p>
+            </div>
+            <div>
+              <span class="meta-label">Periodo</span>
+              <p class="meta-data">
+                Junio 2026 · Proyecto final del curso de IA & Big Data
+              </p>
+            </div>
+            <div>
+              <span class="meta-label">Demo</span>
+              <p class="meta-data">
+                <a
+                  href="https://aparca-ya-project.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="meta-link"
+                  >Abrir demo ↗</a
+                >
+              </p>
+            </div>
+          </div>
+        </section>
 
-                <div class="project-meta-grid">
-                    <div>
-                        <span class="meta-label">Mi rol</span>
-                        <p class="meta-data">Frontend completo — mapa, chatbot, integración de datos en tiempo real y despliegue · Equipo de dos</p>
-                    </div>
-                    <div>
-                        <span class="meta-label">Stack</span>
-                        <p class="meta-data">JavaScript · Leaflet.js · Fetch API · Python · scikit-learn · TensorFlow/Keras · OpenCV · MobileNetV2 · Supabase · Vercel</p>
-                    </div>
-                    <div>
-                        <span class="meta-label">Periodo</span>
-                        <p class="meta-data">Junio 2026 · Proyecto final del curso de IA & Big Data</p>
-                    </div>
-                    <div>
-                        <span class="meta-label">Demo</span>
-                        <p class="meta-data">
-                            <a href="https://aparca-ya-project.vercel.app/" target="_blank" rel="noopener noreferrer" class="meta-link">Abrir demo ↗</a>
-                        </p>
-                    </div>
-                </div>
-            </section>
+        <section class="case-study-section" data-animate>
+          <h2 class="section-subtitle">El problema</h2>
+          <p>
+            Encontrar aparcamiento en el centro de Málaga es una de esas
+            fricciones que todo el mundo ha vivido: das vueltas, no sabes qué
+            aparcamientos están llenos, y cuando llegas a uno resulta que está
+            al 95 % de ocupación. La información existe — el Ayuntamiento
+            publica datos de los aparcamientos municipales — pero no hay ninguna
+            herramienta que los haga útiles en el momento en que los necesitas.
+          </p>
+          <p>
+            El reto del proyecto fue ir un paso más allá de mostrar datos en
+            tiempo real: predecir la ocupación a 1-2 horas vista para que puedas
+            planificar antes de salir de casa, y añadir un chatbot que, dada tu
+            dirección de destino, te diga directamente cuál es la mejor opción.
+          </p>
+        </section>
 
-            <section class="case-study-section" data-animate>
-                <h2 class="section-subtitle">El problema</h2>
-                <p>
-                    Encontrar aparcamiento en el centro de Málaga es una de esas fricciones que todo el mundo ha vivido: das vueltas, no sabes qué aparcamientos están llenos, y cuando llegas a uno resulta que está al 95 % de ocupación. La información existe — el Ayuntamiento publica datos de los aparcamientos municipales — pero no hay ninguna herramienta que los haga útiles en el momento en que los necesitas.
-                </p>
-                <p>
-                    El reto del proyecto fue ir un paso más allá de mostrar datos en tiempo real: predecir la ocupación a 1-2 horas vista para que puedas planificar antes de salir de casa, y añadir un chatbot que, dada tu dirección de destino, te diga directamente cuál es la mejor opción.
-                </p>
-            </section>
+        <section class="case-study-section" data-animate>
+          <h2 class="section-subtitle">Qué construí (mi parte)</h2>
 
-            <section class="case-study-section" data-animate>
-                <h2 class="section-subtitle">Qué construí (mi parte)</h2>
+          <h3>Mapa interactivo con Leaflet.js</h3>
+          <p>
+            Mapa centrado en Málaga con los 12 aparcamientos marcados. Cada
+            marcador muestra el nombre, la ocupación actual y la predicción a 1
+            hora con un semáforo de colores (verde / ámbar / rojo). Al hacer
+            clic en un aparcamiento se despliega el detalle completo: plazas
+            totales, libres, ocupadas, histórico reciente y predicción.
+          </p>
 
-                <h3>Mapa interactivo con Leaflet.js</h3>
-                <p>
-                    Mapa centrado en Málaga con los 12 aparcamientos marcados. Cada marcador muestra el nombre, la ocupación actual y la predicción a 1 hora con un semáforo de colores (verde / ámbar / rojo). Al hacer clic en un aparcamiento se despliega el detalle completo: plazas totales, libres, ocupadas, histórico reciente y predicción.
-                </p>
+          <h3>Datos en tiempo real — Fetch API + CSV del Ayuntamiento</h3>
+          <p>
+            La Junta de Andalucía y el Ayuntamiento de Málaga publican los datos
+            de ocupación en CSV con actualización periódica. Cada 60 segundos la
+            app hace un fetch, parsea el CSV, actualiza los marcadores del mapa
+            y recalcula las predicciones en cliente. Sin backend propio para
+            este flujo — todo ocurre en el navegador.
+          </p>
 
-                <h3>Datos en tiempo real — Fetch API + CSV del Ayuntamiento</h3>
-                <p>
-                    La Junta de Andalucía y el Ayuntamiento de Málaga publican los datos de ocupación en CSV con actualización periódica. Cada 60 segundos la app hace un fetch, parsea el CSV, actualiza los marcadores del mapa y recalcula las predicciones en cliente. Sin backend propio para este flujo — todo ocurre en el navegador.
-                </p>
+          <h3>Chatbot de recomendación</h3>
+          <p>
+            El usuario escribe su destino en lenguaje natural ("quiero ir al
+            Mercado Central", "aparco cerca del Museo Picasso"). El chatbot
+            identifica la zona, cruza con los datos de ocupación actuales y la
+            predicción, y devuelve una recomendación concreta con el
+            aparcamiento más conveniente y el tiempo estimado a pie. La lógica
+            de recomendación la desarrolló Luisa; yo construí la interfaz y la
+            integración con el modelo.
+          </p>
 
-                <h3>Chatbot de recomendación</h3>
-                <p>
-                    El usuario escribe su destino en lenguaje natural ("quiero ir al Mercado Central", "aparco cerca del Museo Picasso"). El chatbot identifica la zona, cruza con los datos de ocupación actuales y la predicción, y devuelve una recomendación concreta con el aparcamiento más conveniente y el tiempo estimado a pie. La lógica de recomendación la desarrolló Luisa; yo construí la interfaz y la integración con el modelo.
-                </p>
+          <h3>Semáforo de ocupación</h3>
+          <p>
+            Componente visual que resume de un vistazo el estado de todos los
+            aparcamientos: cuántos están en verde, cuántos en ámbar, cuántos en
+            rojo. Pensado para decidir en dos segundos si vale la pena ir al
+            centro o no.
+          </p>
 
-                <h3>Semáforo de ocupación</h3>
-                <p>
-                    Componente visual que resume de un vistazo el estado de todos los aparcamientos: cuántos están en verde, cuántos en ámbar, cuántos en rojo. Pensado para decidir en dos segundos si vale la pena ir al centro o no.
-                </p>
+          <div class="key-challenge">
+            <h3 class="challenge-title">
+              Reto principal: llevar el modelo predictivo al navegador
+            </h3>
+            <p>
+              Luisa entrenó el modelo de predicción en Python con scikit-learn
+              sobre el histórico de ocupación. El reto fue exportarlo a un
+              formato que pudiera ejecutarse en el cliente sin llamadas a un
+              servidor externo. Trabajamos juntas para convertir el modelo a
+              JSON y reproducir la lógica de predicción en JavaScript, de manera
+              que la predicción a 1-2 horas ocurriera en el navegador, sin
+              latencia de red.
+            </p>
+          </div>
+        </section>
 
-                <div class="key-challenge">
-                    <h3 class="challenge-title">Reto principal: llevar el modelo predictivo al navegador</h3>
-                    <p>
-                        Luisa entrenó el modelo de predicción en Python con scikit-learn sobre el histórico de ocupación. El reto fue exportarlo a un formato que pudiera ejecutarse en el cliente sin llamadas a un servidor externo. Trabajamos juntas para convertir el modelo a JSON y reproducir la lógica de predicción en JavaScript, de manera que la predicción a 1-2 horas ocurriera en el navegador, sin latencia de red.
-                    </p>
-                </div>
-            </section>
+        <section class="case-study-section" data-animate>
+          <h2 class="section-subtitle">
+            La parte de IA (Luisa + contexto mío)
+          </h2>
 
-            <section class="case-study-section" data-animate>
-                <h2 class="section-subtitle">La parte de IA (Luisa + contexto mío)</h2>
+          <h3>Modelo predictivo — scikit-learn</h3>
+          <p>
+            Luisa entrenó un modelo de regresión sobre el histórico de ocupación
+            de los aparcamientos, incorporando variables como hora del día, día
+            de la semana, festivos y eventos locales. El output es una
+            predicción de plazas libres para las próximas 1-2 horas. Mi trabajo
+            fue integrarlo en el frontend y hacer que los datos fluidos llegaran
+            al mapa y al chatbot.
+          </p>
 
-                <h3>Modelo predictivo — scikit-learn</h3>
-                <p>
-                    Luisa entrenó un modelo de regresión sobre el histórico de ocupación de los aparcamientos, incorporando variables como hora del día, día de la semana, festivos y eventos locales. El output es una predicción de plazas libres para las próximas 1-2 horas. Mi trabajo fue integrarlo en el frontend y hacer que los datos fluidos llegaran al mapa y al chatbot.
-                </p>
+          <h3>Visión artificial — MobileNetV2 + OpenCV</h3>
+          <p>
+            La parte más ambiciosa del proyecto: un clasificador de plazas de
+            aparcamiento entrenado con transfer learning sobre MobileNetV2. Toma
+            imágenes de cámaras de tráfico y clasifica cada plaza como LIBRE u
+            OCUPADO. OpenCV hace el preprocesado de imagen antes de pasarla al
+            modelo. Esta capa añade una fuente de datos adicional más allá del
+            CSV oficial, especialmente útil para el aparcamiento de Sacaba (en
+            calle) que no tiene sensor propio.
+          </p>
+        </section>
 
-                <h3>Visión artificial — MobileNetV2 + OpenCV</h3>
-                <p>
-                    La parte más ambiciosa del proyecto: un clasificador de plazas de aparcamiento entrenado con transfer learning sobre MobileNetV2. Toma imágenes de cámaras de tráfico y clasifica cada plaza como LIBRE u OCUPADO. OpenCV hace el preprocesado de imagen antes de pasarla al modelo. Esta capa añade una fuente de datos adicional más allá del CSV oficial, especialmente útil para el aparcamiento de Sacaba (en calle) que no tiene sensor propio.
-                </p>
-            </section>
+        <section class="case-study-section" data-animate>
+          <h2 class="section-subtitle">Decisiones técnicas</h2>
 
-            <section class="case-study-section" data-animate>
-                <h2 class="section-subtitle">Decisiones técnicas</h2>
+          <h3>JavaScript vanilla — sin frameworks</h3>
+          <p>
+            Decidimos no añadir React ni Vue. El proyecto tiene una UI clara y
+            acotada, y evitar un framework eliminó complejidad de bundling,
+            build steps y dependencias. Con módulos ES nativos y Leaflet fue
+            suficiente para todo lo que necesitábamos.
+          </p>
 
-                <h3>JavaScript vanilla — sin frameworks</h3>
-                <p>
-                    Decidimos no añadir React ni Vue. El proyecto tiene una UI clara y acotada, y evitar un framework eliminó complejidad de bundling, build steps y dependencias. Con módulos ES nativos y Leaflet fue suficiente para todo lo que necesitábamos.
-                </p>
+          <h3>Predicción en cliente</h3>
+          <p>
+            Ejecutar el modelo en el navegador significa cero coste de servidor
+            y respuesta instantánea. El trade-off es que el modelo tiene que ser
+            suficientemente ligero para no penalizar la carga inicial —
+            trabajamos en reducir el tamaño del JSON exportado sin perder
+            precisión.
+          </p>
 
-                <h3>Predicción en cliente</h3>
-                <p>
-                    Ejecutar el modelo en el navegador significa cero coste de servidor y respuesta instantánea. El trade-off es que el modelo tiene que ser suficientemente ligero para no penalizar la carga inicial — trabajamos en reducir el tamaño del JSON exportado sin perder precisión.
-                </p>
+          <h3>Vercel para despliegue</h3>
+          <p>
+            Auto-deploy en cada push a main. El proyecto es estático en su
+            mayoría (los datos los sirve el Ayuntamiento), así que Vercel es la
+            opción natural: rápido, gratuito para este caso de uso y con HTTPS
+            incluido.
+          </p>
+        </section>
 
-                <h3>Vercel para despliegue</h3>
-                <p>
-                    Auto-deploy en cada push a main. El proyecto es estático en su mayoría (los datos los sirve el Ayuntamiento), así que Vercel es la opción natural: rápido, gratuito para este caso de uso y con HTTPS incluido.
-                </p>
-            </section>
+        <section class="case-study-section" data-animate>
+          <h2 class="section-subtitle">Aprendizajes</h2>
+          <ul>
+            <li>
+              <strong
+                >Trabajar con datos de una fuente externa que no controlas es un
+                ejercicio de resiliencia.</strong
+              >
+              El CSV del Ayuntamiento cambia de formato sin aviso, tiene valores
+              vacíos y a veces no se actualiza. Aprendí a escribir parsers
+              defensivos que no rompan la UI cuando el dato llega mal.
+            </li>
+            <li>
+              <strong
+                >Dividir el trabajo bien desde el principio es lo que hace que
+                un proyecto en equipo funcione.</strong
+              >
+              Luisa y yo tuvimos claro desde el día uno el contrato de datos
+              entre el modelo y el frontend: qué estructura devuelve el modelo,
+              cómo la consume el mapa. Eso evitó fricciones de integración al
+              final.
+            </li>
+            <li>
+              <strong
+                >El transfer learning hace accesible la visión
+                artificial.</strong
+              >
+              MobileNetV2 preentrenado + fine-tuning sobre nuestras imágenes de
+              aparcamiento es mucho más rápido de entrenar y más preciso que un
+              modelo desde cero con el dataset que teníamos. No necesitas
+              millones de imágenes si partes de una base buena.
+            </li>
+          </ul>
+        </section>
 
-            <section class="case-study-section" data-animate>
-                <h2 class="section-subtitle">Aprendizajes</h2>
-                <ul>
-                    <li><strong>Trabajar con datos de una fuente externa que no controlas es un ejercicio de resiliencia.</strong> El CSV del Ayuntamiento cambia de formato sin aviso, tiene valores vacíos y a veces no se actualiza. Aprendí a escribir parsers defensivos que no rompan la UI cuando el dato llega mal.</li>
-                    <li><strong>Dividir el trabajo bien desde el principio es lo que hace que un proyecto en equipo funcione.</strong> Luisa y yo tuvimos claro desde el día uno el contrato de datos entre el modelo y el frontend: qué estructura devuelve el modelo, cómo la consume el mapa. Eso evitó fricciones de integración al final.</li>
-                    <li><strong>El transfer learning hace accesible la visión artificial.</strong> MobileNetV2 preentrenado + fine-tuning sobre nuestras imágenes de aparcamiento es mucho más rápido de entrenar y más preciso que un modelo desde cero con el dataset que teníamos. No necesitas millones de imágenes si partes de una base buena.</li>
-                </ul>
-            </section>
-
-            <section class="cta-section" data-animate>
-                <a href="project-4.html" class="cta-link">← Anterior: Mi Armario</a>
-                <a href="index.html#projects" class="cta-link">Todos los proyectos →</a>
-            </section>
-
-        </div>
+        <section class="cta-section" data-animate>
+          <a href="project-4.html" class="cta-link">← Anterior: Mi Armario</a>
+          <a href="index.html#projects" class="cta-link"
+            >Todos los proyectos →</a
+          >
+        </section>
+      </div>
     </main>
 
     <footer class="footer" id="contact">
-        <div class="container">
-            <div data-animate>
-                <p class="intro-eyebrow">Contacto</p>
-                <h2 class="footer-headline">¿Hablamos de tu próximo proyecto?</h2>
-                <p class="email">
-                    <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
-                </p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/paula-fernandez-canas/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                    <a href="https://github.com/paulafc30" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="copyright">© <span data-current-year>2026</span> Paula Fernández Cañas</p>
-                <span class="footer-meta">Diseñado y desarrollado a mano</span>
-            </div>
+      <div class="container">
+        <div data-animate>
+          <p class="intro-eyebrow">Contacto</p>
+          <h2 class="footer-headline">¿Hablamos de tu próximo proyecto?</h2>
+          <p class="email">
+            <a href="mailto:contacto@ferava.es">contacto@ferava.es</a>
+          </p>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/paula-fernandez-canas/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn ↗</a
+            >
+            <a
+              href="https://github.com/paulafc30"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub ↗</a
+            >
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p class="copyright">
+            © <span data-current-year>2026</span> Paula Fernández Cañas
+          </p>
+          <span class="footer-meta">Diseñado y desarrollado a mano</span>
+        </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

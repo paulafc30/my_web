@@ -17,12 +17,18 @@ function Header({ t, lang, setLang, dark, setDark }) {
           <a href="#blog">{t.nav.blog}</a>
         </nav>
         <div className="top-right">
-          <button className="pill" onClick={() => setLang(lang === 'es' ? 'en' : 'es')} aria-label="Toggle language">
+          <button
+            className="pill"
+            onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+            aria-label="Toggle language">
             <span className={'seg ' + (lang === 'es' ? 'on' : '')}>ES</span>
             <span className="seg">·</span>
             <span className={'seg ' + (lang === 'en' ? 'on' : '')}>EN</span>
           </button>
-          <button className="pill" onClick={() => setDark(!dark)} aria-label="Toggle theme">
+          <button
+            className="pill"
+            onClick={() => setDark(!dark)}
+            aria-label="Toggle theme">
             {dark ? '◐' : '◑'}
           </button>
         </div>
@@ -46,7 +52,9 @@ function Hero({ t }) {
             {t.hero.headlineLines.map((line, i) => (
               <React.Fragment key={i}>
                 {line.map((part, j) => (
-                  <span key={j} className={j === 1 ? 'accent' : 'ink'}>{part}</span>
+                  <span key={j} className={j === 1 ? 'accent' : 'ink'}>
+                    {part}
+                  </span>
                 ))}
                 {i < t.hero.headlineLines.length - 1 && <br />}
               </React.Fragment>
@@ -59,7 +67,10 @@ function Hero({ t }) {
             <a href="#work" className="btn-pill primary">
               {t.hero.cta1} <span className="arr">→</span>
             </a>
-            <a href="#" className="btn-pill" onClick={(e) => e.preventDefault()}>
+            <a
+              href="#"
+              className="btn-pill"
+              onClick={(e) => e.preventDefault()}>
               {t.hero.cta2} <span className="arr">↓</span>
             </a>
           </div>
@@ -70,16 +81,25 @@ function Hero({ t }) {
             <image-slot
               id="hero-portrait"
               shape="rect"
-              placeholder={t.hero.portraitPh}
-            ></image-slot>
+              placeholder={t.hero.portraitPh}></image-slot>
           </div>
           <div className="info-card">
             <div className="kv">
-              <span className="k">rol</span>      <span className="v">{t.hero.info.role}</span>
-              <span className="k">en</span>       <span className="v">{t.hero.info.company}</span>
-              <span className="k">stack</span>    <span className="v">{t.hero.info.focus}</span>
-              <span className="k">desde</span>    <span className="v">{t.hero.info.location}</span>
-              <span className="k">estado</span>   <span className="v"><span className="live"><i />{t.hero.info.availability}</span></span>
+              <span className="k">rol</span>{' '}
+              <span className="v">{t.hero.info.role}</span>
+              <span className="k">en</span>{' '}
+              <span className="v">{t.hero.info.company}</span>
+              <span className="k">stack</span>{' '}
+              <span className="v">{t.hero.info.focus}</span>
+              <span className="k">desde</span>{' '}
+              <span className="v">{t.hero.info.location}</span>
+              <span className="k">estado</span>{' '}
+              <span className="v">
+                <span className="live">
+                  <i />
+                  {t.hero.info.availability}
+                </span>
+              </span>
             </div>
           </div>
         </div>
@@ -97,8 +117,7 @@ function ProjectCard({ p }) {
         <image-slot
           id={'thumb-' + p.n}
           shape="rect"
-          placeholder={'captura · ' + p.name}
-        ></image-slot>
+          placeholder={'captura · ' + p.name}></image-slot>
         <span className="num">N.º {p.n}</span>
         <span className={tagClass}>{p.tag}</span>
       </div>
@@ -115,7 +134,9 @@ function ProjectCard({ p }) {
         </div>
 
         <div className="stack">
-          {p.stack.map(s => <span key={s}>{s}</span>)}
+          {p.stack.map((s) => (
+            <span key={s}>{s}</span>
+          ))}
         </div>
       </div>
       <div className="foot">
@@ -137,7 +158,11 @@ function Projects({ t }) {
     const el = ref.current;
     if (!el) return;
     const card = el.children[i];
-    if (card) el.scrollTo({ left: card.offsetLeft - el.offsetLeft, behavior: 'smooth' });
+    if (card)
+      el.scrollTo({
+        left: card.offsetLeft - el.offsetLeft,
+        behavior: 'smooth',
+      });
   }
 
   React.useEffect(() => {
@@ -145,10 +170,14 @@ function Projects({ t }) {
     if (!el) return;
     function onScroll() {
       const items = Array.from(el.children);
-      let best = 0, bestDist = Infinity;
+      let best = 0,
+        bestDist = Infinity;
       items.forEach((c, i) => {
-        const d = Math.abs((c.offsetLeft - el.offsetLeft) - el.scrollLeft);
-        if (d < bestDist) { bestDist = d; best = i; }
+        const d = Math.abs(c.offsetLeft - el.offsetLeft - el.scrollLeft);
+        if (d < bestDist) {
+          bestDist = d;
+          best = i;
+        }
       });
       setIdx(best);
     }
@@ -164,13 +193,28 @@ function Projects({ t }) {
           <div className="label">{t.projects.label}</div>
           <h2>{t.projects.title}</h2>
         </div>
-        <div className="meta">{t.projects.meta} &nbsp;·&nbsp; {String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</div>
+        <div className="meta">
+          {t.projects.meta} &nbsp;·&nbsp; {String(idx + 1).padStart(2, '0')} /{' '}
+          {String(total).padStart(2, '0')}
+        </div>
       </div>
 
       <div className="car-wrap">
         <div className="car-controls">
-          <button className="car-btn" disabled={idx === 0} onClick={() => scrollTo(Math.max(0, idx - 1))} aria-label="Previous">←</button>
-          <button className="car-btn" disabled={idx === total - 1} onClick={() => scrollTo(Math.min(total - 1, idx + 1))} aria-label="Next">→</button>
+          <button
+            className="car-btn"
+            disabled={idx === 0}
+            onClick={() => scrollTo(Math.max(0, idx - 1))}
+            aria-label="Previous">
+            ←
+          </button>
+          <button
+            className="car-btn"
+            disabled={idx === total - 1}
+            onClick={() => scrollTo(Math.min(total - 1, idx + 1))}
+            aria-label="Next">
+            →
+          </button>
         </div>
         <div className="carousel" ref={ref}>
           {t.projects.list.map((p, i) => (
@@ -178,7 +222,12 @@ function Projects({ t }) {
           ))}
         </div>
         <div className="car-progress">
-          <i style={{ width: `${100 / total}%`, left: `${(idx * 100) / total}%` }} />
+          <i
+            style={{
+              width: `${100 / total}%`,
+              left: `${(idx * 100) / total}%`,
+            }}
+          />
         </div>
       </div>
     </section>
@@ -257,9 +306,7 @@ function Blog({ t }) {
         </div>
         <div className="meta">{t.blog.meta}</div>
       </div>
-      {t.blog.intro && (
-        <p className="blog-intro">{t.blog.intro}</p>
-      )}
+      {t.blog.intro && <p className="blog-intro">{t.blog.intro}</p>}
       <div className="blog-grid">
         {t.blog.posts.map((p, i) => (
           <a key={i} href={p.link} className="bcard">
@@ -272,7 +319,9 @@ function Blog({ t }) {
             </div>
             <h3 className="btitle">{p.title}</h3>
             <p className="bexcerpt">{p.excerpt}</p>
-            <span className="bread">{t.blog.readMore} <span className="arr">→</span></span>
+            <span className="bread">
+              {t.blog.readMore} <span className="arr">→</span>
+            </span>
           </a>
         ))}
       </div>
@@ -284,23 +333,32 @@ function Blog({ t }) {
 function Contact({ t }) {
   const [copied, setCopied] = React.useState(false);
   function copy() {
-    navigator.clipboard?.writeText('paulafc30@gmail.com');
+    navigator.clipboard?.writeText('contacto@ferava.es');
     setCopied(true);
     setTimeout(() => setCopied(false), 1400);
   }
   return (
     <section id="contact" className="contact">
       <div className="wrap">
-        <div className="label dim" style={{
-          color: 'var(--accent)',
-          fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', fontWeight: 600,
-        }}>{t.contact.label}</div>
+        <div
+          className="label dim"
+          style={{
+            color: 'var(--accent)',
+            fontSize: 11,
+            letterSpacing: '0.16em',
+            textTransform: 'uppercase',
+            fontWeight: 600,
+          }}>
+          {t.contact.label}
+        </div>
         <h2>
-          {t.contact.titlePre}{' '}<span className="accent">{t.contact.titleAccent}</span>{t.contact.titlePost}
+          {t.contact.titlePre}{' '}
+          <span className="accent">{t.contact.titleAccent}</span>
+          {t.contact.titlePost}
         </h2>
         <p className="kicker">{t.contact.kicker}</p>
         <div className="email-row">
-          <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
+          <a href="mailto:contacto@ferava.es">contacto@ferava.es</a>
           <button className="copy" onClick={copy}>
             {copied ? t.contact.copied : t.contact.copy}
           </button>
@@ -330,4 +388,13 @@ function Footer({ t }) {
   );
 }
 
-Object.assign(window, { Header, Hero, Projects, Stack, About, Blog, Contact, Footer });
+Object.assign(window, {
+  Header,
+  Hero,
+  Projects,
+  Stack,
+  About,
+  Blog,
+  Contact,
+  Footer,
+});
