@@ -388,7 +388,7 @@ const COPY = {
         {
           name: 'Programación en IA y Big Data aplicables en 5G',
           issuer: 'Formación en Tecnología 5G · Polo Digital',
-          date: 'En curso · 2026',
+          date: 'may. – jun. 2026',
           highlight: true,
           icon: '🤖',
         },
@@ -931,7 +931,7 @@ const COPY = {
         {
           name: 'AI & Big Data Programming applicable to 5G',
           issuer: '5G Technology Training · Polo Digital',
-          date: 'In progress · 2026',
+          date: 'May – Jun. 2026',
           highlight: true,
           icon: '🤖',
         },
@@ -1181,6 +1181,13 @@ function Header({ t, lang, setLang, dark, setDark }) {
           </button>
         </div>
       </div>
+      <nav className="nav-mobile" aria-label="Navegación">
+        {navLinks.map(({ href, label, id }) => (
+          <a key={id} href={href} className={active === id ? 'nav-active' : ''}>
+            {label}
+          </a>
+        ))}
+      </nav>
     </header>
   );
 }
@@ -1640,7 +1647,7 @@ function Contact({ t }) {
           <div className="contact-left">
             <p className="kicker">{t.contact.kicker}</p>
             <div className="email-row">
-              <a href="mailto:paulafc30@gmail.com">paulafc30@gmail.com</a>
+              <a href="https://mail.google.com/mail/?view=cm&to=paulafc30@gmail.com" target="_blank" rel="noopener noreferrer">paulafc30@gmail.com</a>
               <button className="copy" onClick={copy}>
                 {copied ? t.contact.copied : t.contact.copy}
               </button>

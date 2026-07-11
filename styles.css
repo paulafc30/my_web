@@ -136,10 +136,35 @@ header.top {
 .pill .seg { color: var(--fg-3); }
 .pill .seg.on { color: var(--accent); font-weight: 600; }
 
+/* Nav móvil */
+.nav-mobile { display: none; }
+
 @media (max-width: 720px) {
+  .wrap { padding: 0 24px; }
   .top-inner { grid-template-columns: auto 1fr; }
   .nav { display: none; }
   .brand .role { display: none; }
+  .nav-mobile {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-top: 1px solid var(--rule);
+    padding: 0 24px;
+    gap: 0;
+  }
+  .nav-mobile::-webkit-scrollbar { display: none; }
+  .nav-mobile a {
+    font-size: 12px;
+    color: var(--fg-2);
+    white-space: nowrap;
+    padding: 10px 14px;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+    flex-shrink: 0;
+  }
+  .nav-mobile a:first-child { padding-left: 0; }
+  .nav-mobile a:hover { color: var(--accent); }
+  .nav-mobile a.nav-active { color: var(--accent); border-bottom-color: var(--accent); }
 }
 
 /* ===== Hero ================================================ */
