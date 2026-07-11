@@ -788,3 +788,88 @@ footer.bot {
 .bot-inner {
   display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
 }
+
+/* ===== Mobile ≤720px ====================================== */
+@media (max-width: 720px) {
+  /* Espaciado general */
+  .hero { padding: 52px 0 40px; }
+  .section { padding: 64px 0; }
+  .contact { padding: 64px 0 52px; }
+
+  /* Section header: apila label+h2 y meta */
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+
+  /* Carousel: ajustar al padding de .wrap en móvil (20px) */
+  .carousel {
+    scroll-padding-left: 20px;
+    padding: 4px 20px 20px;
+    margin: 0 -20px;
+  }
+  .car-controls { left: 0; right: 0; }
+  .car-btn { width: 36px; height: 36px; font-size: 12px; }
+
+  /* Skills: anillos más pequeños en móvil */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+    gap: 22px 8px;
+  }
+  .skill-ring-wrap, .skill-ring { width: 72px; height: 72px; }
+  .skill-icon { width: 38px; height: 38px; }
+
+  /* Blog */
+  .bcard { padding: 20px 0; }
+  .btitle { font-size: 19px; }
+
+  /* Contacto */
+  .email-row { flex-wrap: wrap; gap: 10px; }
+  .email-row .copy { margin-left: 0; }
+  .contact .kicker { font-size: 13.5px; }
+
+  /* Footer */
+  .bot-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* ===== Mobile ≤480px (pantallas pequeñas) ================= */
+@media (max-width: 480px) {
+  .hero { padding: 40px 0 32px; }
+  .section { padding: 52px 0; }
+
+  /* Headline más compacto */
+  .headline { font-size: clamp(26px, 8vw, 40px); }
+
+  /* Lede sin justify en pantallas pequeñas */
+  .lede { font-size: 14.5px; }
+  .lede p { text-align: left; }
+
+  /* CTA row: botones a ancho completo */
+  .cta-row { flex-direction: column; }
+  .btn-pill { justify-content: center; }
+
+  /* Info card más compacta */
+  .info-card .kv { grid-template-columns: 72px 1fr; font-size: 11.5px; }
+
+  /* Proyectos */
+  .pcard h3 { font-size: 20px; }
+
+  /* Skills aún más compactos */
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(68px, 1fr)); gap: 18px 6px; }
+  .skill-ring-wrap, .skill-ring { width: 64px; height: 64px; }
+  .skill-icon { width: 32px; height: 32px; }
+  .skill-name { font-size: 10.5px; }
+
+  /* Training */
+  .edu-item { padding: 14px 16px; }
+
+  /* Blog */
+  .btitle { font-size: 17px; }
+  .bexcerpt { font-size: 13px; }
+
+  /* Contacto */
+  .contact h2 { font-size: clamp(26px, 7vw, 44px); }
+  .email-row { font-size: clamp(15px, 4vw, 20px); }
+}

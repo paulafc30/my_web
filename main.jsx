@@ -32,7 +32,7 @@ const COPY = {
       cta1: 'Ver proyectos',
       cta2: 'Descargar CV',
       info: {
-        role: 'Junior Developer',
+        role: 'Junior Fullstack Developer',
         focus: 'Fullstack (con interés en back)',
         location: 'Jaén, ES · GMT+1',
         availability: 'Open to work — remoto o Jaén',
@@ -324,10 +324,10 @@ const COPY = {
       ),
       p3: (
         <>
-          Por una situación personal complicada tuve que dejar BNT y Málaga y
-          volver a Jaén con mi familia. Pero estoy dispuesta a volver al sector
-          con más fuerza y con muchas ganas de seguir aprendiendo. Lo que busco
-          es un <b>equipo</b> donde crecer bien.
+          Por una situación personal tuve que dejar BNT y Málaga y volver a Jaén
+          con mi familia. Pero estoy dispuesta a volver al sector con más fuerza
+          y con muchas ganas de seguir aprendiendo. Lo que busco es un{' '}
+          <b>equipo</b> donde crecer bien.
         </>
       ),
       timeline: [
@@ -350,7 +350,7 @@ const COPY = {
         {
           when: 'sept. 2023 – jun. 2025',
           what: 'Grado Superior · Desarrollo de Aplicaciones Web',
-          note: 'Donde supe que esto era lo mío. TFG: Compiso, plataforma para compañeros de piso.',
+          note: 'TFG: Compiso, plataforma para compañeros de piso.',
         },
         {
           when: 'sept. 2022 – sept. 2023',
