@@ -32,7 +32,7 @@ const COPY = {
       cta1: 'Ver proyectos',
       cta2: 'Descargar CV',
       info: {
-        role: 'Junior Fullstack Developer',
+        role: 'Junior Web Developer',
         focus: 'Fullstack (con interés en back)',
         location: 'Jaén, ES · GMT+1',
         availability: 'Open to work — remoto o Jaén',
@@ -389,6 +389,7 @@ const COPY = {
           name: 'Programación en IA y Big Data aplicables en 5G',
           issuer: 'Formación en Tecnología 5G · Polo Digital',
           date: 'may. – jun. 2026',
+          highlight: true,
           icon: '🤖',
         },
         {
@@ -576,16 +577,14 @@ const COPY = {
         <>
           I started on the front (HTML, CSS, JavaScript, Tailwind) and ended up
           writing backend with <b>PHP, Laravel and MySQL</b>. The backend is
-          where I want to keep growing.
-        </>,
-        <>
-          I'm also currently studying <b>AI and Big Data</b>.
+          where I want to keep growing. I'm also currently studying{' '}
+          <b>AI and Big Data</b>.
         </>,
       ],
       cta1: 'See projects',
       cta2: 'Download CV',
       info: {
-        role: 'Junior Developer',
+        role: 'Junior Web Developer',
         focus: 'Fullstack (backend-focused)',
         location: 'Jaén, Andalusia · GMT+1',
         availability: 'Open to work — remote or Jaén, Andalusia',
@@ -847,7 +846,7 @@ const COPY = {
     },
     about: {
       label: 'About',
-      title: 'A junior ready to find her team.',
+      title: 'A little about my journey.',
       p1: (
         <>
           My interest in technology started long before secondary school, but
@@ -857,7 +856,8 @@ const COPY = {
           needed something more hands-on and knew I could always come back to
           it. So I switched to a{' '}
           <b>Higher Vocational Diploma in Web Application Development</b>, which
-          I loved. That's where I knew this was what I wanted to do.
+          I loved. That's where I knew this was for me: I learned a lot and made
+          great friends along the way.
         </>
       ),
       p2: (
@@ -1013,10 +1013,10 @@ const COPY = {
     },
     blog: {
       label: 'Blog',
-      title: "Things I'm learning.",
+      title: 'My Notes.',
       meta: 'Field notes · honest',
       intro:
-        "I'm no systems expert, but I love learning new things. I write down everything I hear and read — in my head and in a notebook. This is the publishable version of that notebook.",
+        "I'm no expert, but I love learning new things, sharing what I find and how I see the world.",
       empty: 'More notes coming soon.',
       readMore: 'read',
       seeAll: 'See all →',
@@ -1240,6 +1240,20 @@ function Hero({ t }) {
               <p>{t.hero.lede}</p>
             )}
           </div>
+
+          <div className="cta-row hero-cta">
+            <a href="#work" className="btn-pill primary">
+              {t.hero.cta1} <span className="arr">→</span>
+            </a>
+            <a
+              href="assets/paula-fernandez-cv.pdf"
+              download="Paula-Fernandez-Canas-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-pill">
+              {t.hero.cta2} <span className="arr">↓</span>
+            </a>
+          </div>
         </div>
 
         <div className="portrait-stack">
@@ -1275,19 +1289,6 @@ function Hero({ t }) {
           </div>
         </div>
 
-        <div className="cta-row hero-cta">
-          <a href="#work" className="btn-pill primary">
-            {t.hero.cta1} <span className="arr">→</span>
-          </a>
-          <a
-            href="assets/paula-fernandez-cv.pdf"
-            download="Paula-Fernandez-Canas-CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-pill">
-            {t.hero.cta2} <span className="arr">↓</span>
-          </a>
-        </div>
       </div>
     </section>
   );
@@ -1721,11 +1722,18 @@ function Contact({ t }) {
               </button>
             </div>
             <div className="links">
-              {t.contact.links.map((l, i) => (
-                <a key={i} href={l.url} target="_blank" rel="noopener">
-                  {l.name} ↗
-                </a>
-              ))}
+              {t.contact.links.map((l, i) => {
+                const icon = l.name.toLowerCase().includes('linkedin')
+                  ? <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.98 1.98 0 0 1-1.98-1.981 1.98 1.98 0 1 1 1.98 1.981zm1.707 13.019H3.63V9h3.414v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  : l.name.toLowerCase().includes('github')
+                  ? <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  : null;
+                return (
+                  <a key={i} href={l.url} target="_blank" rel="noopener">
+                    {icon}{l.name} ↗
+                  </a>
+                );
+              })}
             </div>
           </div>
 

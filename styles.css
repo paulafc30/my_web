@@ -258,9 +258,11 @@ header.top {
   overflow: hidden;
   background: var(--bg-2);
   box-shadow: var(--shadow);
+  touch-action: pan-y;
 }
 .portrait image-slot {
   width: 100%; height: 100%;
+  pointer-events: none;
 }
 
 .info-card {
@@ -502,7 +504,11 @@ header.top {
   grid-template-columns: 1.05fr 1fr;
   gap: 64px;
 }
-@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-grid > div:first-child { order: 2; }
+  .about-grid .timeline { order: 1; }
+}
 .about-grid p { color: var(--fg-2); font-size: 14.5px; line-height: 1.75; max-width: 56ch; }
 .about-grid p b { color: var(--fg); font-weight: 600; }
 .about-grid p + p { margin-top: 16px; }
