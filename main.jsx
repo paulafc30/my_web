@@ -90,6 +90,7 @@ const COPY = {
             'Cloudflare',
           ],
           year: '2026',
+          thumb: 'assets/images/project-lour.png',
           link: 'https://lour.es',
         },
         {
@@ -682,6 +683,7 @@ const COPY = {
             'Cloudflare',
           ],
           year: '2026',
+          thumb: 'assets/images/project-lour.png',
           link: 'https://lour.es',
         },
         {
