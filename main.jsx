@@ -290,6 +290,21 @@ const COPY = {
           icon: 'https://cdn.simpleicons.org/dotnet/512bd4',
           pct: 20,
         },
+        {
+          n: 'ChatGPT',
+          icon: null,
+          pct: 58,
+        },
+        {
+          n: 'Gemini',
+          icon: 'https://cdn.simpleicons.org/googlegemini/4285f4',
+          pct: 68,
+        },
+        {
+          n: 'Claude',
+          icon: 'https://cdn.simpleicons.org/claude/d97757',
+          pct: 80,
+        },
       ],
     },
     about: {
@@ -841,6 +856,21 @@ const COPY = {
           n: '.NET',
           icon: 'https://cdn.simpleicons.org/dotnet/512bd4',
           pct: 20,
+        },
+        {
+          n: 'ChatGPT',
+          icon: null,
+          pct: 58,
+        },
+        {
+          n: 'Gemini',
+          icon: 'https://cdn.simpleicons.org/googlegemini/4285f4',
+          pct: 68,
+        },
+        {
+          n: 'Claude',
+          icon: 'https://cdn.simpleicons.org/claude/d97757',
+          pct: 80,
         },
       ],
     },
