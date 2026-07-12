@@ -45,20 +45,18 @@ const COPY = {
       roleLabel: 'rol',
       meta: 'Desliza →',
       list: [
-        /* 01 — pendiente de revisar
         {
-          n: "01",
-          name: "Secure Files App",
-          sub: "Plataforma de archivos con 2FA",
-          tag: "Académico",
-          status: "done",
-          role: "fullstack — sobre todo backend y auth",
-          desc: "Plataforma para subir, compartir y solicitar archivos de forma segura. Implementé autenticación con 2FA, control de acceso por roles y un flujo de solicitudes por email.",
-          stack: ["Laravel", "PHP", "JavaScript", "Docker", "PL/SQL"],
-          year: "2024",
-          link: "https://paula-fernandez-canas.vercel.app/project-1.html",
+          n: '06',
+          name: 'Secure Files App',
+          sub: 'Plataforma de archivos con 2FA',
+          tag: 'Académico',
+          status: 'done',
+          role: 'fullstack — sobre todo backend y auth',
+          desc: 'Plataforma para subir, compartir y solicitar archivos de forma segura. Implementé autenticación con 2FA, control de acceso por roles y un flujo de solicitudes por email.',
+          stack: ['Laravel', 'PHP', 'JavaScript', 'Docker', 'PL/SQL'],
+          year: '2024',
+          link: 'https://paula-fernandez-canas.vercel.app/project-1.html',
         },
-        */
         /* 02 — pendiente de revisar
         {
           n: "02",
@@ -638,20 +636,18 @@ const COPY = {
       roleLabel: 'role',
       meta: 'Swipe →',
       list: [
-        /* 01 — pending review
         {
-          n: "01",
-          name: "Secure Files App",
-          sub: "File platform with 2FA",
-          tag: "Academic",
-          status: "done",
-          role: "fullstack — mostly backend and auth",
-          desc: "Platform to upload, share and request files securely. I implemented 2FA, role-based access control and an email-driven file request flow.",
-          stack: ["Laravel", "PHP", "JavaScript", "Docker", "PL/SQL"],
-          year: "2024",
-          link: "https://paula-fernandez-canas.vercel.app/project-1.html",
+          n: '06',
+          name: 'Secure Files App',
+          sub: 'File platform with 2FA',
+          tag: 'Academic',
+          status: 'done',
+          role: 'fullstack — mostly backend and auth',
+          desc: 'Platform to upload, share and request files securely. I implemented 2FA, role-based access control and an email-driven file request flow.',
+          stack: ['Laravel', 'PHP', 'JavaScript', 'Docker', 'PL/SQL'],
+          year: '2024',
+          link: 'https://paula-fernandez-canas.vercel.app/project-1.html',
         },
-        */
         /* 02 — pending review
         {
           n: "02",
