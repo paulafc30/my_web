@@ -51,7 +51,7 @@
               <span class="meta-label">Stack</span>
               <p class="meta-data">
                 React 18 · TypeScript · Vite · Tailwind · Supabase · Zustand ·
-                PWA
+                PWA · ONNX / AI
               </p>
             </div>
             <div>
@@ -123,6 +123,16 @@
             genera un preview automático con imagen, nombre y precio. Funciona
             como una wishlist visual para las cosas que te gustan pero no
             compras todavía.
+          </p>
+
+          <h3>Buscador con filtros avanzados</h3>
+          <p>
+            El catálogo tiene un buscador por nombre con panel de filtros acumulables: swatches de color, pills de talla y tejido, y marcas que aparecen dinámicamente según las prendas que tengas. Puedes combinar varios filtros a la vez y limpiarlos de un click. Cuando una búsqueda no devuelve resultados aparece un empty state claro en lugar del estado de armario vacío.
+          </p>
+
+          <h3>Prettify: retoque automático estilo catálogo</h3>
+          <p>
+            Un botón por miniatura que quita el fondo con IA (modelo <code>isnet_fp16</code>, mejor recorte en bordes finos y texturas) y compone la imagen sobre un canvas de 1600×1600: prenda centrada al 78% del frame y sombra de suelo radial para que no flote. Tres acabados: Estudio (blanco puro), Crema (warm tone) y Solo recorte (PNG transparente). Soporta AVIF y HEIC — los normaliza a PNG antes de pasarlos al modelo. Incluye barra de progreso durante la inferencia y un botón de deshacer por miniatura para volver a la foto original sin perder el retoque de las demás.
           </p>
 
           <div class="key-challenge">

@@ -101,7 +101,7 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'arquitectura, diseño y desarrollo — proyecto en solitario',
-          desc: 'App web PWA para organizar ropa por categorías, crear outfits y gestionar prendas en venta (flujo Baúl → En Venta → Vendida). Integra Web Share Target para importar desde Wallapop o Vinted y lista de deseos con preview automático de URLs. Incluye Prettify: eliminación de fondo con IA (isnet_fp16) y composición estilo catálogo 1600×1600 con sombra de suelo y tres acabados (Estudio, Crema y PNG). Soporta AVIF y HEIC.',
+          desc: 'App web PWA para organizar ropa por categorías, crear outfits y gestionar prendas en venta (flujo Baúl → En Venta → Vendida). Integra Web Share Target para importar desde Wallapop o Vinted y lista de deseos con preview automático de URLs. Buscador con filtros avanzados acumulables: color, talla, tejido y marca. Prettify: IA de eliminación de fondo (isnet_fp16) con composición estilo catálogo 1600×1600, sombra de suelo, tres acabados (Estudio, Crema, PNG) y soporte AVIF/HEIC; incluye botón de deshacer retoque por miniatura.',
           stack: [
             'React 18',
             'TypeScript',
@@ -693,7 +693,7 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'architecture, design and development — solo project',
-          desc: 'PWA web app to organise clothes by category, create outfits and manage items for sale (Stored → For Sale → Sold flow). Integrates Web Share Target to import from Wallapop or Vinted and a wishlist with automatic URL preview. Features Prettify: AI background removal (isnet_fp16) with 1600×1600 catalogue composition, floor shadow and three finish styles (Studio, Warm, PNG). Supports AVIF and HEIC.',
+          desc: 'PWA web app to organise clothes by category, create outfits and manage items for sale (Stored → For Sale → Sold flow). Integrates Web Share Target to import from Wallapop or Vinted and a wishlist with automatic URL preview. Advanced search with stackable filters: colour, size, material and brand. Prettify: AI background removal (isnet_fp16) with 1600×1600 catalogue composition, floor shadow, three finish styles (Studio, Warm, PNG) and AVIF/HEIC support; includes per-image undo button.',
           stack: [
             'React 18',
             'TypeScript',
@@ -1833,7 +1833,6 @@ function Contact({ t }) {
 
           {/* Columna derecha — formulario */}
           <div className="contact-right">
-            <div className="cf-title">{t.contact.form.title}</div>
             {status === 'sent' ? (
               <p className="cf-sent">{t.contact.form.sent}</p>
             ) : (
