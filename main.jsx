@@ -134,7 +134,7 @@ const COPY = {
           ],
           year: '2025 →',
           thumb: 'assets/images/finanzor.png',
-          link: 'https://paula-fernandez-canas.vercel.app/project-3.html',
+          link: 'https://paula-fernandez-canas.vercel.app/finanzor',
         },
         {
           n: '04',
@@ -156,7 +156,7 @@ const COPY = {
           ],
           year: '2025 →',
           thumb: 'assets/images/miarmario.png',
-          link: 'https://paula-fernandez-canas.vercel.app/project-4.html',
+          link: 'https://paula-fernandez-canas.vercel.app/mi-armario',
         },
         {
           n: '05',
@@ -706,7 +706,7 @@ const COPY = {
           ],
           year: '2026 →',
           thumb: 'assets/images/aparcaya.png',
-          link: 'https://paula-fernandez-canas.vercel.app/project-5.html',
+          link: 'https://paula-fernandez-canas.vercel.app/aparcaya',
         },
         {
           n: '03',
@@ -727,7 +727,7 @@ const COPY = {
           ],
           year: '2025 →',
           thumb: 'assets/images/finanzor.png',
-          link: 'https://paula-fernandez-canas.vercel.app/project-3.html',
+          link: 'https://paula-fernandez-canas.vercel.app/finanzor',
         },
         {
           n: '04',
@@ -749,7 +749,7 @@ const COPY = {
           ],
           year: '2025 →',
           thumb: 'assets/images/miarmario.png',
-          link: 'https://paula-fernandez-canas.vercel.app/project-4.html',
+          link: 'https://paula-fernandez-canas.vercel.app/mi-armario',
         },
         {
           n: '05',
@@ -1239,10 +1239,10 @@ function Header({ t, lang, setLang, dark, setDark }) {
     'blog',
   ]);
   const navLinks = [
-    { href: '#work', label: t.nav.work, id: 'work' },
-    { href: '#training', label: t.nav.training, id: 'training' },
-    { href: '#about', label: t.nav.about, id: 'about' },
-    { href: '#contact', label: t.nav.contact, id: 'contact' },
+    { href: '#proyectos', label: t.nav.work, id: 'proyectos' },
+    { href: '#formacion', label: t.nav.training, id: 'formacion' },
+    { href: '#sobre-mi', label: t.nav.about, id: 'sobre-mi' },
+    { href: '#contacto', label: t.nav.contact, id: 'contacto' },
     { href: '#blog', label: t.nav.blog, id: 'blog' },
   ];
   return (
@@ -1410,8 +1410,8 @@ function ProjectCard({ p, roleLabel = 'role' }) {
       <div className="foot">
         <span className="yr">{p.year}</span>
         {p.link && p.link !== '#' && (
-          <a href={p.link} target={p.link.includes('project-') ? '_self' : '_blank'} rel="noopener noreferrer">
-            {p.link.includes('project-') ? 'Ver detalle' : 'Ver web'} <span className="arr">→</span>
+          <a href={p.link} target={p.link.includes('paula-fernandez-canas') ? '_self' : '_blank'} rel="noopener noreferrer">
+            {p.link.includes('paula-fernandez-canas') ? 'Ver detalle' : 'Ver web'} <span className="arr">→</span>
           </a>
         )}
       </div>
@@ -1491,7 +1491,7 @@ function Projects({ t }) {
 
   const total = t.projects.list.length;
   return (
-    <section id="work" className="section wrap">
+    <section id="proyectos" className="section wrap">
       <div className="section-head">
         <div>
           <div className="label">{t.projects.label}</div>
@@ -1596,7 +1596,7 @@ function Stack({ t }) {
 // ------- About + timeline -------
 function About({ t }) {
   return (
-    <section id="about" className="section wrap">
+    <section id="sobre-mi" className="section wrap">
       <div className="section-head">
         <div>
           <div className="label">{t.about.label}</div>
@@ -1626,7 +1626,7 @@ function About({ t }) {
 // ------- Blog -------
 function Training({ t }) {
   return (
-    <section id="training" className="section wrap">
+    <section id="formacion" className="section wrap">
       <div className="section-head">
         <div>
           <div className="label">{t.training.label}</div>
@@ -1774,7 +1774,7 @@ function Contact({ t }) {
   }
 
   return (
-    <section id="contact" className="contact">
+    <section id="contacto" className="contact">
       <div className="wrap">
         <div
           className="label dim"
