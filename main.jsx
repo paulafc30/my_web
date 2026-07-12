@@ -1421,6 +1421,9 @@ function ProjectCard({ p, roleLabel = 'role' }) {
 function Projects({ t }) {
   const ref = React.useRef(null);
   const [idx, setIdx] = React.useState(0);
+  const idxRef = React.useRef(0);
+  const timerRef = React.useRef(null);
+  const pausedRef = React.useRef(false);
 
   function scrollTo(i) {
     const el = ref.current;
@@ -1433,9 +1436,20 @@ function Projects({ t }) {
       });
   }
 
+  function startAuto(total) {
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      if (pausedRef.current) return;
+      const next = (idxRef.current + 1) % total;
+      scrollTo(next);
+    }, 4000);
+  }
+
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const total = t.projects.list.length;
+
     function onScroll() {
       const items = Array.from(el.children);
       let best = 0,
@@ -1447,10 +1461,30 @@ function Projects({ t }) {
           best = i;
         }
       });
+      idxRef.current = best;
       setIdx(best);
     }
+
+    function onUserInteract() {
+      pausedRef.current = true;
+      clearTimeout(onUserInteract._resume);
+      onUserInteract._resume = setTimeout(() => {
+        pausedRef.current = false;
+      }, 8000);
+    }
+
     el.addEventListener('scroll', onScroll, { passive: true });
-    return () => el.removeEventListener('scroll', onScroll);
+    el.addEventListener('pointerdown', onUserInteract, { passive: true });
+    el.addEventListener('touchstart', onUserInteract, { passive: true });
+
+    startAuto(total);
+
+    return () => {
+      el.removeEventListener('scroll', onScroll);
+      el.removeEventListener('pointerdown', onUserInteract);
+      el.removeEventListener('touchstart', onUserInteract);
+      clearInterval(timerRef.current);
+    };
   }, []);
 
   const total = t.projects.list.length;
@@ -1472,14 +1506,13 @@ function Projects({ t }) {
           <button
             className="car-btn"
             disabled={idx === 0}
-            onClick={() => scrollTo(Math.max(0, idx - 1))}
+            onClick={() => { pausedRef.current = true; clearTimeout(pausedRef._resume); pausedRef._resume = setTimeout(() => { pausedRef.current = false; }, 8000); scrollTo(Math.max(0, idx - 1)); }}
             aria-label="Previous">
             ←
           </button>
           <button
             className="car-btn"
-            disabled={idx === total - 1}
-            onClick={() => scrollTo(Math.min(total - 1, idx + 1))}
+            onClick={() => { pausedRef.current = true; clearTimeout(pausedRef._resume); pausedRef._resume = setTimeout(() => { pausedRef.current = false; }, 8000); scrollTo((idx + 1) % total); }}
             aria-label="Next">
             →
           </button>
