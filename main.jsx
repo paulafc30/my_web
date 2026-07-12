@@ -80,13 +80,14 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'diseño + frontend + backend — proyecto en solitario',
-          desc: 'Aplicación personal para registrar ingresos y gastos por categorías, ver un calendario de movimientos, gestionar presupuestos mensuales y crear metas de ahorro con seguimiento. Permite importar CSV bancario y exportar datos. Multiusuario.',
+          desc: 'Aplicación personal para registrar ingresos y gastos por categorías, ver un calendario de movimientos, gestionar presupuestos mensuales y crear metas de ahorro con seguimiento. Incluye KPIs con "Saldo a hoy" y barra de "Saldo estimado" con proyección de movimientos futuros. Importación de CSV bancario, exportación de datos y sección de sugerencias y fallos integrada (Supabase + Web3Forms). Multiusuario.',
           stack: [
             'React 18',
             'Vite',
             'Tailwind',
             'Supabase',
             'React Query',
+            'Web3Forms',
             'Vercel',
           ],
           year: '2025 →',
@@ -100,7 +101,7 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'arquitectura, diseño y desarrollo — proyecto en solitario',
-          desc: 'App web PWA para organizar ropa por categorías, crear outfits y gestionar prendas en venta (flujo Baúl → En Venta → Vendida). Integra Web Share Target para importar desde Wallapop o Vinted y una lista de deseos con preview automático de URLs.',
+          desc: 'App web PWA para organizar ropa por categorías, crear outfits y gestionar prendas en venta (flujo Baúl → En Venta → Vendida). Integra Web Share Target para importar desde Wallapop o Vinted y lista de deseos con preview automático de URLs. Incluye Prettify: eliminación de fondo con IA (isnet_fp16) y composición estilo catálogo 1600×1600 con sombra de suelo y tres acabados (Estudio, Crema y PNG). Soporta AVIF y HEIC.',
           stack: [
             'React 18',
             'TypeScript',
@@ -109,6 +110,7 @@ const COPY = {
             'Supabase',
             'Zustand',
             'PWA',
+            'ONNX / AI',
           ],
           year: '2025 →',
           thumb: 'assets/images/miarmario.png',
@@ -147,6 +149,25 @@ const COPY = {
           stack: ['Laravel', 'PHP', 'JavaScript', 'Docker', 'PL/SQL'],
           year: '2025 →',
           link: '#',
+        },
+        {
+          n: '07',
+          name: 'lour.es',
+          sub: 'Portfolio para Lourdes, editora de vídeo y creadora de contenido',
+          tag: 'Freelance',
+          status: 'done',
+          role: 'diseño y desarrollo completo — proyecto en solitario',
+          desc: 'Portfolio personal para Lourdes, editora de vídeo para influencers y marcas. Incluye sección de edición con galería de creadoras de YouTube y Reels/TikTok, vídeos enlazados por creadora, páginas de servicios y contacto. Desplegado en lour.es con Cloudflare.',
+          stack: [
+            'React 18',
+            'TypeScript',
+            'Vite',
+            'Tailwind',
+            'Replit',
+            'Cloudflare',
+          ],
+          year: '2026',
+          link: 'https://lour.es',
         },
       ],
     },
@@ -404,14 +425,13 @@ const COPY = {
           name: 'Programación en IA y Big Data aplicables en 5G',
           issuer: 'Formación en Tecnología 5G · Polo Digital',
           date: 'may. – jun. 2026',
-          highlight: true,
-          icon: '🤖',
+          icon: 'https://formacionen5g.es/wp-content/uploads/2022/10/LANDING_FORMACION_5G_03_05.png',
         },
         {
           name: 'Introducción al Big Data y la Inteligencia Artificial',
           issuer: 'Grupo Aspasia',
           date: 'mar. 2026',
-          icon: '📊',
+          icon: 'https://grupoaspasia.com/wp-content/uploads/2022/02/Logo350x70-2.png',
         },
         {
           name: 'Cisco CCNA — Fundamentos de networking para redes IP',
@@ -535,13 +555,18 @@ const COPY = {
     },
     contact: {
       label: 'Contacto',
-      titlePre: '¿Buscáis a una junior',
+      titlePre: '¿Buscas a una programadora',
       titleAccent: 'con ganas',
-      titlePost: ' para vuestro equipo?',
+      titlePost: ' para tu empresa?',
       kicker:
         'Estoy abierta a un puesto fullstack o backend, en Jaén o remoto. Si tu equipo necesita de alguien con muchas ideas y motivación, mándame un correo y hablamos!',
       copy: 'Copiar correo',
       copied: '¡Copiado!',
+      freelance: {
+        title: '¿Tienes un proyecto propio?',
+        text: 'También hago proyectos pequeños por mi cuenta. Si necesitas una landing page, una tienda online o una app de gestión interna, cuéntame la idea y lo vemos.',
+        tags: ['Landing page', 'Tienda online', 'Gestión interna'],
+      },
       links: [
         {
           name: 'LinkedIn',
@@ -647,13 +672,14 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'design + frontend + backend — solo project',
-          desc: 'Personal app to track income and expenses by category, view a transaction calendar, manage monthly budgets and savings goals with contribution tracking. Supports bank CSV import and data export. Multi-user.',
+          desc: "Personal app to track income and expenses by category, view a transaction calendar, manage monthly budgets and savings goals. Features KPIs with 'Balance today' and an 'Estimated balance' bar projecting future transactions. Bank CSV import, data export and a built-in feedback section (Supabase + Web3Forms). Multi-user.",
           stack: [
             'React 18',
             'Vite',
             'Tailwind',
             'Supabase',
             'React Query',
+            'Web3Forms',
             'Vercel',
           ],
           year: '2025 →',
@@ -667,7 +693,7 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'architecture, design and development — solo project',
-          desc: 'PWA web app to organise clothes by category, create outfits and manage items for sale (Stored → For Sale → Sold flow). Integrates Web Share Target to import from Wallapop or Vinted and a wishlist with automatic URL preview.',
+          desc: 'PWA web app to organise clothes by category, create outfits and manage items for sale (Stored → For Sale → Sold flow). Integrates Web Share Target to import from Wallapop or Vinted and a wishlist with automatic URL preview. Features Prettify: AI background removal (isnet_fp16) with 1600×1600 catalogue composition, floor shadow and three finish styles (Studio, Warm, PNG). Supports AVIF and HEIC.',
           stack: [
             'React 18',
             'TypeScript',
@@ -676,6 +702,7 @@ const COPY = {
             'Supabase',
             'Zustand',
             'PWA',
+            'ONNX / AI',
           ],
           year: '2025 →',
           thumb: 'assets/images/miarmario.png',
@@ -714,6 +741,25 @@ const COPY = {
           stack: ['Laravel', 'PHP', 'JavaScript', 'Docker', 'PL/SQL'],
           year: '2025 →',
           link: '#',
+        },
+        {
+          n: '07',
+          name: 'lour.es',
+          sub: 'Portfolio for Lourdes, video editor and content creator',
+          tag: 'Freelance',
+          status: 'done',
+          role: 'full design and development — solo project',
+          desc: 'Personal portfolio for Lourdes, a video editor for influencers and brands. Features an editing section with a creator gallery (YouTube and Reels/TikTok), per-creator video links, a services page and a contact page. Deployed at lour.es via Cloudflare.',
+          stack: [
+            'React 18',
+            'TypeScript',
+            'Vite',
+            'Tailwind',
+            'Replit',
+            'Cloudflare',
+          ],
+          year: '2026',
+          link: 'https://lour.es',
         },
       ],
     },
@@ -970,14 +1016,13 @@ const COPY = {
           name: 'AI & Big Data Programming applicable to 5G',
           issuer: '5G Technology Training · Polo Digital',
           date: 'May – Jun. 2026',
-          highlight: true,
-          icon: '🤖',
+          icon: 'https://formacionen5g.es/wp-content/uploads/2022/10/LANDING_FORMACION_5G_03_05.png',
         },
         {
           name: 'Introduction to Big Data and Artificial Intelligence',
           issuer: 'Grupo Aspasia',
           date: 'Mar. 2026',
-          icon: '📊',
+          icon: 'https://grupoaspasia.com/wp-content/uploads/2022/02/Logo350x70-2.png',
         },
         {
           name: 'Cisco CCNA — Networking Fundamentals for IP Networks',
@@ -1108,6 +1153,11 @@ const COPY = {
         "I'm open to a fullstack or backend role, in Jaén (Andalusia) or remote. If your team needs someone with lots of ideas and motivation, send me an email and let's talk!",
       copy: 'Copy email',
       copied: 'Copied!',
+      freelance: {
+        title: 'Got a project of your own?',
+        text: "I also take on small projects independently. If you need a landing page, an online store or an internal management app, tell me about it and we'll figure it out.",
+        tags: ['Landing page', 'Online store', 'Internal app'],
+      },
       links: [
         {
           name: 'LinkedIn',
@@ -1318,7 +1368,6 @@ function Hero({ t }) {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -1358,9 +1407,11 @@ function ProjectCard({ p, roleLabel = 'role' }) {
       </div>
       <div className="foot">
         <span className="yr">{p.year}</span>
-        <a href={p.link}>
-          Ver detalle <span className="arr">→</span>
-        </a>
+        {p.link && p.link !== '#' && (
+          <a href={p.link} target={p.link.includes('project-') ? '_self' : '_blank'} rel="noopener noreferrer">
+            {p.link.includes('project-') ? 'Ver detalle' : 'Ver web'} <span className="arr">→</span>
+          </a>
+        )}
       </div>
     </article>
   );
@@ -1753,14 +1804,27 @@ function Contact({ t }) {
             </div>
             <div className="links">
               {t.contact.links.map((l, i) => {
-                const icon = l.name.toLowerCase().includes('linkedin')
-                  ? <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.98 1.98 0 0 1-1.98-1.981 1.98 1.98 0 1 1 1.98 1.981zm1.707 13.019H3.63V9h3.414v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                  : l.name.toLowerCase().includes('github')
-                  ? <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                  : null;
+                const icon = l.name.toLowerCase().includes('linkedin') ? (
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.98 1.98 0 0 1-1.98-1.981 1.98 1.98 0 1 1 1.98 1.981zm1.707 13.019H3.63V9h3.414v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                ) : l.name.toLowerCase().includes('github') ? (
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                  </svg>
+                ) : null;
                 return (
                   <a key={i} href={l.url} target="_blank" rel="noopener">
-                    {icon}{l.name} ↗
+                    {icon}
+                    {l.name} ↗
                   </a>
                 );
               })}
@@ -1817,6 +1881,18 @@ function Contact({ t }) {
                 </button>
               </form>
             )}
+          </div>
+        </div>
+
+        <div className="freelance-callout">
+          <div className="freelance-title">{t.contact.freelance.title}</div>
+          <p className="freelance-text">{t.contact.freelance.text}</p>
+          <div className="freelance-tags">
+            {t.contact.freelance.tags.map((tag, i) => (
+              <span key={i} className="freelance-tag">
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </div>

@@ -751,6 +751,39 @@ header.top {
 }
 .contact .links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
+.freelance-callout {
+  margin-top: 40px;
+  padding: 28px 32px;
+  border: 1px solid var(--rule-2);
+  border-radius: 10px;
+  background: var(--bg-2);
+}
+.freelance-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.freelance-text {
+  font-size: 15px;
+  color: var(--fg-2);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.freelance-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.freelance-tag {
+  font-size: 13px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--rule-2);
+  color: var(--fg-3);
+  background: var(--bg);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -796,7 +829,7 @@ header.top {
   font-family: var(--mono);
   font-size: 13px;
   font-weight: 600;
-  border-radius: 999px;
+  border-radius: 4px;
   padding: 12px 28px;
   transition: opacity .15s;
   cursor: pointer;
