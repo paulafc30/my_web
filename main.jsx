@@ -31,6 +31,8 @@ const COPY = {
       ],
       cta1: 'Ver proyectos',
       cta2: 'Descargar CV',
+      cvUrl: 'assets/cv-paula-fernandez-es.pdf',
+      cvName: 'Paula-Fernandez-Canas-CV-ES.pdf',
       info: {
         role: 'Junior Web Developer',
         focus: 'Fullstack (con interés en back)',
@@ -572,7 +574,7 @@ const COPY = {
           url: 'https://www.linkedin.com/in/paula-fernandez-canas/',
         },
         { name: 'GitHub', url: 'https://github.com/paulafc30' },
-        { name: 'CV (pdf)', url: '#' },
+        { name: 'CV (pdf)', url: 'assets/cv-paula-fernandez-es.pdf' },
       ],
       form: {
         title: 'Escríbeme',
@@ -622,6 +624,8 @@ const COPY = {
       ],
       cta1: 'See projects',
       cta2: 'Download CV',
+      cvUrl: 'assets/cv-paula-fernandez-en.pdf',
+      cvName: 'Paula-Fernandez-Canas-CV-EN.pdf',
       info: {
         role: 'Junior Web Developer',
         focus: 'Fullstack (backend-focused)',
@@ -1162,7 +1166,7 @@ const COPY = {
           url: 'https://www.linkedin.com/in/paula-fernandez-canas/',
         },
         { name: 'GitHub', url: 'https://github.com/paulafc30' },
-        { name: 'CV (pdf)', url: '#' },
+        { name: 'CV (pdf)', url: 'assets/cv-paula-fernandez-en.pdf' },
       ],
       form: {
         title: 'Send me a message',
@@ -1324,8 +1328,8 @@ function Hero({ t }) {
               {t.hero.cta1} <span className="arr">→</span>
             </a>
             <a
-              href="assets/paula-fernandez-cv.pdf"
-              download="Paula-Fernandez-Canas-CV.pdf"
+              href={t.hero.cvUrl}
+              download={t.hero.cvName}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-pill">
