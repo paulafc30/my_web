@@ -49,6 +49,7 @@ const COPY = {
       list: [
         {
           n: '06',
+          hidden: true,
           name: 'Secure Files App',
           sub: 'Plataforma de archivos con 2FA',
           tag: 'Académico',
@@ -647,6 +648,7 @@ const COPY = {
       list: [
         {
           n: '06',
+          hidden: true,
           name: 'Secure Files App',
           sub: 'File platform with 2FA',
           tag: 'Academic',
@@ -1480,7 +1482,8 @@ function Projects({ t }) {
   const pausedRef = React.useRef(false);
   const timerRef = React.useRef(null);
   const goNextRef = React.useRef(null);
-  const total = t.projects.list.length;
+  const list = t.projects.list.filter(p => !p.hidden);
+  const total = list.length;
 
   function goTo(next, dir) {
     if (animRef.current) return;
@@ -1526,7 +1529,7 @@ function Projects({ t }) {
         <button className="car-btn" onClick={goPrev} aria-label="Previous">←</button>
 
         <div className="deck-stage">
-          {t.projects.list.map((p, i) => {
+          {list.map((p, i) => {
             const isExit = i === exitIdx;
             const rel = (i - idx + total) % total;
             let posClass;
