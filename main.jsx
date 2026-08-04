@@ -29,7 +29,7 @@ const COPY = {
           en <b>IA y Big Data</b>.
         </>,
       ],
-      cta1: 'Ver proyectos',
+      cta1: 'Contacto',
       cta2: 'Descargar CV',
       cvUrl: 'assets/cv-paula-fernandez-es.pdf',
       cvName: 'Paula-Fernandez-Canas-CV-ES.pdf',
@@ -54,7 +54,7 @@ const COPY = {
           tag: 'Académico',
           status: 'done',
           role: 'fullstack — sobre todo backend y auth',
-          desc: 'Plataforma para subir, compartir y solicitar archivos de forma segura. Implementé autenticación con 2FA, control de acceso por roles y un flujo de solicitudes por email.',
+          desc: 'Subida y compartición segura de archivos · autenticación 2FA · control de acceso por roles · flujo de solicitudes por email',
           stack: ['Laravel', 'PHP', 'JavaScript', 'Docker', 'PL/SQL'],
           year: '2024',
           link: 'https://paula-fernandez-canas.vercel.app/project-1.html',
@@ -67,7 +67,7 @@ const COPY = {
           tag: "TFG",
           status: "done",
           role: "diseño, front y backend ligero",
-          desc: "Mi proyecto de fin de grado. Una web que conecta inquilinos y propietarios con un sistema de matches, chat interno, valoraciones y notificaciones por email.",
+          desc: "Matches inquilino–propietario · chat interno · valoraciones · notificaciones por email",
           stack: ["PHP", "MySQL", "Tailwind", "JavaScript", "EmailJS"],
           year: "2024",
           link: "https://paula-fernandez-canas.vercel.app/project-2.html",
@@ -80,7 +80,7 @@ const COPY = {
           tag: 'Freelance',
           status: 'done',
           role: 'diseño y desarrollo completo — proyecto en solitario',
-          desc: 'Portfolio personal para Lourdes, editora de vídeo para influencers y marcas. Incluye sección de edición con galería de creadoras de YouTube y Reels/TikTok, vídeos enlazados por creadora, páginas de servicios y contacto. Desplegado en lour.es con Cloudflare.',
+          desc: 'Portfolio editora de vídeo · galería YouTube & TikTok · servicios y contacto',
           stack: [
             'React 18',
             'TypeScript',
@@ -100,7 +100,7 @@ const COPY = {
           tag: 'IA & Big Data',
           status: 'wip',
           role: 'frontend completo — mapa, chatbot, integración de datos y despliegue',
-          desc: 'App web que muestra en tiempo real la ocupación de los 12 aparcamientos públicos de Málaga y predice disponibilidad a 1-2 horas. Incluye mapa interactivo con Leaflet, semáforo de ocupación y un chatbot que recomienda aparcamiento según tu destino. Modelo predictivo en scikit-learn exportado a JS; visión artificial con MobileNetV2 para clasificar plazas desde cámara de tráfico.',
+          desc: 'Ocupación en tiempo real · predicción 1–2h · mapa Leaflet · chatbot · MobileNetV2',
           stack: [
             'JavaScript',
             'Leaflet.js',
@@ -122,7 +122,7 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'diseño + frontend + backend — proyecto en solitario',
-          desc: 'Aplicación personal para registrar ingresos y gastos por categorías, ver un calendario de movimientos, gestionar presupuestos mensuales y crear metas de ahorro con seguimiento. Incluye KPIs con "Saldo a hoy" y barra de "Saldo estimado" con proyección de movimientos futuros. Importación de CSV bancario, exportación de datos y sección de sugerencias y fallos integrada (Supabase + Web3Forms). Multiusuario.',
+          desc: 'Ingresos/gastos · presupuestos · metas de ahorro · KPIs · CSV bancario · multiusuario',
           stack: [
             'React 18',
             'Vite',
@@ -143,7 +143,7 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'arquitectura, diseño y desarrollo — proyecto en solitario',
-          desc: 'App web PWA para organizar ropa por categorías, crear outfits y gestionar prendas en venta (flujo Baúl → En Venta → Vendida). Integra Web Share Target para importar desde Wallapop o Vinted y lista de deseos con preview automático de URLs. Buscador con filtros avanzados acumulables: color, talla, tejido y marca. Prettify: IA de eliminación de fondo (isnet_fp16) con composición estilo catálogo 1600×1600, sombra de suelo, tres acabados (Estudio, Crema, PNG) y soporte AVIF/HEIC; incluye botón de deshacer retoque por miniatura.',
+          desc: 'Outfits · flujo venta · Web Share Target · filtros avanzados · Prettify IA · AVIF/HEIC',
           stack: [
             'React 18',
             'TypeScript',
@@ -165,7 +165,7 @@ const COPY = {
           tag: 'Freelance',
           status: 'wip',
           role: 'fullstack en equipo con Aurora Medel',
-          desc: 'Proyecto en equipo con Aurora Medel para un familiar suyo con un negocio de piensos. El cliente gestionaba todo con Canva y Excel — construimos una aplicación interna para centralizar y digitalizar ese flujo de trabajo.',
+          desc: 'App interna para negocio de piensos · digitalización flujo Canva/Excel · proyecto en equipo con Aurora Medel',
           stack: ['Laravel', 'PHP', 'JavaScript', 'Docker', 'PL/SQL'],
           year: '2025 →',
           link: '#',
@@ -278,9 +278,14 @@ const COPY = {
           pct: 30,
         },
         {
-          n: 'Oracle DB',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',
-          pct: 30,
+          n: 'Power BI',
+          icon: 'https://img.icons8.com/fluency/96/power-bi-2021.png',
+          pct: 28,
+        },
+        {
+          n: 'Pentaho',
+          icon: null,
+          pct: 25,
         },
         {
           n: 'Cypress',
@@ -622,7 +627,7 @@ const COPY = {
           <b>AI and Big Data</b>.
         </>,
       ],
-      cta1: 'See projects',
+      cta1: 'Contact',
       cta2: 'Download CV',
       cvUrl: 'assets/cv-paula-fernandez-en.pdf',
       cvName: 'Paula-Fernandez-Canas-CV-EN.pdf',
@@ -647,7 +652,7 @@ const COPY = {
           tag: 'Academic',
           status: 'done',
           role: 'fullstack — mostly backend and auth',
-          desc: 'Platform to upload, share and request files securely. I implemented 2FA, role-based access control and an email-driven file request flow.',
+          desc: 'Secure file upload & sharing · 2FA authentication · role-based access control · email request flow',
           stack: ['Laravel', 'PHP', 'JavaScript', 'Docker', 'PL/SQL'],
           year: '2024',
           link: 'https://paula-fernandez-canas.vercel.app/project-1.html',
@@ -660,7 +665,7 @@ const COPY = {
           tag: "Thesis",
           status: "done",
           role: "design, front and light backend",
-          desc: "My final degree project. A web app that connects tenants and landlords with a matching system, in-app chat, ratings and email notifications.",
+          desc: "Tenant–landlord matching · in-app chat · ratings · email notifications",
           stack: ["PHP", "MySQL", "Tailwind", "JavaScript", "EmailJS"],
           year: "2024",
           link: "https://paula-fernandez-canas.vercel.app/project-2.html",
@@ -673,7 +678,7 @@ const COPY = {
           tag: 'Freelance',
           status: 'done',
           role: 'full design and development — solo project',
-          desc: 'Personal portfolio for Lourdes, a video editor for influencers and brands. Features an editing section with a creator gallery (YouTube and Reels/TikTok), per-creator video links, a services page and a contact page. Deployed at lour.es via Cloudflare.',
+          desc: 'Video editor portfolio · YouTube & TikTok gallery · services & contact',
           stack: [
             'React 18',
             'TypeScript',
@@ -693,7 +698,7 @@ const COPY = {
           tag: 'AI & Big Data',
           status: 'wip',
           role: 'full frontend — map, chatbot, data integration and deployment',
-          desc: "Web app showing real-time occupancy of Málaga's 12 public car parks and predicting availability 1-2 hours ahead. Features an interactive Leaflet map, occupancy traffic-light indicator and a chatbot that recommends where to park based on your destination. Predictive model in scikit-learn exported to JS; computer vision with MobileNetV2 to classify spaces from traffic camera images.",
+          desc: "Real-time occupancy · 1–2h prediction · Leaflet map · chatbot · MobileNetV2",
           stack: [
             'JavaScript',
             'Leaflet.js',
@@ -715,7 +720,7 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'design + frontend + backend — solo project',
-          desc: "Personal app to track income and expenses by category, view a transaction calendar, manage monthly budgets and savings goals. Features KPIs with 'Balance today' and an 'Estimated balance' bar projecting future transactions. Bank CSV import, data export and a built-in feedback section (Supabase + Web3Forms). Multi-user.",
+          desc: "Income/expenses · budgets · savings goals · KPIs · bank CSV import · multi-user",
           stack: [
             'React 18',
             'Vite',
@@ -736,7 +741,7 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'architecture, design and development — solo project',
-          desc: 'PWA web app to organise clothes by category, create outfits and manage items for sale (Stored → For Sale → Sold flow). Integrates Web Share Target to import from Wallapop or Vinted and a wishlist with automatic URL preview. Advanced search with stackable filters: colour, size, material and brand. Prettify: AI background removal (isnet_fp16) with 1600×1600 catalogue composition, floor shadow, three finish styles (Studio, Warm, PNG) and AVIF/HEIC support; includes per-image undo button.',
+          desc: 'Outfits · sale flow · Web Share Target · advanced filters · Prettify AI · AVIF/HEIC',
           stack: [
             'React 18',
             'TypeScript',
@@ -758,7 +763,7 @@ const COPY = {
           tag: 'Freelance',
           status: 'wip',
           role: 'fullstack with Aurora Medel',
-          desc: "Team project with Aurora Medel for her family member's pet food business. The client was managing everything with Canva and Excel — we built an internal app to centralise and digitalise that workflow.",
+          desc: "Internal app for a pet food business · Canva/Excel workflow digitalisation · team project with Aurora Medel",
           stack: ['Laravel', 'PHP', 'JavaScript', 'Docker', 'PL/SQL'],
           year: '2025 →',
           link: '#',
@@ -871,9 +876,14 @@ const COPY = {
           pct: 30,
         },
         {
-          n: 'Oracle DB',
-          icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/oracle/oracle-original.svg',
-          pct: 30,
+          n: 'Power BI',
+          icon: 'https://img.icons8.com/fluency/96/power-bi-2021.png',
+          pct: 28,
+        },
+        {
+          n: 'Pentaho',
+          icon: null,
+          pct: 25,
         },
         {
           n: 'Cypress',
@@ -1324,7 +1334,7 @@ function Hero({ t }) {
           </div>
 
           <div className="cta-row hero-cta">
-            <a href="#work" className="btn-pill primary">
+            <a href="#contacto" className="btn-pill primary">
               {t.hero.cta1} <span className="arr">→</span>
             </a>
             <a
@@ -1375,121 +1385,131 @@ function Hero({ t }) {
   );
 }
 
-// ------- Project card -------
-function ProjectCard({ p, roleLabel = 'role' }) {
-  const tagClass = p.status === 'wip' ? 'tag' : 'tag muted';
+// ------- Project card (Pokémon-inspired) -------
+const TAG_COLORS = {
+  'Personal':      { from: '#b8720a', to: '#7a4a00', accent: '#f0c040' },
+  'IA & Big Data': { from: '#1d4ed8', to: '#1e3a8a', accent: '#60a5fa' },
+  'Freelance':     { from: '#15803d', to: '#14532d', accent: '#4ade80' },
+  'Académico':     { from: '#b91c1c', to: '#7f1d1d', accent: '#f87171' },
+  'TFG':           { from: '#6d28d9', to: '#3b0764', accent: '#a78bfa' },
+};
+
+function ProjectCard({ p, roleLabel, posClass, isActive }) {
+  const cardRef = React.useRef(null);
+  const c = TAG_COLORS[p.tag] || TAG_COLORS['Personal'];
+  const isDetail = p.link && p.link.includes('paula-fernandez-canas');
+
+  function handleMouseMove(e) {
+    if (!isActive || !cardRef.current) return;
+    const card = cardRef.current;
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    card.style.setProperty('--mx', `${x * 100}%`);
+    card.style.setProperty('--my', `${y * 100}%`);
+    card.style.setProperty('--shine', '1');
+  }
+  function handleMouseLeave() {
+    if (!cardRef.current) return;
+    cardRef.current.style.setProperty('--shine', '0');
+  }
+
   return (
-    <article className="pcard">
-      <div className="thumb">
-        <image-slot
-          id={'thumb-' + p.n}
-          shape="rect"
-          src={p.thumb || undefined}
-          placeholder={'captura · ' + p.name}></image-slot>
-        <span className="num">N.º {p.n}</span>
-        <span className={tagClass}>{p.tag}</span>
-      </div>
-      <div className="body">
-        <h3>
-          {p.name}
-          <span className="sub">{p.sub}</span>
-        </h3>
-        <p>{p.desc}</p>
+    <article
+      ref={cardRef}
+      className={`pcard ${posClass}`}
+      style={{ '--card-from': c.from, '--card-to': c.to, '--card-accent': c.accent }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="pcard-inner">
+        <div className="pcard-shine" />
 
-        <div className="role">
-          <span className="k">{roleLabel}</span>
-          <span>{p.role}</span>
+        <div className="pcard-header">
+          <span className="pcard-num">N.º {p.n}</span>
+          <span className="pcard-tag">{p.tag}</span>
+          <span className="pcard-year">{p.year}</span>
         </div>
 
-        <div className="stack">
-          {p.stack.map((s) => (
-            <span key={s}>{s}</span>
-          ))}
+        <div className="pcard-img">
+          <image-slot
+            id={'thumb-' + p.n}
+            shape="rect"
+            src={p.thumb || undefined}
+            placeholder={p.name}
+          />
+          {!p.thumb && <div className="pcard-img-ph">{p.name}</div>}
         </div>
-      </div>
-      <div className="foot">
-        <span className="yr">{p.year}</span>
-        {p.link && p.link !== '#' && (
-          <a href={p.link} target={p.link.includes('paula-fernandez-canas') ? '_self' : '_blank'} rel="noopener noreferrer">
-            {p.link.includes('paula-fernandez-canas') ? 'Ver detalle' : 'Ver web'} <span className="arr">→</span>
-          </a>
-        )}
+
+        <div className="pcard-name">
+          <h3>{p.name}</h3>
+          <span className="pcard-sub">{p.sub}</span>
+        </div>
+
+        <p className="pcard-desc">{p.desc}</p>
+
+        <div className="pcard-stack">
+          {p.stack.map(s => <span key={s}>{s}</span>)}
+        </div>
+
+        <div className="pcard-foot">
+          <span className="pcard-role">{roleLabel}: {p.role}</span>
+          {p.link && p.link !== '#' && (
+            <a
+              href={p.link}
+              target={isDetail ? '_self' : '_blank'}
+              rel="noopener noreferrer"
+              className="pcard-link"
+            >
+              {isDetail ? 'Ver detalle' : 'Ver web'} →
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
 }
 
-// ------- Projects carousel -------
+// ------- Projects deck -------
 function Projects({ t }) {
-  const ref = React.useRef(null);
   const [idx, setIdx] = React.useState(0);
+  const [exitIdx, setExitIdx] = React.useState(null);
+  const [exitDir, setExitDir] = React.useState('next');
   const idxRef = React.useRef(0);
-  const timerRef = React.useRef(null);
+  const animRef = React.useRef(false);
   const pausedRef = React.useRef(false);
+  const timerRef = React.useRef(null);
+  const goNextRef = React.useRef(null);
+  const total = t.projects.list.length;
 
-  function scrollTo(i) {
-    const el = ref.current;
-    if (!el) return;
-    const card = el.children[i];
-    if (card)
-      el.scrollTo({
-        left: card.offsetLeft - el.offsetLeft,
-        behavior: 'smooth',
-      });
+  function goTo(next, dir) {
+    if (animRef.current) return;
+    animRef.current = true;
+    pausedRef.current = true;
+    const old = idxRef.current;
+    idxRef.current = next;
+    setExitDir(dir);
+    setExitIdx(old);
+    setIdx(next);
+    setTimeout(() => {
+      setExitIdx(null);
+      animRef.current = false;
+      clearTimeout(pausedRef._resume);
+      pausedRef._resume = setTimeout(() => { pausedRef.current = false; }, 6000);
+    }, 500);
   }
 
-  function startAuto(total) {
-    clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      if (pausedRef.current) return;
-      const next = (idxRef.current + 1) % total;
-      scrollTo(next);
-    }, 4000);
-  }
+  function goNext() { goTo((idxRef.current + 1) % total, 'next'); }
+  function goPrev() { goTo((idxRef.current - 1 + total) % total, 'prev'); }
+  goNextRef.current = goNext;
 
   React.useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const total = t.projects.list.length;
-
-    function onScroll() {
-      const items = Array.from(el.children);
-      let best = 0,
-        bestDist = Infinity;
-      items.forEach((c, i) => {
-        const d = Math.abs(c.offsetLeft - el.offsetLeft - el.scrollLeft);
-        if (d < bestDist) {
-          bestDist = d;
-          best = i;
-        }
-      });
-      idxRef.current = best;
-      setIdx(best);
-    }
-
-    function onUserInteract() {
-      pausedRef.current = true;
-      clearTimeout(onUserInteract._resume);
-      onUserInteract._resume = setTimeout(() => {
-        pausedRef.current = false;
-      }, 8000);
-    }
-
-    el.addEventListener('scroll', onScroll, { passive: true });
-    el.addEventListener('pointerdown', onUserInteract, { passive: true });
-    el.addEventListener('touchstart', onUserInteract, { passive: true });
-
-    startAuto(total);
-
-    return () => {
-      el.removeEventListener('scroll', onScroll);
-      el.removeEventListener('pointerdown', onUserInteract);
-      el.removeEventListener('touchstart', onUserInteract);
-      clearInterval(timerRef.current);
-    };
+    timerRef.current = setInterval(() => {
+      if (!pausedRef.current) goNextRef.current();
+    }, 5000);
+    return () => clearInterval(timerRef.current);
   }, []);
 
-  const total = t.projects.list.length;
   return (
     <section id="proyectos" className="section wrap">
       <div className="section-head">
@@ -1498,40 +1518,43 @@ function Projects({ t }) {
           <h2>{t.projects.title}</h2>
         </div>
         <div className="meta">
-          {t.projects.meta} &nbsp;·&nbsp; {String(idx + 1).padStart(2, '0')} /{' '}
-          {String(total).padStart(2, '0')}
+          {String(idx + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
         </div>
       </div>
 
-      <div className="car-wrap">
-        <div className="car-controls">
-          <button
-            className="car-btn"
-            disabled={idx === 0}
-            onClick={() => { pausedRef.current = true; clearTimeout(pausedRef._resume); pausedRef._resume = setTimeout(() => { pausedRef.current = false; }, 8000); scrollTo(Math.max(0, idx - 1)); }}
-            aria-label="Previous">
-            ←
-          </button>
-          <button
-            className="car-btn"
-            onClick={() => { pausedRef.current = true; clearTimeout(pausedRef._resume); pausedRef._resume = setTimeout(() => { pausedRef.current = false; }, 8000); scrollTo((idx + 1) % total); }}
-            aria-label="Next">
-            →
-          </button>
+      <div className="deck-outer">
+        <button className="car-btn" onClick={goPrev} aria-label="Previous">←</button>
+
+        <div className="deck-stage">
+          {t.projects.list.map((p, i) => {
+            const isExit = i === exitIdx;
+            const rel = (i - idx + total) % total;
+            let posClass;
+            if (isExit) posClass = `pcard-exit-${exitDir}`;
+            else if (rel === 0) posClass = 'pcard-active';
+            else if (rel === 1) posClass = 'pcard-next-1';
+            else if (rel === 2) posClass = 'pcard-next-2';
+            else if (rel === total - 1) posClass = 'pcard-prev-1';
+            else if (rel === total - 2) posClass = 'pcard-prev-2';
+            else posClass = 'pcard-hidden';
+
+            return (
+              <ProjectCard
+                key={p.n}
+                p={p}
+                roleLabel={t.projects.roleLabel}
+                posClass={posClass}
+                isActive={rel === 0 && !isExit}
+              />
+            );
+          })}
         </div>
-        <div className="carousel" ref={ref}>
-          {t.projects.list.map((p, i) => (
-            <ProjectCard key={i} p={p} roleLabel={t.projects.roleLabel} />
-          ))}
-        </div>
-        <div className="car-progress">
-          <i
-            style={{
-              width: `${100 / total}%`,
-              left: `${(idx * 100) / total}%`,
-            }}
-          />
-        </div>
+
+        <button className="car-btn" onClick={goNext} aria-label="Next">→</button>
+      </div>
+
+      <div className="car-progress">
+        <i style={{ width: `${100 / total}%`, left: `${(idx * 100) / total}%` }} />
       </div>
     </section>
   );
