@@ -408,6 +408,16 @@ header.top {
   transform: translateX(3px);
 }
 
+/* Hero left col — aligns with portrait top */
+.hero-grid > div:first-child {
+  margin-top: -36px;
+}
+@media (max-width: 900px) {
+  .hero-grid > div:first-child {
+    margin-top: 0;
+  }
+}
+
 /* Portrait + info */
 .portrait-stack {
   display: flex;
