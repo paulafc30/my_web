@@ -25,8 +25,12 @@ const COPY = {
         <>
           Empecé por el front (HTML, CSS, JavaScript, Tailwind) y acabé tocando
           backend con <b>PHP, Laravel y MySQL</b>. Me atrae el backend y es por
-          donde quiero seguir creciendo. Actualmente también me estoy formando
-          en <b>IA y Big Data</b>.
+          donde quiero seguir creciendo. Tengo formación en <b>IA y Big Data</b>
+          .
+        </>,
+        <>
+          Actualmente también he comenzado una{' '}
+          <b>Ingeniería en Industria Digital</b>.
         </>,
       ],
       cta1: 'Contacto',
@@ -37,7 +41,7 @@ const COPY = {
         role: 'Junior Web Developer',
         focus: 'Fullstack (con interés en back)',
         location: 'Jaén, ES · GMT+1',
-        availability: 'Open to work — remoto o Jaén',
+        availability: 'Open to work — compatible con los estudios',
       },
       portraitPh: 'arrastra una foto',
     },
@@ -341,10 +345,10 @@ const COPY = {
       p1: (
         <>
           Mi interés por la tecnología empezó mucho antes del bachillerato, pero
-          fue ahí donde di mi primer paso real: elegí la rama tecnológica y fue
-          donde escribí mis primeras líneas de código. Después me decanté por
-          estudiar <b>Ingeniería Telemática</b> en Málaga — aprendí muchas
-          cosas, pero sentí que necesitaba algo más concreto y que siempre
+          fue ahí donde di mi primer paso real: elegí la rama tecnológica y
+          escribí mis primeras líneas de código. Después me decanté por estudiar{' '}
+          <b>Ingeniería Telemática</b> en Málaga — aprendí muchas cosas, pero
+          sentí que necesitaba algo más concreto en ese momento y que siempre
           podría retomar la carrera. Así que empecé un{' '}
           <b>Grado Superior de Desarrollo de Aplicaciones Web</b> que me
           encantó. Ahí supe que esto era lo mío: aprendí mucho y me llevé muy
@@ -367,17 +371,21 @@ const COPY = {
       ),
       p3: (
         <>
-          Por una situación personal tuve que dejar BNT y Málaga y volver a Jaén
-          con mi familia. Pero estoy dispuesta a volver al sector con más fuerza
-          y con muchas ganas de seguir aprendiendo. Lo que busco es un{' '}
-          <b>equipo</b> donde crecer bien.
+          Por una situación personal tuve que dejar BNT y Málaga y volver a
+          Jaén. Con la perspectiva que da el tiempo, he decidido retomar la
+          universidad: este año empiezo <b>Ingeniería en Industria Digital</b>{' '}
+          en la Universidad de Jaén (Linares) con posibilidad de matrícula
+          parcial, con intención de compaginarlo con un trabajo. No lo veo como
+          un freno, lo veo como una apuesta por seguir creciendo en los dos
+          frentes a la vez. Busco un <b>equipo</b> que valore esa actitud, con
+          posibilidad de trabajo remoto o flexibilidad horaria.
         </>
       ),
       timeline: [
         {
-          when: 'Ahora',
-          what: 'En búsqueda activa',
-          note: 'Buscando mi siguiente oportunidad. Abierta a roles fullstack o backend, en Jaén o remoto.',
+          when: 'Sept. 2026',
+          what: 'Ingeniería en Industria Digital · Universidad de Jaén (Linares)',
+          note: 'Nueva etapa. Busco trabajo compatible con la carrera — remoto o con flexibilidad horaria.',
           now: true,
         },
         {
@@ -414,6 +422,13 @@ const COPY = {
       certLabel: 'Licencias y certificaciones',
       langsLabel: 'Idiomas',
       edu: [
+        {
+          school:
+            'Universidad de Jaén · Campus Científico-Tecnológico de Linares',
+          degree: 'Ingeniería en Industria Digital',
+          period: 'sept. 2026 – en curso',
+          logo: 'assets/images/logo-uja.png',
+        },
         {
           school: 'MEDAC',
           degree: 'Técnico Superior en Desarrollo de Aplicaciones Web',
@@ -636,7 +651,7 @@ const COPY = {
         role: 'Junior Web Developer',
         focus: 'Fullstack (backend-focused)',
         location: 'Jaén, Andalusia · GMT+1',
-        availability: 'Open to work — remote or Jaén, Andalusia',
+        availability: 'Looking for a job compatible with university',
       },
       portraitPh: 'drop a photo',
     },
@@ -700,7 +715,7 @@ const COPY = {
           tag: 'AI & Big Data',
           status: 'wip',
           role: 'full frontend — map, chatbot, data integration and deployment',
-          desc: "Real-time occupancy · 1–2h prediction · Leaflet map · chatbot · MobileNetV2",
+          desc: 'Real-time occupancy · 1–2h prediction · Leaflet map · chatbot · MobileNetV2',
           stack: [
             'JavaScript',
             'Leaflet.js',
@@ -722,7 +737,7 @@ const COPY = {
           tag: 'Personal',
           status: 'wip',
           role: 'design + frontend + backend — solo project',
-          desc: "Income/expenses · budgets · savings goals · KPIs · bank CSV import · multi-user",
+          desc: 'Income/expenses · budgets · savings goals · KPIs · bank CSV import · multi-user',
           stack: [
             'React 18',
             'Vite',
@@ -765,7 +780,7 @@ const COPY = {
           tag: 'Freelance',
           status: 'wip',
           role: 'fullstack with Aurora Medel',
-          desc: "Internal app for a pet food business · Canva/Excel workflow digitalisation · team project with Aurora Medel",
+          desc: 'Internal app for a pet food business · Canva/Excel workflow digitalisation · team project with Aurora Medel',
           stack: ['Laravel', 'PHP', 'JavaScript', 'Docker', 'PL/SQL'],
           year: '2025 →',
           link: '#',
@@ -966,16 +981,21 @@ const COPY = {
       p3: (
         <>
           A personal situation meant I had to leave BNT and Málaga and return to
-          Jaén, Andalusia. But I'm ready to get back into the industry with
-          renewed energy and a lot of desire to keep growing. What I'm looking
-          for is a <b>team</b> where I can do exactly that.
+          Jaén. With some perspective, I've decided to go back to university:
+          this year I'm starting{' '}
+          <b>Digital Industry Engineering</b> at the University of Jaén (Linares
+          campus), potentially as a part-time student, with the intention of
+          combining it with work. I don't see it as a limitation — I see it as a
+          bet on growing on both fronts at once. I'm looking for a{' '}
+          <b>team</b> that values that attitude, with remote work or flexible
+          hours.
         </>
       ),
       timeline: [
         {
-          when: 'Now',
-          what: 'Actively looking',
-          note: 'Looking for my next opportunity. Open to fullstack or backend roles, in Jaén (Andalusia) or remote.',
+          when: 'Sep. 2026',
+          what: 'Digital Industry Engineering · University of Jaén (Linares)',
+          note: 'New chapter. Looking for a job compatible with my degree — remote or flexible hours.',
           now: true,
         },
         {
@@ -1012,6 +1032,12 @@ const COPY = {
       certLabel: 'Licences & certifications',
       langsLabel: 'Languages',
       edu: [
+        {
+          school: 'University of Jaén · Linares Campus',
+          degree: 'Digital Industry Engineering',
+          period: 'Sep. 2026 – present',
+          logo: 'assets/images/logo-uja.png',
+        },
         {
           school: 'MEDAC',
           degree: 'Higher Vocational Diploma in Web Application Development',
@@ -1164,7 +1190,7 @@ const COPY = {
       titleAccent: 'with drive',
       titlePost: ' for your team?',
       kicker:
-        "I'm open to a fullstack or backend role, in Jaén (Andalusia) or remote. If your team needs someone with lots of ideas and motivation, send me an email and let's talk!",
+        "This year I'm starting a Digital Industry Engineering degree in Linares, so I'm looking for a role that fits around university — remote or with flexible hours. If your team needs someone eager to grow, send me an email and let's talk.",
       copy: 'Copy email',
       copied: 'Copied!',
       freelance: {
@@ -1389,11 +1415,11 @@ function Hero({ t }) {
 
 // ------- Project card (Pokémon-inspired) -------
 const TAG_COLORS = {
-  'Personal':      { from: '#b8720a', to: '#7a4a00', accent: '#f0c040' },
+  Personal: { from: '#b8720a', to: '#7a4a00', accent: '#f0c040' },
   'IA & Big Data': { from: '#1d4ed8', to: '#1e3a8a', accent: '#60a5fa' },
-  'Freelance':     { from: '#15803d', to: '#14532d', accent: '#4ade80' },
-  'Académico':     { from: '#b91c1c', to: '#7f1d1d', accent: '#f87171' },
-  'TFG':           { from: '#6d28d9', to: '#3b0764', accent: '#a78bfa' },
+  Freelance: { from: '#15803d', to: '#14532d', accent: '#4ade80' },
+  Académico: { from: '#b91c1c', to: '#7f1d1d', accent: '#f87171' },
+  TFG: { from: '#6d28d9', to: '#3b0764', accent: '#a78bfa' },
 };
 
 function ProjectCard({ p, roleLabel, posClass, isActive }) {
@@ -1420,10 +1446,13 @@ function ProjectCard({ p, roleLabel, posClass, isActive }) {
     <article
       ref={cardRef}
       className={`pcard ${posClass}`}
-      style={{ '--card-from': c.from, '--card-to': c.to, '--card-accent': c.accent }}
+      style={{
+        '--card-from': c.from,
+        '--card-to': c.to,
+        '--card-accent': c.accent,
+      }}
       onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
+      onMouseLeave={handleMouseLeave}>
       <div className="pcard-inner">
         <div className="pcard-shine" />
 
@@ -1451,18 +1480,21 @@ function ProjectCard({ p, roleLabel, posClass, isActive }) {
         <p className="pcard-desc">{p.desc}</p>
 
         <div className="pcard-stack">
-          {p.stack.map(s => <span key={s}>{s}</span>)}
+          {p.stack.map((s) => (
+            <span key={s}>{s}</span>
+          ))}
         </div>
 
         <div className="pcard-foot">
-          <span className="pcard-role">{roleLabel}: {p.role}</span>
+          <span className="pcard-role">
+            {roleLabel}: {p.role}
+          </span>
           {p.link && p.link !== '#' && (
             <a
               href={p.link}
               target={isDetail ? '_self' : '_blank'}
               rel="noopener noreferrer"
-              className="pcard-link"
-            >
+              className="pcard-link">
               {isDetail ? 'Ver detalle' : 'Ver web'} →
             </a>
           )}
@@ -1482,7 +1514,7 @@ function Projects({ t }) {
   const pausedRef = React.useRef(false);
   const timerRef = React.useRef(null);
   const goNextRef = React.useRef(null);
-  const list = t.projects.list.filter(p => !p.hidden);
+  const list = t.projects.list.filter((p) => !p.hidden);
   const total = list.length;
 
   function goTo(next, dir) {
@@ -1498,12 +1530,18 @@ function Projects({ t }) {
       setExitIdx(null);
       animRef.current = false;
       clearTimeout(pausedRef._resume);
-      pausedRef._resume = setTimeout(() => { pausedRef.current = false; }, 6000);
+      pausedRef._resume = setTimeout(() => {
+        pausedRef.current = false;
+      }, 6000);
     }, 500);
   }
 
-  function goNext() { goTo((idxRef.current + 1) % total, 'next'); }
-  function goPrev() { goTo((idxRef.current - 1 + total) % total, 'prev'); }
+  function goNext() {
+    goTo((idxRef.current + 1) % total, 'next');
+  }
+  function goPrev() {
+    goTo((idxRef.current - 1 + total) % total, 'prev');
+  }
   goNextRef.current = goNext;
 
   React.useEffect(() => {
@@ -1526,7 +1564,9 @@ function Projects({ t }) {
       </div>
 
       <div className="deck-outer">
-        <button className="car-btn" onClick={goPrev} aria-label="Previous">←</button>
+        <button className="car-btn" onClick={goPrev} aria-label="Previous">
+          ←
+        </button>
 
         <div className="deck-stage">
           {list.map((p, i) => {
@@ -1553,11 +1593,15 @@ function Projects({ t }) {
           })}
         </div>
 
-        <button className="car-btn" onClick={goNext} aria-label="Next">→</button>
+        <button className="car-btn" onClick={goNext} aria-label="Next">
+          →
+        </button>
       </div>
 
       <div className="car-progress">
-        <i style={{ width: `${100 / total}%`, left: `${(idx * 100) / total}%` }} />
+        <i
+          style={{ width: `${100 / total}%`, left: `${(idx * 100) / total}%` }}
+        />
       </div>
     </section>
   );

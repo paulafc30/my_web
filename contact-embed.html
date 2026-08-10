@@ -1,181 +1,309 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
-  <style>
-    html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
-    /* Notifica al padre el alto real del contenido */
-  </style>
-</head>
-<body>
-  <div id="root"></div>
-  <script type="text/babel">
-    const t = {
-      contact: {
-        label: 'Contacto',
-        titlePre: '¿Buscas a una programadora',
-        titleAccent: 'con ganas',
-        titlePost: ' para tu empresa?',
-        kicker: 'Estoy abierta a un puesto fullstack o backend, en Jaén o remoto. Si tu equipo necesita de alguien con muchas ideas y motivación, mándame un correo y hablamos!',
-        copy: 'Copiar correo',
-        copied: '¡Copiado!',
-        freelance: {
-          title: '¿Tienes un proyecto propio?',
-          text: 'También hago proyectos pequeños por mi cuenta. Si necesitas una landing page, una tienda online o una app de gestión interna, cuéntame la idea y lo vemos.',
-          tags: ['Landing page', 'Tienda online', 'Gestión interna'],
-        },
-        links: [
-          { name: 'LinkedIn', url: 'https://www.linkedin.com/in/paula-fernandez-canas/' },
-          { name: 'GitHub', url: 'https://github.com/paulafc30' },
-          { name: 'CV (pdf)', url: '/assets/cv-paula-fernandez-es.pdf' },
-        ],
-        form: {
-          namePh: 'Tu nombre',
-          emailPh: 'Tu email',
-          msgPh: 'Tu mensaje...',
-          send: 'Enviar →',
-          sending: 'Enviando...',
-          sent: '¡Mensaje enviado! Te respondo pronto.',
-          error: 'Algo salió mal. Prueba por email directamente.',
-        },
-      },
-      footer: {
-        left: '© 2026 Paula Fernández Cañas',
-        mid: 'Jaén, ES',
-        right: '',
-      },
-    };
-
-    function Contact({ t }) {
-      const [copied, setCopied] = React.useState(false);
-      const [form, setForm] = React.useState({ name: '', email: '', msg: '' });
-      const [status, setStatus] = React.useState('idle');
-
-      function copy() {
-        navigator.clipboard?.writeText('paulafc30@gmail.com');
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1400);
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+      crossorigin></script>
+    <script
+      src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+      crossorigin></script>
+    <script
+      src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+      crossorigin></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        overflow: hidden;
       }
+      /* Notifica al padre el alto real del contenido */
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const t = {
+        contact: {
+          label: 'Contacto',
+          titlePre: '¿Buscas a una programadora',
+          titleAccent: 'con ganas',
+          titlePost: ' para tu empresa?',
+          kicker:
+            'Estoy abierta a un puesto fullstack o backend, en Jaén o remoto. Si tu equipo necesita de alguien con muchas ideas y motivación, mándame un correo y hablamos!',
+          copy: 'Copiar correo',
+          copied: '¡Copiado!',
+          freelance: {
+            title: '¿Tienes un proyecto propio?',
+            text: 'También hago proyectos pequeños por mi cuenta. Si necesitas una landing page, una tienda online o una app de gestión interna, cuéntame la idea y lo vemos.',
+            tags: ['Landing page', 'Tienda online', 'Gestión interna'],
+          },
+          links: [
+            {
+              name: 'LinkedIn',
+              url: 'https://www.linkedin.com/in/paula-fernandez-canas/',
+            },
+            { name: 'GitHub', url: 'https://github.com/paulafc30' },
+            { name: 'CV (pdf)', url: '/assets/cv-paula-fernandez-es.pdf' },
+          ],
+          form: {
+            namePh: 'Tu nombre',
+            emailPh: 'Tu email',
+            msgPh: 'Tu mensaje...',
+            send: 'Enviar →',
+            sending: 'Enviando...',
+            sent: '¡Mensaje enviado! Te respondo pronto.',
+            error: 'Algo salió mal. Prueba por email directamente.',
+          },
+        },
+        footer: {
+          left: '© 2026 Paula Fernández Cañas',
+          mid: 'Jaén, ES',
+          right: '',
+        },
+      };
 
-      async function handleSubmit(e) {
-        e.preventDefault();
-        setStatus('sending');
-        try {
-          const res = await fetch('https://formspree.io/f/xnjknwpz', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify({ name: form.name, email: form.email, message: form.msg }),
-          });
-          setStatus(res.ok ? 'sent' : 'error');
-        } catch { setStatus('error'); }
-      }
+      function Contact({ t }) {
+        const [copied, setCopied] = React.useState(false);
+        const [form, setForm] = React.useState({
+          name: '',
+          email: '',
+          msg: '',
+        });
+        const [status, setStatus] = React.useState('idle');
 
-      const liIcon = <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.98 1.98 0 0 1-1.98-1.981 1.98 1.98 0 1 1 1.98 1.981zm1.707 13.019H3.63V9h3.414v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>;
-      const ghIcon = <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>;
+        function copy() {
+          navigator.clipboard?.writeText('paulafc30@gmail.com');
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1400);
+        }
 
-      return (
-        <section id="contacto" className="contact">
-          <div className="wrap">
-            <div style={{color:'var(--accent)',fontSize:11,letterSpacing:'0.16em',textTransform:'uppercase',fontWeight:600}}>
-              {t.contact.label}
-            </div>
-            <h2>
-              {t.contact.titlePre}{' '}
-              <span className="accent">{t.contact.titleAccent}</span>
-              {t.contact.titlePost}
-            </h2>
+        async function handleSubmit(e) {
+          e.preventDefault();
+          setStatus('sending');
+          try {
+            const res = await fetch('https://formspree.io/f/xnjknwpz', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+              },
+              body: JSON.stringify({
+                name: form.name,
+                email: form.email,
+                message: form.msg,
+              }),
+            });
+            setStatus(res.ok ? 'sent' : 'error');
+          } catch {
+            setStatus('error');
+          }
+        }
 
-            <div className="contact-grid">
-              <div>
-                <p className="kicker">{t.contact.kicker}</p>
-                <div className="email-row">
-                  <a href="https://mail.google.com/mail/?view=cm&to=paulafc30@gmail.com" target="_blank" rel="noopener noreferrer">
-                    paulafc30@gmail.com
-                  </a>
-                  <button className="copy-icon" onClick={copy} aria-label="Copiar correo" title={copied ? t.contact.copied : t.contact.copy}>
-                    {copied
-                      ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                      : <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                    }
-                  </button>
-                </div>
-                <div className="links">
-                  {t.contact.links.map((l, i) => (
-                    <a key={i} href={l.url} target="_blank" rel="noopener noreferrer">
-                      {l.name.toLowerCase().includes('linkedin') ? liIcon : l.name.toLowerCase().includes('github') ? ghIcon : null}
-                      {l.name} ↗
+        const liIcon = (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452H16.89v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.98 1.98 0 0 1-1.98-1.981 1.98 1.98 0 1 1 1.98 1.981zm1.707 13.019H3.63V9h3.414v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        );
+        const ghIcon = (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+          </svg>
+        );
+
+        return (
+          <section id="contacto" className="contact">
+            <div className="wrap">
+              <div
+                style={{
+                  color: 'var(--accent)',
+                  fontSize: 11,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  fontWeight: 600,
+                }}>
+                {t.contact.label}
+              </div>
+              <h2>
+                {t.contact.titlePre}{' '}
+                <span className="accent">{t.contact.titleAccent}</span>
+                {t.contact.titlePost}
+              </h2>
+
+              <div className="contact-grid">
+                <div>
+                  <p className="kicker">{t.contact.kicker}</p>
+                  <div className="email-row">
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&to=paulafc30@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      paulafc30@gmail.com
                     </a>
+                    <button
+                      className="copy-icon"
+                      onClick={copy}
+                      aria-label="Copiar correo"
+                      title={copied ? t.contact.copied : t.contact.copy}>
+                      {copied ? (
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      ) : (
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round">
+                          <rect x="9" y="9" width="13" height="13" rx="2" />
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+                  <div className="links">
+                    {t.contact.links.map((l, i) => (
+                      <a
+                        key={i}
+                        href={l.url}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {l.name.toLowerCase().includes('linkedin')
+                          ? liIcon
+                          : l.name.toLowerCase().includes('github')
+                            ? ghIcon
+                            : null}
+                        {l.name} ↗
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  {status === 'sent' ? (
+                    <p className="cf-sent">{t.contact.form.sent}</p>
+                  ) : (
+                    <form className="cf" onSubmit={handleSubmit}>
+                      <input
+                        className="cf-input"
+                        type="text"
+                        placeholder={t.contact.form.namePh}
+                        value={form.name}
+                        onChange={(e) =>
+                          setForm((f) => ({ ...f, name: e.target.value }))
+                        }
+                        required
+                      />
+                      <input
+                        className="cf-input"
+                        type="email"
+                        placeholder={t.contact.form.emailPh}
+                        value={form.email}
+                        onChange={(e) =>
+                          setForm((f) => ({ ...f, email: e.target.value }))
+                        }
+                        required
+                      />
+                      <textarea
+                        className="cf-input cf-textarea"
+                        placeholder={t.contact.form.msgPh}
+                        value={form.msg}
+                        onChange={(e) =>
+                          setForm((f) => ({ ...f, msg: e.target.value }))
+                        }
+                        required
+                        rows={5}
+                      />
+                      {status === 'error' && (
+                        <p className="cf-error">{t.contact.form.error}</p>
+                      )}
+                      <button
+                        className="cf-btn"
+                        type="submit"
+                        disabled={status === 'sending'}>
+                        {status === 'sending'
+                          ? t.contact.form.sending
+                          : t.contact.form.send}
+                      </button>
+                    </form>
+                  )}
+                </div>
+              </div>
+
+              <div className="freelance-callout">
+                <div className="freelance-title">
+                  {t.contact.freelance.title}
+                </div>
+                <p className="freelance-text">{t.contact.freelance.text}</p>
+                <div className="freelance-tags">
+                  {t.contact.freelance.tags.map((tag, i) => (
+                    <span key={i} className="freelance-tag">
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
-
-              <div>
-                {status === 'sent' ? (
-                  <p className="cf-sent">{t.contact.form.sent}</p>
-                ) : (
-                  <form className="cf" onSubmit={handleSubmit}>
-                    <input className="cf-input" type="text" placeholder={t.contact.form.namePh} value={form.name} onChange={e => setForm(f => ({...f, name: e.target.value}))} required/>
-                    <input className="cf-input" type="email" placeholder={t.contact.form.emailPh} value={form.email} onChange={e => setForm(f => ({...f, email: e.target.value}))} required/>
-                    <textarea className="cf-input cf-textarea" placeholder={t.contact.form.msgPh} value={form.msg} onChange={e => setForm(f => ({...f, msg: e.target.value}))} required rows={5}/>
-                    {status === 'error' && <p className="cf-error">{t.contact.form.error}</p>}
-                    <button className="cf-btn" type="submit" disabled={status === 'sending'}>
-                      {status === 'sending' ? t.contact.form.sending : t.contact.form.send}
-                    </button>
-                  </form>
-                )}
-              </div>
             </div>
+          </section>
+        );
+      }
 
-            <div className="freelance-callout">
-              <div className="freelance-title">{t.contact.freelance.title}</div>
-              <p className="freelance-text">{t.contact.freelance.text}</p>
-              <div className="freelance-tags">
-                {t.contact.freelance.tags.map((tag, i) => <span key={i} className="freelance-tag">{tag}</span>)}
-              </div>
+      function Footer({ t }) {
+        return (
+          <footer className="bot">
+            <div className="wrap bot-inner">
+              <span>{t.footer.left}</span>
+              <span>{t.footer.mid}</span>
+              <span>{t.footer.right}</span>
             </div>
-          </div>
-        </section>
-      );
-    }
+          </footer>
+        );
+      }
 
-    function Footer({ t }) {
-      return (
-        <footer className="bot">
-          <div className="wrap bot-inner">
-            <span>{t.footer.left}</span>
-            <span>{t.footer.mid}</span>
-            <span>{t.footer.right}</span>
-          </div>
-        </footer>
-      );
-    }
+      function App() {
+        return (
+          <>
+            <Contact t={t} />
+            <Footer t={t} />
+          </>
+        );
+      }
 
-    function App() {
-      return <>
-        <Contact t={t}/>
-        <Footer t={t}/>
-      </>;
-    }
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
-
-    // Notifica al padre la altura real para que el iframe se ajuste
-    function notifyHeight() {
-      const h = document.documentElement.scrollHeight;
-      window.parent.postMessage({ type: 'pf-contact-height', height: h }, '*');
-    }
-    window.addEventListener('load', () => {
-      notifyHeight();
-      new ResizeObserver(notifyHeight).observe(document.body);
-    });
-  </script>
-</body>
+      // Notifica al padre la altura real para que el iframe se ajuste
+      function notifyHeight() {
+        const h = document.documentElement.scrollHeight;
+        window.parent.postMessage(
+          { type: 'pf-contact-height', height: h },
+          '*',
+        );
+      }
+      window.addEventListener('load', () => {
+        notifyHeight();
+        new ResizeObserver(notifyHeight).observe(document.body);
+      });
+    </script>
+  </body>
 </html>
