@@ -18,7 +18,7 @@ const COPY = {
       ],
       lede: [
         <>
-          Soy <b>Paula Fernández Cañas</b>. He estado trabajando como{' '}
+          Soy <b>Paula Fernández</b>. He estado trabajando como{' '}
           <b>desarrolladora web junior</b> en BNT Business Telecom, en proyectos
           web e <b>IoT</b>.
         </>,
@@ -632,7 +632,7 @@ const COPY = {
       ],
       lede: [
         <>
-          I'm <b>Paula Fernández Cañas</b>. I've been working as a{' '}
+          I'm <b>Paula Fernández</b>. I've been working as a{' '}
           <b>junior web developer</b> at BNT Business Telecom, on web and{' '}
           <b>IoT</b> projects.
         </>,
